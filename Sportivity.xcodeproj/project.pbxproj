@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
+		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
-		49B89E501EA0D56A0004BCB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4F1EA0D56A0004BCB3 /* ViewController.swift */; };
-		49B89E531EA0D56A0004BCB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E511EA0D56A0004BCB3 /* Main.storyboard */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
 		49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */; };
 		49B89E631EA0D56A0004BCB3 /* SportivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E621EA0D56A0004BCB3 /* SportivityTests.swift */; };
 		49B89E6E1EA0D56A0004BCB3 /* SportivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */; };
+		49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */; };
+		49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */; };
+		49C0C3D91EA5274B00F7B5F5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D71EA5274B00F7B5F5 /* Router.swift */; };
+		49C0C3DA1EA5274B00F7B5F5 /* ViewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
+		49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */; };
 		F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617642F456594DE78CA04236 /* Pods_Sportivity.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +43,10 @@
 
 /* Begin PBXFileReference section */
 		20A9D25DEA3CD01FDD5C43BD /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
+		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49B89E4F1EA0D56A0004BCB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		49B89E521EA0D56A0004BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49B89E541EA0D56A0004BCB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B89E571EA0D56A0004BCB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49B89E591EA0D56A0004BCB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,8 +56,13 @@
 		49B89E691EA0D56A0004BCB3 /* SportivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportivityUITests.swift; sourceTree = "<group>"; };
 		49B89E6F1EA0D56A0004BCB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginChoiceViewController.swift; path = Authorization/LoginChoiceViewController.swift; sourceTree = "<group>"; };
+		49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HairlineView.swift; path = Views/HairlineView.swift; sourceTree = "<group>"; };
+		49C0C3D71EA5274B00F7B5F5 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Routing/Router.swift; sourceTree = "<group>"; };
+		49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewTag.swift; path = Routing/ViewTag.swift; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
+		49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		617642F456594DE78CA04236 /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7FD16BF7CE12A88B1B956B /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +101,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4918C1301EA51E310081F43D /* UITools */ = {
+			isa = PBXGroup;
+			children = (
+				4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */,
+			);
+			name = UITools;
+			sourceTree = "<group>";
+		};
+		4930F1621EA524320090F1D1 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */,
+				4930F1631EA524480090F1D1 /* Authorization.storyboard */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
 		49A0BE0F4A7F77AB90C84BF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +152,12 @@
 		49B89E4C1EA0D56A0004BCB3 /* Sportivity */ = {
 			isa = PBXGroup;
 			children = (
+				49D559481EA510E40000C712 /* Tools */,
+				49D559491EA510E40000C712 /* Common */,
+				49D559471EA510E40000C712 /* Networking */,
+				49D559451EA510E40000C712 /* Models */,
+				49D559461EA510E40000C712 /* Stories */,
 				49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */,
-				49B89E4F1EA0D56A0004BCB3 /* ViewController.swift */,
-				49B89E511EA0D56A0004BCB3 /* Main.storyboard */,
 				49D5593F1EA50E050000C712 /* R.generated.swift */,
 				49B89E541EA0D56A0004BCB3 /* Assets.xcassets */,
 				49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */,
@@ -155,6 +185,14 @@
 			path = SportivityUITests;
 			sourceTree = "<group>";
 		};
+		49C0C3D41EA526DE00F7B5F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		49D559411EA50E300000C712 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +207,55 @@
 				49D559431EA50E300000C712 /* Sportivity.clr */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		49D559451EA510E40000C712 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49D559461EA510E40000C712 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				4930F1621EA524320090F1D1 /* Authorization */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		49D559471EA510E40000C712 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		49D559481EA510E40000C712 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				49D5594A1EA513F50000C712 /* Routing */,
+				4918C1301EA51E310081F43D /* UITools */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		49D559491EA510E40000C712 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */,
+				49C0C3D41EA526DE00F7B5F5 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		49D5594A1EA513F50000C712 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				49C0C3D71EA5274B00F7B5F5 /* Router.swift */,
+				49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */,
+			);
+			name = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +373,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */,
+				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
 				49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */,
 				49D559441EA50E300000C712 /* Sportivity.clr in Resources */,
-				49B89E531EA0D56A0004BCB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,9 +462,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B89E501EA0D56A0004BCB3 /* ViewController.swift in Sources */,
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
+				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
+				49C0C3D91EA5274B00F7B5F5 /* Router.swift in Sources */,
+				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
+				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
+				49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */,
+				49C0C3DA1EA5274B00F7B5F5 /* ViewTag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,14 +505,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49B89E511EA0D56A0004BCB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49B89E521EA0D56A0004BCB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
