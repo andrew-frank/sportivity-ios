@@ -41,7 +41,7 @@
         <!--Games-->
         <scene sceneID="Uxy-7a-Ku5">
             <objects>
-                <viewController storyboardIdentifier="games" title="Games" id="May-m7-SMN" customClass="GamesViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="games" title="Games" id="May-m7-SMN" customClass="EventsViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FN2-bc-woW"/>
                         <viewControllerLayoutGuide type="bottom" id="kKp-Ig-jqR"/>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gamesCategoryFilterCell" rowHeight="100" id="9em-eJ-qpb" customClass="GamesCategoryFilterTableViewCell" customModule="Sportivity" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventsCategoryFilterTableCell" rowHeight="100" id="9em-eJ-qpb" customClass="EventsCategoryFilterTableViewCell" customModule="Sportivity" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9em-eJ-qpb" id="0nN-Dn-Mw4">
@@ -71,7 +71,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gamesCategoryFilterCollectionCell" id="LYM-kp-QLF" customClass="GamesCategoryCollectionViewCell" customModule="Sportivity" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventsCategoryFilterCollectionCell" id="LYM-kp-QLF" customClass="EventsCategoryFilterCollectionViewCell" customModule="Sportivity" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

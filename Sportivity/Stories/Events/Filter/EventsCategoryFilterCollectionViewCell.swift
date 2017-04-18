@@ -1,5 +1,5 @@
 //
-//  GamesCategoriesCollectionViewCell.swift
+//  EventsCategoryCollectionViewCell.swift
 //  Sportivity
 //
 //  Created by Andrzej Frankowski on 18/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GamesCategoryCollectionViewCell: UICollectionViewCell {
+class EventsCategoryFilterCollectionViewCell: UICollectionViewCell {
     
     fileprivate var category: Category? = nil
     

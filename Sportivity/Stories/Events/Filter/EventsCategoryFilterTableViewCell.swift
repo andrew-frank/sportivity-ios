@@ -1,5 +1,5 @@
 //
-//  GamesCategoryFilterTableViewCell.swift
+//  EventsCategoryFilterTableViewCell.swift
 //  Sportivity
 //
 //  Created by Andrzej Frankowski on 18/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GamesCategoryFilterTableViewCell: UITableViewCell {
+class EventsCategoryFilterTableViewCell: UITableViewCell {
 
     @IBOutlet fileprivate weak var categoriesCollectionView: UICollectionView!
     
@@ -18,8 +18,8 @@ class GamesCategoryFilterTableViewCell: UITableViewCell {
     }
 }
 
-private extension GamesCategoryFilterTableViewCell {
+private extension EventsCategoryFilterTableViewCell {
     func setup() {
-        categoriesCollectionView.register(GamesCategoryCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.gamesCategoryFilterCollectionCell.identifier)
+        categoriesCollectionView.register(EventsCategoryFilterCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier)
     }
 }
