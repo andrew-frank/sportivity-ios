@@ -8,6 +8,7 @@ def shared_pods
     #pod 'AlamofireNetworkActivityIndicator', '~> 2.1.0'
     pod 'RxSwift', '~> 3.4.0'
     pod 'RxCocoa', '~> 3.4.0'
+    pod 'RxDataSources', '~> 1.0.3'
     pod 'R.swift', '~> 3.2.0'
     #pod 'Unbox', '~> 2.3.0'
     #pod 'Wrap', '~> 2.1.0'

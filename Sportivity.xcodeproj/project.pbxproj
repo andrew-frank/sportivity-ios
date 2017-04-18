@@ -11,6 +11,12 @@
 		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
 		4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */; };
 		4916F3291EA688390053C3E2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3271EA688390053C3E2 /* Router.swift */; };
+		4916F32F1EA689DD0053C3E2 /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F32E1EA689DD0053C3E2 /* GamesViewModel.swift */; };
+		4916F3311EA689F00053C3E2 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3301EA689F00053C3E2 /* GamesViewController.swift */; };
+		4916F3351EA68AD80053C3E2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3341EA68AD80053C3E2 /* Category.swift */; };
+		4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3381EA68B7E0053C3E2 /* Event.swift */; };
+		4916F33C1EA68D290053C3E2 /* GamesCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F33B1EA68D290053C3E2 /* GamesCategoryCollectionViewCell.swift */; };
+		4916F3421EA68F510053C3E2 /* GamesCategoryFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3411EA68F510053C3E2 /* GamesCategoryFilterTableViewCell.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
@@ -49,6 +55,12 @@
 		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
 		4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = MainTab/MainTabBarViewController.swift; sourceTree = "<group>"; };
 		4916F3271EA688390053C3E2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4916F32E1EA689DD0053C3E2 /* GamesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesViewModel.swift; path = Games/GamesViewModel.swift; sourceTree = "<group>"; };
+		4916F3301EA689F00053C3E2 /* GamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesViewController.swift; path = Games/GamesViewController.swift; sourceTree = "<group>"; };
+		4916F3341EA68AD80053C3E2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Category/Category.swift; sourceTree = "<group>"; };
+		4916F3381EA68B7E0053C3E2 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Event/Event.swift; sourceTree = "<group>"; };
+		4916F33B1EA68D290053C3E2 /* GamesCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesCategoryCollectionViewCell.swift; path = Games/GamesCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4916F3411EA68F510053C3E2 /* GamesCategoryFilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamesCategoryFilterTableViewCell.swift; path = Games/GamesCategoryFilterTableViewCell.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +120,7 @@
 		4916F31E1EA676480053C3E2 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
+				4916F32B1EA689BE0053C3E2 /* Games */,
 				4916F31F1EA676660053C3E2 /* MainTab.storyboard */,
 				4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */,
 			);
@@ -128,6 +141,48 @@
 				4916F3271EA688390053C3E2 /* Router.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		4916F32B1EA689BE0053C3E2 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				4916F32E1EA689DD0053C3E2 /* GamesViewModel.swift */,
+				4916F3301EA689F00053C3E2 /* GamesViewController.swift */,
+				4916F33A1EA68CFD0053C3E2 /* Categories Filter */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		4916F3361EA68ADC0053C3E2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3341EA68AD80053C3E2 /* Category.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		4916F3371EA68B730053C3E2 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3381EA68B7E0053C3E2 /* Event.swift */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		4916F33A1EA68CFD0053C3E2 /* Categories Filter */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3411EA68F510053C3E2 /* GamesCategoryFilterTableViewCell.swift */,
+				4916F33B1EA68D290053C3E2 /* GamesCategoryCollectionViewCell.swift */,
+			);
+			name = "Categories Filter";
+			sourceTree = "<group>";
+		};
+		4916F3431EA6915F0053C3E2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		4918C1301EA51E310081F43D /* UITools */ = {
@@ -241,6 +296,8 @@
 		49D559451EA510E40000C712 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4916F3371EA68B730053C3E2 /* Event */,
+				4916F3361EA68ADC0053C3E2 /* Category */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +333,7 @@
 				49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */,
 				4916F3261EA688390053C3E2 /* Routing */,
 				49C0C3D41EA526DE00F7B5F5 /* Views */,
+				4916F3431EA6915F0053C3E2 /* Managers */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -489,10 +547,16 @@
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
+				4916F32F1EA689DD0053C3E2 /* GamesViewModel.swift in Sources */,
+				4916F3421EA68F510053C3E2 /* GamesCategoryFilterTableViewCell.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
+				4916F3311EA689F00053C3E2 /* GamesViewController.swift in Sources */,
+				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
 				49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */,
+				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
+				4916F33C1EA68D290053C3E2 /* GamesCategoryCollectionViewCell.swift in Sources */,
 				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
