@@ -41,6 +41,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8dO-bf-Pig"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="ISJ-dh-kZo" id="HcP-QP-DTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmW-et-oyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

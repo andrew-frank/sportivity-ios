@@ -19,8 +19,23 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
+    @IBOutlet fileprivate weak var facebookButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bind()
+    }
+}
+
+private extension LoginChoiceViewController {
+    func bind() {
+        facebookButton
+            .rx
+            .tap
+            .map {
+                return Route(view: .mainTab, type: nil)
+            }
+            .bind(to: onRouteTo.asPublishSubject()!)
+            .addDisposableTo(disposeBag)
     }
 }

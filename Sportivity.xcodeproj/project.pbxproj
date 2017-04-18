@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4916F31F1EA676660053C3E2 /* MainTab.storyboard */; };
+		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
+		4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */; };
+		4916F3291EA688390053C3E2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3271EA688390053C3E2 /* Router.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
@@ -16,8 +20,6 @@
 		49B89E6E1EA0D56A0004BCB3 /* SportivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */; };
 		49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */; };
 		49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */; };
-		49C0C3D91EA5274B00F7B5F5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D71EA5274B00F7B5F5 /* Router.swift */; };
-		49C0C3DA1EA5274B00F7B5F5 /* ViewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
 		49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */; };
@@ -43,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		20A9D25DEA3CD01FDD5C43BD /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
+		4916F31F1EA676660053C3E2 /* MainTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTab.storyboard; path = MainTab/MainTab.storyboard; sourceTree = "<group>"; };
+		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
+		4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = MainTab/MainTabBarViewController.swift; sourceTree = "<group>"; };
+		4916F3271EA688390053C3E2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +64,6 @@
 		49B89E6F1EA0D56A0004BCB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginChoiceViewController.swift; path = Authorization/LoginChoiceViewController.swift; sourceTree = "<group>"; };
 		49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HairlineView.swift; path = Views/HairlineView.swift; sourceTree = "<group>"; };
-		49C0C3D71EA5274B00F7B5F5 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Routing/Router.swift; sourceTree = "<group>"; };
-		49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewTag.swift; path = Routing/ViewTag.swift; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
 		49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -101,6 +105,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4916F31E1EA676480053C3E2 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				4916F31F1EA676660053C3E2 /* MainTab.storyboard */,
+				4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */,
+			);
+			name = MainTab;
+			sourceTree = "<group>";
+		};
+		4916F3211EA682630053C3E2 /* RxTools */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3221EA6827B0053C3E2 /* RxTools.swift */,
+			);
+			name = RxTools;
+			sourceTree = "<group>";
+		};
+		4916F3261EA688390053C3E2 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3271EA688390053C3E2 /* Router.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		4918C1301EA51E310081F43D /* UITools */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +141,8 @@
 		4930F1621EA524320090F1D1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */,
 				4930F1631EA524480090F1D1 /* Authorization.storyboard */,
+				49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -219,6 +248,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				4916F31E1EA676480053C3E2 /* MainTab */,
 				4930F1621EA524320090F1D1 /* Authorization */,
 			);
 			path = Stories;
@@ -234,7 +264,7 @@
 		49D559481EA510E40000C712 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				49D5594A1EA513F50000C712 /* Routing */,
+				4916F3211EA682630053C3E2 /* RxTools */,
 				4918C1301EA51E310081F43D /* UITools */,
 			);
 			path = Tools;
@@ -244,18 +274,10 @@
 			isa = PBXGroup;
 			children = (
 				49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */,
+				4916F3261EA688390053C3E2 /* Routing */,
 				49C0C3D41EA526DE00F7B5F5 /* Views */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		49D5594A1EA513F50000C712 /* Routing */ = {
-			isa = PBXGroup;
-			children = (
-				49C0C3D71EA5274B00F7B5F5 /* Router.swift */,
-				49C0C3D81EA5274B00F7B5F5 /* ViewTag.swift */,
-			);
-			name = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */,
+				4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */,
 				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
 				49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */,
 				49D559441EA50E300000C712 /* Sportivity.clr in Resources */,
@@ -465,11 +488,12 @@
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
-				49C0C3D91EA5274B00F7B5F5 /* Router.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
+				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
+				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
 				49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */,
-				49C0C3DA1EA5274B00F7B5F5 /* ViewTag.swift in Sources */,
+				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
