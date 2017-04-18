@@ -7,31 +7,75 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
+private struct EventsSection {
+    var header: String
+    var items: [Item]
+}
 
-
-class EventsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension EventsSection: AnimatableSectionModelType  {
+    typealias Item = EventViewModel
+    typealias Identity = String
+    
+    var identity: String {
+        return header
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    init(original: EventsSection, items: [Item]) {
+        self = original
+        self.items = items
     }
-    */
+}
 
+
+class EventsViewController: UIViewController, Configurable {
+
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var categoryFilterCollectionView: UICollectionView!
+    
+    var viewModel: EventsViewModel! = EventsViewModel()
+    
+    let disposeBag = DisposeBag()
+    fileprivate let tableDataSource = RxTableViewSectionedAnimatedDataSource<EventsSection>()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableDataSource.animationConfiguration = AnimationConfiguration()
+        categoryFilterCollectionView.register(EventsCategoryFilterCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier)
+        bindTableView()
+        bindFilter()
+    }
+}
+
+private extension EventsViewController {
+    func bindFilter() {
+        viewModel
+            .categories
+            .asObservable()
+            .debug()
+            .bind(to: categoryFilterCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier, cellType: EventsCategoryFilterCollectionViewCell.self)) {
+                index, category, cell in
+                //cell.set(category: category)
+            }
+            .addDisposableTo(disposeBag)
+    }
+    
+    func bindTableView() {
+        tableDataSource.configureCell = { dataSource, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)!
+            return cell
+        }
+        
+        viewModel
+            .events
+            .asObservable()
+            .map { (events) -> [EventsSection] in
+                let section = EventsSection(header: "", items: events)
+                return [section]
+            }
+            .bind(to: tableView.rx.items(dataSource: self.tableDataSource))
+            .addDisposableTo(disposeBag)
+    }
 }

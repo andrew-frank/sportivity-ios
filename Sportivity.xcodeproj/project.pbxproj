@@ -16,7 +16,9 @@
 		4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3471EA6B6B50053C3E2 /* EventsViewController.swift */; };
 		4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3481EA6B6B50053C3E2 /* EventsViewModel.swift */; };
 		4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F34A1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift */; };
-		4916F34F1EA6B6B50053C3E2 /* EventsCategoryFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F34B1EA6B6B50053C3E2 /* EventsCategoryFilterTableViewCell.swift */; };
+		4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3511EA6B8690053C3E2 /* EventViewModel.swift */; };
+		4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35A1EA6BB750053C3E2 /* Configurable.swift */; };
+		4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
@@ -28,7 +30,6 @@
 		49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
-		49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */; };
 		F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617642F456594DE78CA04236 /* Pods_Sportivity.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +61,9 @@
 		4916F3471EA6B6B50053C3E2 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		4916F3481EA6B6B50053C3E2 /* EventsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		4916F34A1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCategoryFilterCollectionViewCell.swift; sourceTree = "<group>"; };
-		4916F34B1EA6B6B50053C3E2 /* EventsCategoryFilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCategoryFilterTableViewCell.swift; sourceTree = "<group>"; };
+		4916F3511EA6B8690053C3E2 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewModel.swift; path = ViewModels/EventViewModel.swift; sourceTree = "<group>"; };
+		4916F35A1EA6BB750053C3E2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Protocols/Configurable.swift; sourceTree = "<group>"; };
+		4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerProtocol.swift; path = Protocols/ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +81,6 @@
 		49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HairlineView.swift; path = Views/HairlineView.swift; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
-		49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		617642F456594DE78CA04236 /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7FD16BF7CE12A88B1B956B /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,8 +170,8 @@
 		4916F3461EA6B6B50053C3E2 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				4916F3471EA6B6B50053C3E2 /* EventsViewController.swift */,
 				4916F3481EA6B6B50053C3E2 /* EventsViewModel.swift */,
+				4916F3471EA6B6B50053C3E2 /* EventsViewController.swift */,
 				4916F3491EA6B6B50053C3E2 /* Filter */,
 			);
 			path = Events;
@@ -178,10 +180,26 @@
 		4916F3491EA6B6B50053C3E2 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				4916F34B1EA6B6B50053C3E2 /* EventsCategoryFilterTableViewCell.swift */,
 				4916F34A1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		4916F3501EA6B85A0053C3E2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4916F3511EA6B8690053C3E2 /* EventViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		4916F3531EA6B8870053C3E2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */,
+				4916F35A1EA6BB750053C3E2 /* Configurable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		4918C1301EA51E310081F43D /* UITools */ = {
@@ -330,10 +348,11 @@
 		49D559491EA510E40000C712 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				49D5594F1EA514D80000C712 /* ViewControllerProtocol.swift */,
+				4916F3501EA6B85A0053C3E2 /* ViewModels */,
 				4916F3261EA688390053C3E2 /* Routing */,
 				49C0C3D41EA526DE00F7B5F5 /* Views */,
 				4916F3431EA6915F0053C3E2 /* Managers */,
+				4916F3531EA6B8870053C3E2 /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -547,16 +566,17 @@
 				4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
-				4916F34F1EA6B6B50053C3E2 /* EventsCategoryFilterTableViewCell.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
+				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
-				49D559501EA514D80000C712 /* ViewControllerProtocol.swift in Sources */,
+				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
 				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
+				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,
 				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

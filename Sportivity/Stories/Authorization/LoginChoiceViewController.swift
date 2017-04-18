@@ -33,7 +33,7 @@ private extension LoginChoiceViewController {
             .rx
             .tap
             .map {
-                return Route(view: .mainTab, type: nil)
+                return Route(to: .mainTab, type: nil)
             }
             .bind(to: onRouteTo.asPublishSubject()!)
             .addDisposableTo(disposeBag)

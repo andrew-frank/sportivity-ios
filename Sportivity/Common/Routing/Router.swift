@@ -34,7 +34,7 @@ struct Route {
     let view : ViewTag
     let type : RouteType?
     
-    init(view: ViewTag, type: RouteType? = nil) {
+    init(to view: ViewTag, type: RouteType? = nil) {
         self.view = view
         self.type = type
     }
@@ -55,7 +55,7 @@ class Router {
     
     init(window: UIWindow) {
         self.window = window
-        let route = Route(view: .loginChoice)
+        let route = Route(to: .loginChoice)
         let vc = self.route(to: route)
         self.window.rootViewController = vc
         self.window.makeKeyAndVisible()

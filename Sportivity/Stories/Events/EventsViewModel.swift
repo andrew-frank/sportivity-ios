@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class EventsViewModel {
+    let events = Variable<[EventViewModel]>([ ])
+    let categories = Variable<[Category]>(Category.all())
+    
+    init() {
+        var arr = [EventViewModel]()
+        arr.append(EventViewModel())
+        arr.append(EventViewModel())
+        arr.append(EventViewModel())
+        arr.append(EventViewModel())
+        arr.append(EventViewModel())
+        events.value = arr
+    }
+}
