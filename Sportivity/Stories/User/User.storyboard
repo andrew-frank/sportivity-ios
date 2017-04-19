@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="BaN-g8-7i9">
+            <objects>
+                <viewController storyboardIdentifier="user" title="Profile" id="0Le-fw-IJe" customClass="UserViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FDf-3W-ZfY"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Nb-AJ-oCb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Op-d0-ocP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="304" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mod-RE-xoE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userHeaderTableCell" rowHeight="304" id="xDI-um-S82" customClass="UserHeaderTableViewCell" customModule="Sportivity" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="304"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xDI-um-S82" id="vIR-Lv-eas">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="bIW-aP-KYO" customClass="UserAvatarImageView" customModule="Sportivity" customModuleProvider="target">
+                                                    <rect key="frame" x="137" y="30" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="N6c-XR-U8f"/>
+                                                        <constraint firstAttribute="width" secondItem="bIW-aP-KYO" secondAttribute="height" multiplier="1:1" id="QeS-Mv-Asn"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew Frank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-Vf-lS0">
+                                                    <rect key="frame" x="134.5" y="145" width="106" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Followers / 8 Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YX-wi-8kc">
+                                                    <rect key="frame" x="115" y="176" width="145.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-0h-HbW" customClass="ActionButton" customModule="Sportivity" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="215.5" width="345" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="a2b-Nh-k7F"/>
+                                                    </constraints>
+                                                    <state key="normal" title="FOLLOW"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EeU-Vf-lS0" firstAttribute="centerX" secondItem="vIR-Lv-eas" secondAttribute="centerX" id="1BZ-7r-4sJ"/>
+                                                <constraint firstItem="EeU-Vf-lS0" firstAttribute="top" secondItem="bIW-aP-KYO" secondAttribute="bottom" constant="15" id="2uX-IW-Te3"/>
+                                                <constraint firstItem="bGD-0h-HbW" firstAttribute="top" secondItem="8YX-wi-8kc" secondAttribute="bottom" constant="25" id="5qx-ct-Upu"/>
+                                                <constraint firstAttribute="trailing" secondItem="bGD-0h-HbW" secondAttribute="trailing" constant="15" id="GSh-fc-7Tm"/>
+                                                <constraint firstItem="8YX-wi-8kc" firstAttribute="top" secondItem="EeU-Vf-lS0" secondAttribute="bottom" constant="10" id="IZd-NN-x4f"/>
+                                                <constraint firstItem="bIW-aP-KYO" firstAttribute="centerX" secondItem="vIR-Lv-eas" secondAttribute="centerX" id="P89-0m-2Xt"/>
+                                                <constraint firstItem="bIW-aP-KYO" firstAttribute="top" secondItem="vIR-Lv-eas" secondAttribute="top" constant="30" id="a1Z-ph-fSy"/>
+                                                <constraint firstItem="bGD-0h-HbW" firstAttribute="leading" secondItem="vIR-Lv-eas" secondAttribute="leading" constant="15" id="hXq-H9-S6x"/>
+                                                <constraint firstItem="8YX-wi-8kc" firstAttribute="centerX" secondItem="vIR-Lv-eas" secondAttribute="centerX" id="tUH-lm-h9V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="avatarImageVIew" destination="bIW-aP-KYO" id="jDI-um-rZx"/>
+                                            <outlet property="followersLabel" destination="8YX-wi-8kc" id="PFl-1I-01h"/>
+                                            <outlet property="nameLabel" destination="EeU-Vf-lS0" id="4eL-Dd-Ivh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mod-RE-xoE" firstAttribute="top" secondItem="7Op-d0-ocP" secondAttribute="top" id="BEV-jR-Z0G"/>
+                            <constraint firstAttribute="trailing" secondItem="mod-RE-xoE" secondAttribute="trailing" id="MTA-9q-qV7"/>
+                            <constraint firstItem="3Nb-AJ-oCb" firstAttribute="top" secondItem="mod-RE-xoE" secondAttribute="bottom" id="UdD-XI-DFq"/>
+                            <constraint firstItem="mod-RE-xoE" firstAttribute="leading" secondItem="7Op-d0-ocP" secondAttribute="leading" id="s4J-Co-5eZ"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="mod-RE-xoE" id="uuq-FO-FwP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFB-lU-8UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.200000000000003" y="66.11694152923539"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="userPlaceholder" width="145" height="145"/>
+    </resources>
+</document>

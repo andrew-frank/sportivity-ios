@@ -21,6 +21,16 @@
 		4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
+		494DF0B51EA7F1E200583DBB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494DF0B41EA7F1E200583DBB /* MapKit.framework */; };
+		494DF0B81EA7F61E00583DBB /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DF0B71EA7F61E00583DBB /* User.storyboard */; };
+		494DF0BA1EA7F62900583DBB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0B91EA7F62900583DBB /* UserViewController.swift */; };
+		494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BB1EA7F93800583DBB /* UserAvatarImageView.swift */; };
+		494DF0BE1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */; };
+		494DF0C01EA7FCC400583DBB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */; };
+		494DF0C21EA7FD4100583DBB /* UserHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */; };
+		494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C51EA8046100583DBB /* ActionButton.swift */; };
+		494DF0C81EA8047700583DBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C71EA8047700583DBB /* GradientView.swift */; };
+		494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */; };
 		4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605B1EA791AE003454F5 /* EventAPI.swift */; };
 		4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605D1EA79204003454F5 /* EventAPI+Requests.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
@@ -74,6 +84,16 @@
 		4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerProtocol.swift; path = Protocols/ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
+		494DF0B41EA7F1E200583DBB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		494DF0B71EA7F61E00583DBB /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = User/User.storyboard; sourceTree = "<group>"; };
+		494DF0B91EA7F62900583DBB /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = User/UserViewController.swift; sourceTree = "<group>"; };
+		494DF0BB1EA7F93800583DBB /* UserAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAvatarImageView.swift; path = Views/UserAvatarImageView.swift; sourceTree = "<group>"; };
+		494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHeaderTableViewCell.swift; path = User/UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = User/UserViewModel.swift; sourceTree = "<group>"; };
+		494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHeaderViewModel.swift; path = User/UserHeaderViewModel.swift; sourceTree = "<group>"; };
+		494DF0C51EA8046100583DBB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = Views/ActionButton.swift; sourceTree = "<group>"; };
+		494DF0C71EA8047700583DBB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Views/GradientView.swift; sourceTree = "<group>"; };
+		494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorButton.swift; path = Views/ActivityIndicatorButton.swift; sourceTree = "<group>"; };
 		4965605B1EA791AE003454F5 /* EventAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAPI.swift; path = EventAPI/EventAPI.swift; sourceTree = "<group>"; };
 		4965605D1EA79204003454F5 /* EventAPI+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventAPI+Requests.swift"; path = "EventAPI/EventAPI+Requests.swift"; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
@@ -106,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494DF0B51EA7F1E200583DBB /* MapKit.framework in Frameworks */,
 				F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +151,7 @@
 		44AFF9FFA8CCB9CD40B0F507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				494DF0B41EA7F1E200583DBB /* MapKit.framework */,
 				617642F456594DE78CA04236 /* Pods_Sportivity.framework */,
 			);
 			name = Frameworks;
@@ -235,6 +257,36 @@
 			name = Authorization;
 			sourceTree = "<group>";
 		};
+		494DF0B61EA7F61100583DBB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */,
+				494DF0B91EA7F62900583DBB /* UserViewController.swift */,
+				494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */,
+				494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */,
+				494DF0B71EA7F61E00583DBB /* User.storyboard */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		494DF0C31EA803FF00583DBB /* Avatars */ = {
+			isa = PBXGroup;
+			children = (
+				496560661EA79486003454F5 /* AvatarImageView.swift */,
+				494DF0BB1EA7F93800583DBB /* UserAvatarImageView.swift */,
+			);
+			name = Avatars;
+			sourceTree = "<group>";
+		};
+		494DF0C41EA8041000583DBB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				494DF0C51EA8046100583DBB /* ActionButton.swift */,
+				494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		496560561EA79075003454F5 /* EventAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,9 +386,11 @@
 		49C0C3D41EA526DE00F7B5F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				494DF0C41EA8041000583DBB /* Buttons */,
 				496560681EA7949A003454F5 /* ListingCell */,
+				494DF0C31EA803FF00583DBB /* Avatars */,
 				49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */,
-				496560661EA79486003454F5 /* AvatarImageView.swift */,
+				494DF0C71EA8047700583DBB /* GradientView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -369,6 +423,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				494DF0B61EA7F61100583DBB /* User */,
 				4965606F1EA79A05003454F5 /* Search */,
 				4916F3461EA6B6B50053C3E2 /* Events */,
 				4916F31E1EA676480053C3E2 /* MainTab */,
@@ -525,6 +580,7 @@
 				4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */,
 				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
 				49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */,
+				494DF0B81EA7F61E00583DBB /* User.storyboard in Resources */,
 				49D559441EA50E300000C712 /* Sportivity.clr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +669,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
+				494DF0BA1EA7F62900583DBB /* UserViewController.swift in Sources */,
+				494DF0C81EA8047700583DBB /* GradientView.swift in Sources */,
+				494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */,
 				4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
@@ -623,9 +682,13 @@
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
 				4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */,
+				494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
+				494DF0BE1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift in Sources */,
+				494DF0C21EA7FD4100583DBB /* UserHeaderViewModel.swift in Sources */,
 				4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */,
+				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
@@ -634,6 +697,7 @@
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
 				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
 				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,
+				494DF0C01EA7FCC400583DBB /* UserViewModel.swift in Sources */,
 				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

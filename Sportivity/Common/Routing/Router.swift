@@ -11,16 +11,16 @@ import RxSwift
 
 enum ViewTag {
     case loginChoice
-    //    case loginEmail
-    //    case registerEmail
-    
+//    case loginEmail
+//    case registerEmail
+
     case mainTab
-    //    case feed
-    //    case map
-    //
-    //    case user
-    //    case place
-    //    case event
+//    case feed
+//    case map
+//
+    case user
+//    case place
+//    case event
 }
 
 enum RouteType {
@@ -43,6 +43,8 @@ struct Route {
         switch viewTag {
         case .loginChoice, .mainTab:
             return .windowRootSwap
+        case .user:
+            return .push
         }
     }
 }
@@ -74,6 +76,9 @@ class Router {
             mainTabBarController = R.storyboard.mainTab.mainTab()!
             window.set(rootViewController: mainTabBarController!)
             destinationVC = mainTabBarController
+        case .user:
+            let vc = R.storyboard.user.user()!
+            currentNavigationController?.pushViewController(vc, animated: true)
         }
         
         assert(destinationVC != nil, "destinationVC cannot be nil")

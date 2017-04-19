@@ -17,9 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // ROUTING
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.router = Router(window: window)
         self.window = window
+        
+        // APPEARANCE
+        
+        let titleTextAttributes = [ NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold) ]
+        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
         self.window?.tintColor = R.color.sportivity.sunsetOrange()
         
         return true

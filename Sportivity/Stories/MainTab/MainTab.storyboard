@@ -32,7 +32,7 @@
                             <constraint firstAttribute="bottom" secondItem="up0-iM-b6J" secondAttribute="bottom" id="ibb-NW-XGt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="ZfA-3X-IcF"/>
+                    <navigationItem key="navigationItem" title="MAP" id="ZfA-3X-IcF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap5-8m-xLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +101,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJb-g3-7vc" id="z1g-iX-mds">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-38-eSE">
@@ -134,7 +134,7 @@
                             <constraint firstItem="Xep-KP-7xD" firstAttribute="leading" secondItem="JMa-5a-hoz" secondAttribute="leading" id="eFI-kM-wfR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Games" id="IjC-cI-8dq"/>
+                    <navigationItem key="navigationItem" title="GAMES" id="IjC-cI-8dq"/>
                     <connections>
                         <outlet property="categoryFilterCollectionView" destination="x4S-eY-ski" id="DjM-7t-q2B"/>
                         <outlet property="tableView" destination="Xep-KP-7xD" id="8M6-yF-Jwl"/>
@@ -168,7 +168,7 @@
         <scene sceneID="SpG-EN-ned">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OkB-iF-ITt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Games" id="m0V-fa-x4G"/>
+                    <tabBarItem key="tabBarItem" title="Games" image="games" id="m0V-fa-x4G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KiQ-Vn-rvg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -187,7 +187,7 @@
         <scene sceneID="Iap-Kp-qUh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vaB-OM-HDP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="htU-TX-QG0"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapCompass" selectedImage="mapCompassSelected" id="htU-TX-QG0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UTu-5S-TXz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -304,11 +304,11 @@
             </objects>
             <point key="canvasLocation" x="1108" y="1080.8095952023989"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="SD3-uk-DNE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eHq-J2-Ae2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="oQa-qB-Rqd"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="oQa-qB-Rqd"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBl-j9-lqP">
@@ -328,7 +328,7 @@
         <scene sceneID="m7O-QC-Ehp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vsd-0C-opm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="FJM-lB-vgU"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="myProfile" selectedImage="myProfileSelected" id="FJM-lB-vgU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eo0-X6-hxz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="169" y="1739"/>
         </scene>
-        <!--games-->
+        <!--user-->
         <scene sceneID="13l-8C-5uQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainTab" referencedIdentifier="games" id="PRZ-yD-6Mg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="User" referencedIdentifier="user" id="PRZ-yD-6Mg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="BLs-L2-rzo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWH-Zy-8QV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,5 +357,11 @@
     <resources>
         <image name="football" width="400" height="178"/>
         <image name="footballIcon" width="80" height="80"/>
+        <image name="games" width="21" height="21"/>
+        <image name="mapCompass" width="23" height="23"/>
+        <image name="mapCompassSelected" width="23" height="23"/>
+        <image name="myProfile" width="23" height="23"/>
+        <image name="myProfileSelected" width="23" height="23"/>
+        <image name="search" width="22" height="22"/>
     </resources>
 </document>

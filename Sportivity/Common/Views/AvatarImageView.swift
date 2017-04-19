@@ -12,8 +12,7 @@ import RxCocoa
 
 fileprivate struct AvatarImageViewConstants {
     static var placeholder : UIImage {
-        return R.image.football()! //temp
-        //return R.image.avatarPlaceholder()!
+        return R.image.football()!
     }
     
     static let borderWidth = CGFloat(0)
@@ -51,7 +50,7 @@ class AvatarImageView: UIImageView {
     
     fileprivate func config() {
         contentMode = .scaleAspectFill
-        backgroundColor = UIColor.black
+        backgroundColor = UIColor.white
         clipsToBounds = true
         layer.borderColor = C.borderColor.cgColor
         layer.borderWidth = C.borderWidth
