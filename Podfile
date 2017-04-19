@@ -4,7 +4,7 @@ use_frameworks!
 def shared_pods
     use_frameworks!
 
-    #pod 'Alamofire', '~> 4.4.0'
+#pod 'Alamofire', '~> 4.4.0'
     #pod 'AlamofireNetworkActivityIndicator', '~> 2.1.0'
     pod 'RxSwift', '~> 3.4.0'
     pod 'RxCocoa', '~> 3.4.0'

@@ -156,11 +156,13 @@
                     <connections>
                         <segue destination="OkB-iF-ITt" kind="relationship" relationship="viewControllers" id="Vuy-Li-6UN"/>
                         <segue destination="vaB-OM-HDP" kind="relationship" relationship="viewControllers" id="rKD-ha-Zvo"/>
+                        <segue destination="eHq-J2-Ae2" kind="relationship" relationship="viewControllers" id="5Gx-dC-F0b"/>
+                        <segue destination="vsd-0C-opm" kind="relationship" relationship="viewControllers" id="oEN-Ac-jO5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LnY-IU-GaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-782" y="99"/>
+            <point key="canvasLocation" x="-1265" y="1147"/>
         </scene>
         <!--Games-->
         <scene sceneID="SpG-EN-ned">
@@ -199,6 +201,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOg-dz-S9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.80000000000001" y="425.93703148425789"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="9wJ-f6-Pqv">
+            <objects>
+                <viewController title="Search" id="VZR-1C-HqG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tut-Qa-Pi4"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Bq-LL-I1u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tn1-V7-IoL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-Gc-KhA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="5O1-Rl-QMY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qc4-Gc-KhA" secondAttribute="trailing" id="Pzj-Ku-Dbk"/>
+                            <constraint firstItem="qc4-Gc-KhA" firstAttribute="top" secondItem="tn1-V7-IoL" secondAttribute="top" id="RK7-Vi-neE"/>
+                            <constraint firstItem="qc4-Gc-KhA" firstAttribute="leading" secondItem="tn1-V7-IoL" secondAttribute="leading" id="Uzs-dS-aud"/>
+                            <constraint firstAttribute="bottom" secondItem="qc4-Gc-KhA" secondAttribute="bottom" id="r8E-i4-ofa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="vEM-yx-f7Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSe-LF-TD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="1080.8095952023989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SD3-uk-DNE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHq-J2-Ae2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="oQa-qB-Rqd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBl-j9-lqP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VZR-1C-HqG" kind="relationship" relationship="rootViewController" id="hqb-IH-CKr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMs-Py-5Cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="1081.7091454272863"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="m7O-QC-Ehp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vsd-0C-opm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" id="FJM-lB-vgU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eo0-X6-hxz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PRZ-yD-6Mg" kind="relationship" relationship="rootViewController" id="EKh-vU-pjq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlS-cH-wlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="1739"/>
+        </scene>
+        <!--games-->
+        <scene sceneID="13l-8C-5uQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainTab" referencedIdentifier="games" id="PRZ-yD-6Mg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BLs-L2-rzo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWH-Zy-8QV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107" y="1738"/>
         </scene>
     </scenes>
     <resources>

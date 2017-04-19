@@ -21,6 +21,8 @@
 		4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
+		4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605B1EA791AE003454F5 /* EventAPI.swift */; };
+		4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605D1EA79204003454F5 /* EventAPI+Requests.swift */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
 		49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 		4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerProtocol.swift; path = Protocols/ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
+		4965605B1EA791AE003454F5 /* EventAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAPI.swift; path = EventAPI/EventAPI.swift; sourceTree = "<group>"; };
+		4965605D1EA79204003454F5 /* EventAPI+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventAPI+Requests.swift"; path = "EventAPI/EventAPI+Requests.swift"; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B89E541EA0D56A0004BCB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,6 +223,15 @@
 			name = Authorization;
 			sourceTree = "<group>";
 		};
+		496560561EA79075003454F5 /* EventAPI */ = {
+			isa = PBXGroup;
+			children = (
+				4965605B1EA791AE003454F5 /* EventAPI.swift */,
+				4965605D1EA79204003454F5 /* EventAPI+Requests.swift */,
+			);
+			name = EventAPI;
+			sourceTree = "<group>";
+		};
 		49A0BE0F4A7F77AB90C84BF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +345,7 @@
 		49D559471EA510E40000C712 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				496560561EA79075003454F5 /* EventAPI */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -571,7 +585,9 @@
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
+				4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
+				4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,

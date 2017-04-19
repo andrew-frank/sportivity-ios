@@ -43,7 +43,6 @@ class EventsViewController: UIViewController, Configurable {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableDataSource.animationConfiguration = AnimationConfiguration()
-        //categoryFilterCollectionView.register(EventsCategoryFilterCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier)
         bindTableView()
         bindFilter()
     }
