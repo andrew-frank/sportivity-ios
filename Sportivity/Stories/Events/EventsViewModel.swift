@@ -12,7 +12,7 @@ import RxCocoa
 
 class EventsViewModel {
     let events = Variable<[EventViewModel]>([ ])
-    let categories = Variable<[Category]>(Category.all())
+    let categories = Variable<[CategorySelection]>(CategorySelection.all())
     
     init() {
         var arr = [EventViewModel]()

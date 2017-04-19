@@ -10,9 +10,13 @@ import UIKit
 
 class EventsCategoryFilterCollectionViewCell: UICollectionViewCell {
     
-    fileprivate var category: Category? = nil
+    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
     
-    func set(category: Category) {
-        
+    fileprivate var category: CategorySelection? = nil
+    
+    func set(categorySelection: CategorySelection) {
+        imageView.image = categorySelection.category.iconImage
+        titleLabel.text = categorySelection.category.name
     }
 }

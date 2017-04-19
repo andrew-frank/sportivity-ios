@@ -6,26 +6,64 @@
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Category {
-    let name : String
-    let selected : Bool
+enum Category {
+    case basketball
+    case boxing
+    case fitness
+    case football
+    case pingPong
+    case tennis
+    case volleyball
     
-    init(name: String, selected: Bool = false) {
-        self.name = name
-        self.selected = selected
+    var name : String {
+        switch self {
+        case .basketball:
+            return "Basketball"
+        case .boxing:
+            return "Boxing"
+        case .fitness:
+            return "Fitness"
+        case .football:
+            return "Football"
+        case .pingPong:
+            return "Ping Pong"
+        case .tennis:
+            return "Tennis"
+        case .volleyball:
+            return "Volleyball"
+        }
     }
-}
-
-extension Category {
+    
+    var iconImage : UIImage {
+        switch self {
+        case .basketball:
+            return R.image.basketballIcon()!
+        case .boxing:
+            return R.image.boxingIcon()!
+        case .fitness:
+            return R.image.fitnessIcon()!
+        case .football:
+            return R.image.footballIcon()!
+        case .pingPong:
+            return R.image.pingPongIcon()!
+        case .tennis:
+            return R.image.tennisIcon()!
+        case .volleyball:
+            return R.image.volleyballIcon()!
+        }
+    }
+    
     static func all() -> [Category] {
         var all = [Category]()
-        all.append(Category(name: "Football"))
-        all.append(Category(name: "Football"))
-        all.append(Category(name: "Football"))
-        all.append(Category(name: "Football"))
-        all.append(Category(name: "Football"))
+        all.append(Category.basketball)
+        all.append(Category.boxing)
+        all.append(Category.fitness)
+        all.append(Category.football)
+        all.append(Category.pingPong)
+        all.append(Category.tennis)
+        all.append(Category.volleyball)
         return all
     }
 }

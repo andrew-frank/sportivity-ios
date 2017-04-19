@@ -31,6 +31,7 @@
 		494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C51EA8046100583DBB /* ActionButton.swift */; };
 		494DF0C81EA8047700583DBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C71EA8047700583DBB /* GradientView.swift */; };
 		494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */; };
+		494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0CB1EA816DF00583DBB /* CategorySelection.swift */; };
 		4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605B1EA791AE003454F5 /* EventAPI.swift */; };
 		4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605D1EA79204003454F5 /* EventAPI+Requests.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
@@ -94,6 +95,7 @@
 		494DF0C51EA8046100583DBB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = Views/ActionButton.swift; sourceTree = "<group>"; };
 		494DF0C71EA8047700583DBB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Views/GradientView.swift; sourceTree = "<group>"; };
 		494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorButton.swift; path = Views/ActivityIndicatorButton.swift; sourceTree = "<group>"; };
+		494DF0CB1EA816DF00583DBB /* CategorySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelection.swift; path = Category/CategorySelection.swift; sourceTree = "<group>"; };
 		4965605B1EA791AE003454F5 /* EventAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAPI.swift; path = EventAPI/EventAPI.swift; sourceTree = "<group>"; };
 		4965605D1EA79204003454F5 /* EventAPI+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventAPI+Requests.swift"; path = "EventAPI/EventAPI+Requests.swift"; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F3341EA68AD80053C3E2 /* Category.swift */,
+				494DF0CB1EA816DF00583DBB /* CategorySelection.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */,
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
+				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,

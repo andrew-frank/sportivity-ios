@@ -56,7 +56,7 @@ private extension EventsViewController {
             .debug()
             .bind(to: categoryFilterCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier, cellType: EventsCategoryFilterCollectionViewCell.self)) {
                 index, category, cell in
-                cell.set(category: category)
+                cell.set(categorySelection: category)
             }
             .addDisposableTo(disposeBag)
     }
