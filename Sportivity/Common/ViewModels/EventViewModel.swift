@@ -18,6 +18,23 @@ class EventViewModel : IdentifiableType, Equatable {
     }
 }
 
+extension EventViewModel : ListingViewModelProtocol {
+    
+    // TODO: ListingViewModelProtocol once other data is there
+    
+    var id : String {
+        return identity
+    }
+    
+    var title : Observable<String> {
+        return Observable<String>.just("Event")
+    }
+    
+    var imageUrl : Observable<NSURL?> {
+        return Observable<NSURL?>.just(nil)
+    }
+}
+
 func ==(lhs: EventViewModel, rhs: EventViewModel) -> Bool {
     return lhs.identity == rhs.identity
 }

@@ -23,6 +23,12 @@
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605B1EA791AE003454F5 /* EventAPI.swift */; };
 		4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965605D1EA79204003454F5 /* EventAPI+Requests.swift */; };
+		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
+		4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560691EA7949A003454F5 /* ListingTableViewCell.swift */; };
+		4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */; };
+		4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */; };
+		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
+		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
 		49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */; };
@@ -70,6 +76,12 @@
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		4965605B1EA791AE003454F5 /* EventAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAPI.swift; path = EventAPI/EventAPI.swift; sourceTree = "<group>"; };
 		4965605D1EA79204003454F5 /* EventAPI+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventAPI+Requests.swift"; path = "EventAPI/EventAPI+Requests.swift"; sourceTree = "<group>"; };
+		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
+		496560691EA7949A003454F5 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
+		4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingTableViewCell.xib; sourceTree = "<group>"; };
+		4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModelProtocol.swift; sourceTree = "<group>"; };
+		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
+		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B89E541EA0D56A0004BCB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +244,26 @@
 			name = EventAPI;
 			sourceTree = "<group>";
 		};
+		496560681EA7949A003454F5 /* ListingCell */ = {
+			isa = PBXGroup;
+			children = (
+				4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */,
+				496560691EA7949A003454F5 /* ListingTableViewCell.swift */,
+				4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */,
+			);
+			name = ListingCell;
+			path = Views/ListingCell;
+			sourceTree = "<group>";
+		};
+		4965606F1EA79A05003454F5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				496560721EA79A52003454F5 /* SearchViewModel.swift */,
+				496560701EA79A16003454F5 /* SearchViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		49A0BE0F4A7F77AB90C84BF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +334,9 @@
 		49C0C3D41EA526DE00F7B5F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				496560681EA7949A003454F5 /* ListingCell */,
 				49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */,
+				496560661EA79486003454F5 /* AvatarImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -335,6 +369,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				4965606F1EA79A05003454F5 /* Search */,
 				4916F3461EA6B6B50053C3E2 /* Events */,
 				4916F31E1EA676480053C3E2 /* MainTab */,
 				4930F1621EA524320090F1D1 /* Authorization */,
@@ -487,6 +522,7 @@
 			files = (
 				49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */,
 				4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */,
+				4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */,
 				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
 				49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */,
 				49D559441EA50E300000C712 /* Sportivity.clr in Resources */,
@@ -582,14 +618,19 @@
 				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
+				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
 				4965605C1EA791AE003454F5 /* EventAPI.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
+				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
 				4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */,
+				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
+				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
+				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
 				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
 				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,

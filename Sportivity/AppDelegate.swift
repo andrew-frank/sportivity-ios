@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.router = Router(window: window)
         self.window = window
+        self.window?.tintColor = R.color.sportivity.sunsetOrange()
         
         return true
     }
