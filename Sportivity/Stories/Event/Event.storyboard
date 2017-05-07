@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Event-->
+        <scene sceneID="lyb-mp-brR">
+            <objects>
+                <viewController storyboardIdentifier="event" title="Event" id="HPB-Ma-0gp" customClass="EventViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ays-9J-baQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="kwO-gD-Sue"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rJ2-8W-Mgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="247" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qt4-6K-IUi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventHeaderTableCell" rowHeight="247" id="tRA-7a-lWR">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="247"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRA-7a-lWR" id="eZV-S1-C1f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="247"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-Xl-goO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="145" id="mqv-Fb-eEC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94V-WG-yuq" customClass="ActionButton" customModule="Sportivity" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="190" width="345" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="kQW-W8-pho"/>
+                                                    </constraints>
+                                                    <state key="normal" title="ATTEND"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-cg-Hqi" customClass="GradientView" customModule="Sportivity" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="94" width="375" height="51"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football match" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-tn-qGn">
+                                                    <rect key="frame" x="15" y="109" width="114" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organised by: Andrew Frank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-rQ-0TA">
+                                                    <rect key="frame" x="15" y="160" width="160" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="SlC-cg-Hqi" secondAttribute="trailing" id="82V-YY-0v7"/>
+                                                <constraint firstItem="SlC-cg-Hqi" firstAttribute="bottom" secondItem="zSr-Xl-goO" secondAttribute="bottom" id="9dN-l7-xPX"/>
+                                                <constraint firstAttribute="trailing" secondItem="zSr-Xl-goO" secondAttribute="trailing" id="BBy-Xg-2fJ"/>
+                                                <constraint firstItem="94V-WG-yuq" firstAttribute="top" secondItem="Hxy-rQ-0TA" secondAttribute="bottom" constant="15" id="D2H-LL-bpT"/>
+                                                <constraint firstItem="SlC-cg-Hqi" firstAttribute="top" secondItem="aK4-tn-qGn" secondAttribute="top" constant="-15" id="JhR-PP-YZn"/>
+                                                <constraint firstItem="aK4-tn-qGn" firstAttribute="leading" secondItem="eZV-S1-C1f" secondAttribute="leading" constant="15" id="XAs-9Y-kL5"/>
+                                                <constraint firstItem="zSr-Xl-goO" firstAttribute="top" secondItem="eZV-S1-C1f" secondAttribute="top" id="XlW-ZV-8ra"/>
+                                                <constraint firstItem="aK4-tn-qGn" firstAttribute="bottom" secondItem="zSr-Xl-goO" secondAttribute="bottom" constant="-15" id="aCZ-Dr-qiw"/>
+                                                <constraint firstItem="SlC-cg-Hqi" firstAttribute="leading" secondItem="eZV-S1-C1f" secondAttribute="leading" id="cvy-62-PwV"/>
+                                                <constraint firstItem="zSr-Xl-goO" firstAttribute="leading" secondItem="eZV-S1-C1f" secondAttribute="leading" id="kxL-fm-a1V"/>
+                                                <constraint firstAttribute="trailing" secondItem="94V-WG-yuq" secondAttribute="trailing" constant="15" id="n9M-0d-ii8"/>
+                                                <constraint firstItem="94V-WG-yuq" firstAttribute="leading" secondItem="eZV-S1-C1f" secondAttribute="leading" constant="15" id="rhG-BP-F64"/>
+                                                <constraint firstItem="Hxy-rQ-0TA" firstAttribute="top" secondItem="SlC-cg-Hqi" secondAttribute="bottom" constant="15" id="sTH-Ob-FcX"/>
+                                                <constraint firstItem="Hxy-rQ-0TA" firstAttribute="leading" secondItem="eZV-S1-C1f" secondAttribute="leading" constant="15" id="vv3-Xr-QMx"/>
+                                                <constraint firstItem="zSr-Xl-goO" firstAttribute="centerX" secondItem="eZV-S1-C1f" secondAttribute="centerX" id="vz7-HP-Hwp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qt4-6K-IUi" firstAttribute="leading" secondItem="rJ2-8W-Mgb" secondAttribute="leading" id="9y2-r7-y8N"/>
+                            <constraint firstItem="qt4-6K-IUi" firstAttribute="top" secondItem="rJ2-8W-Mgb" secondAttribute="top" id="AiY-Zf-WGp"/>
+                            <constraint firstAttribute="trailing" secondItem="qt4-6K-IUi" secondAttribute="trailing" id="j02-Nq-gaV"/>
+                            <constraint firstItem="kwO-gD-Sue" firstAttribute="top" secondItem="qt4-6K-IUi" secondAttribute="bottom" id="suw-su-66V"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="qt4-6K-IUi" id="Emc-MB-3YP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sin-oN-3cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.200000000000003" y="66.11694152923539"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="football" width="400" height="178"/>
+    </resources>
+</document>

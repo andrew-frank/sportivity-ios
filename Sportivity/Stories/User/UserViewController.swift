@@ -23,7 +23,7 @@ class UserViewController: UIViewController, ViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "PROFILE"
+        navigationItem.title = "Profile"
         bind()
     }
     

@@ -15,12 +15,12 @@ enum ViewTag {
 //    case registerEmail
 
     case mainTab
-//    case feed
+    case events
 //    case map
 //
     case user
 //    case place
-//    case event
+    case event
 }
 
 enum RouteType {
@@ -33,18 +33,23 @@ enum RouteType {
 struct Route {
     let view : ViewTag
     let type : RouteType?
+    /// Any data we want to pass, e.g. EventViewModel
+    var data : Any?
     
-    init(to view: ViewTag, type: RouteType? = nil) {
+    init(to view: ViewTag, type: RouteType? = nil, data : Any? = nil) {
         self.view = view
         self.type = type
+        self.data = data
     }
     
     private func defaultType(for viewTag: ViewTag) -> RouteType {
         switch viewTag {
         case .loginChoice, .mainTab:
             return .windowRootSwap
-        case .user:
+        case .user, .event:
             return .push
+        case .events:
+            return .tabSwitch
         }
     }
 }
@@ -52,7 +57,22 @@ struct Route {
 class Router {
     let window : UIWindow
     fileprivate var currentNavigationController : UINavigationController? = nil
-    fileprivate var mainTabBarController : MainTabBarViewController? = nil
+    fileprivate var mainTabBarController : MainTabBarViewController? = nil {
+        didSet {
+            guard let mainTabBarController = self.mainTabBarController else {
+                return
+            }
+            mainTabBarController
+                .didSelect
+                .subscribeNext { [unowned self] (viewController) in
+                    guard let nvc = viewController as? UINavigationController else {
+                        return
+                    }
+                    self.currentNavigationController = nvc
+                }
+                .addDisposableTo(disposeBag)
+        }
+    }
     fileprivate let disposeBag = DisposeBag()
     
     init(window: UIWindow) {
@@ -79,6 +99,16 @@ class Router {
         case .user:
             let vc = R.storyboard.user.user()!
             currentNavigationController?.pushViewController(vc, animated: true)
+            destinationVC = vc
+        case .event:
+            let vc = R.storyboard.event.event()!
+            currentNavigationController?.pushViewController(vc, animated: true)
+            destinationVC = vc
+            
+        // MAIN TAB SWITCHES
+        case .events:
+            // HACK: this is not supported and we just return UITabViewController because we need to return something.
+            return mainTabBarController!
         }
         
         assert(destinationVC != nil, "destinationVC cannot be nil")

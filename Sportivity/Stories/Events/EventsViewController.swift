@@ -30,14 +30,20 @@ extension EventsSection: AnimatableSectionModelType  {
 }
 
 
-class EventsViewController: UIViewController, Configurable {
+class EventsViewController: UIViewController, ViewControllerProtocol, Configurable {
 
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var categoryFilterCollectionView: UICollectionView!
     
     var viewModel: EventsViewModel! = EventsViewModel()
     
+    /// Tag of the view
+    let viewTag : ViewTag = .events
+    /// Main `DisposeBag` of the `ViewController`
     let disposeBag = DisposeBag()
+    /// Observable that informs that `Router` should route to the `Route`
+    let onRouteTo : Observable<Route> = PublishSubject<Route>()
+    
     fileprivate let tableDataSource = RxTableViewSectionedAnimatedDataSource<EventsSection>()
     
     override func viewDidLoad() {
@@ -75,6 +81,14 @@ private extension EventsViewController {
                 return [section]
             }
             .bind(to: tableView.rx.items(dataSource: self.tableDataSource))
+            .addDisposableTo(disposeBag)
+        
+        tableView
+            .rx.modelSelected(EventViewModel.self)
+            .map { vm -> Route in
+                return Route(to: .event, type: nil, data: vm)
+            }
+            .bind(to: onRouteTo.asPublishSubject()!)
             .addDisposableTo(disposeBag)
     }
 }

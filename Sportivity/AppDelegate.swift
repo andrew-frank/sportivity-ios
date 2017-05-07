@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // APPEARANCE
         
-        let titleTextAttributes = [ NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold) ]
-        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
+        // Disabling, cos Back button title is glitching (...)
+        //let titleTextAttributes = [ NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold) ]
+        //UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
         self.window?.tintColor = R.color.sportivity.sunsetOrange()
         
         return true

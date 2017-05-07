@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4900B1561EBEA2210090FEA4 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B1551EBEA2210090FEA4 /* EventViewController.swift */; };
 		4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4916F31F1EA676660053C3E2 /* MainTab.storyboard */; };
 		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
 		4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */; };
@@ -40,6 +41,7 @@
 		4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */; };
 		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
 		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
+		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
 		49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E561EA0D56A0004BCB3 /* LaunchScreen.storyboard */; };
@@ -71,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		20A9D25DEA3CD01FDD5C43BD /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
+		4900B1551EBEA2210090FEA4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Event/EventViewController.swift; sourceTree = "<group>"; };
 		4916F31F1EA676660053C3E2 /* MainTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTab.storyboard; path = MainTab/MainTab.storyboard; sourceTree = "<group>"; };
 		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
 		4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = MainTab/MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModelProtocol.swift; sourceTree = "<group>"; };
 		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
+		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B89E541EA0D56A0004BCB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -319,6 +323,15 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		4996AC091EBE9B200062A087 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				4900B1551EBEA2210090FEA4 /* EventViewController.swift */,
+				4996AC0A1EBE9B310062A087 /* Event.storyboard */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		49A0BE0F4A7F77AB90C84BF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +439,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				4996AC091EBE9B200062A087 /* Events */,
 				494DF0B61EA7F61100583DBB /* User */,
 				4965606F1EA79A05003454F5 /* Search */,
 				4916F3461EA6B6B50053C3E2 /* Events */,
@@ -579,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B89E581EA0D56A0004BCB3 /* LaunchScreen.storyboard in Resources */,
+				4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */,
 				4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */,
 				4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */,
 				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
@@ -694,6 +709,7 @@
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
+				4900B1561EBEA2210090FEA4 /* EventViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,

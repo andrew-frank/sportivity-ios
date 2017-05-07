@@ -10,8 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+private struct MainTabBarViewControllerConstants {
+    
+}
+
 class MainTabBarViewController: UITabBarController, ViewControllerProtocol {
 
+    // VIEW CONTROLLER PROTOCOL
+    
     /// Tag of the view
     let viewTag : ViewTag = .mainTab
     /// Main `DisposeBag` of the `ViewController`
@@ -19,7 +25,37 @@ class MainTabBarViewController: UITabBarController, ViewControllerProtocol {
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
+    // PUBLIC
+    
+    let didSelect: Observable<UIViewController> = PublishSubject<UIViewController>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let viewControllers = self.viewControllers else {
+            assert(false)
+            return
+        }
+
+        for nvc in viewControllers {
+            guard let nvc = nvc as? UINavigationController, let vcProtocol = nvc.childViewControllers.first as? ViewControllerProtocol else {
+                continue
+            }
+            vcProtocol
+                .onRouteTo
+                .bind(to: onRouteTo.asPublishSubject()!)
+                .addDisposableTo(disposeBag)
+        }
+        
+        self.delegate = self
+        if let first = self.viewControllers?.first {
+            self.didSelect.asPublishSubject()!.onNext(first)
+        }
+    }
+}
+
+extension MainTabBarViewController : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.didSelect.asPublishSubject()!.onNext(viewController)
     }
 }
