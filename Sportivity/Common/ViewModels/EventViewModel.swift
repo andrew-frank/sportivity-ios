@@ -16,6 +16,8 @@ class EventViewModel : IdentifiableType, Equatable {
     var identity: String {
         return identityID
     }
+    
+    let name = Variable<String>("Event!")
 }
 
 extension EventViewModel : ListingViewModelProtocol {
@@ -27,7 +29,7 @@ extension EventViewModel : ListingViewModelProtocol {
     }
     
     var title : Observable<String> {
-        return Observable<String>.just("Event")
+        return Observable<String>.just("Event \(id)")
     }
     
     var imageUrl : Observable<NSURL?> {

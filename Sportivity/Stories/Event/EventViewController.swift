@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class EventViewController: UIViewController, ViewControllerProtocol {
+class EventViewController: UIViewController, ViewControllerProtocol, Configurable {
     
     /// Tag of the view
     let viewTag : ViewTag = .event
@@ -19,18 +19,20 @@ class EventViewController: UIViewController, ViewControllerProtocol {
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
+    var viewModel: EventViewModel!
+    
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Event"
-        //bind()
+        bind()
     }
 }
 
 private extension EventViewController {
     func bind() {
-        Observable<[EventViewModel]>.just([EventViewModel()])
+        Observable<[EventViewModel]>.just([viewModel])
             .bind(to: tableView.rx.items) {
                 tableView, row, viewModel in
                 let indexPath = IndexPath(item: row, section: 0)

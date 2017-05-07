@@ -69,7 +69,8 @@ private extension EventsViewController {
     
     func bindTableView() {
         tableDataSource.configureCell = { dataSource, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)!
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)! as! EventTableViewCell
+            cell.viewModel = item
             return cell
         }
         
