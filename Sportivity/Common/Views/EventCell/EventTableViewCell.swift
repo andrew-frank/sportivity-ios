@@ -29,10 +29,9 @@ class EventTableViewCell: UITableViewCell, Configurable {
         reuseBag = DisposeBag()
     }
     
-    func configure(with viewModel: EventViewModel) {
+    func configure() {
         viewModel
             .name
-            .asDriver()
             .drive(nameLabel.rx.text)
             .addDisposableTo(reuseBag)
     }

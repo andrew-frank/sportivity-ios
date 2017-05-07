@@ -9,34 +9,22 @@
 import Foundation
 import RxDataSources
 import RxSwift
+import RxCocoa
 
 class EventViewModel : IdentifiableType, Equatable {
+    
+    fileprivate let event: Event
+    
     typealias Identity = String
     let identityID: String = UUID().uuidString
     var identity: String {
         return identityID
     }
     
-    let name = Variable<String>("Event!")
-}
-
-extension EventViewModel : ListingViewModelProtocol {
+    let name: Driver<String>
     
-    // TODO: ListingViewModelProtocol once other data is there
-    
-    var id : String {
-        return identity
+    init(event: Event) {
+        self.event = event
+        name = event.name.asDriver()
     }
-    
-    var title : Observable<String> {
-        return Observable<String>.just("Event \(id)")
-    }
-    
-    var imageUrl : Observable<NSURL?> {
-        return Observable<NSURL?>.just(nil)
-    }
-}
-
-func ==(lhs: EventViewModel, rhs: EventViewModel) -> Bool {
-    return lhs.identity == rhs.identity
 }

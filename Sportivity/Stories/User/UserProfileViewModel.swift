@@ -10,17 +10,17 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class UserViewModel {
+class UserProfileViewModel {
     
     let events = Variable<[EventViewModel]>([ ])
     
     init() {
         var arr = [EventViewModel]()
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
         events.value = arr
     }
 

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class EventViewController: UIViewController, ViewControllerProtocol, Configurable {
+class EventProfileViewController: UIViewController, ViewControllerProtocol, Configurable {
     
     /// Tag of the view
     let viewTag : ViewTag = .event
@@ -30,7 +30,7 @@ class EventViewController: UIViewController, ViewControllerProtocol, Configurabl
     }
 }
 
-private extension EventViewController {
+private extension EventProfileViewController {
     func bind() {
         Observable<[EventViewModel]>.just([viewModel])
             .bind(to: tableView.rx.items) {

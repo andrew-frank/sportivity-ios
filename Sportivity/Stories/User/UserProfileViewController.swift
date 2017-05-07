@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class UserViewController: UIViewController, ViewControllerProtocol {
+class UserProfileViewController: UIViewController, ViewControllerProtocol {
     
     /// Tag of the view
     let viewTag : ViewTag = .user
@@ -38,15 +38,15 @@ class UserViewController: UIViewController, ViewControllerProtocol {
 //    }
 }
 
-private extension UserViewController {
+private extension UserProfileViewController {
     func bind() {
-        Observable<[UserHeaderViewModel]>.just([UserHeaderViewModel()])
+        Observable<[UserProfileHeaderViewModel]>.just([UserProfileHeaderViewModel()])
             .bind(to: tableView.rx.items) {
                 tableView, row, viewModel in
                 let indexPath = IndexPath(item: row, section: 0)
                 
                 let reuseId = R.reuseIdentifier.userHeaderTableCell.identifier
-                let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! UserHeaderTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! UserProfileHeaderTableViewCell
                 cell.configure(with: viewModel)
                 
                 return cell

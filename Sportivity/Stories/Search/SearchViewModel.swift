@@ -15,11 +15,12 @@ class SearchViewModel {
     
     init() {
         var arr = [EventViewModel]()
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
-        arr.append(EventViewModel())
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
+        arr.append(EventViewModel(event: Event()))
         data.value = arr
     }
 }

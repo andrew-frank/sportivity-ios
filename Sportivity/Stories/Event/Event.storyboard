@@ -11,7 +11,7 @@
         <!--Event-->
         <scene sceneID="lyb-mp-brR">
             <objects>
-                <viewController storyboardIdentifier="event" title="Event" id="HPB-Ma-0gp" customClass="EventViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="event" title="Event" id="HPB-Ma-0gp" customClass="EventProfileViewController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ays-9J-baQ"/>
                         <viewControllerLayoutGuide type="bottom" id="kwO-gD-Sue"/>
@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="435"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRA-7a-lWR" id="eZV-S1-C1f">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="435"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="434.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sz-P7-LNf" userLabel="HeaderHolder">
@@ -91,14 +91,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-T2-3IG" userLabel="SeparatorBig">
                                                     <rect key="frame" x="0.0" y="249" width="375" height="15"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXQ-W4-3LN" userLabel="Seprator" customClass="HairlineView" customModule="Sportivity" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXQ-W4-3LN" userLabel="Seprator">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.5" id="6CL-hf-PnF"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXr-BF-xV1" userLabel="Seprator" customClass="HairlineView" customModule="Sportivity" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXr-BF-xV1" userLabel="Seprator">
                                                             <rect key="frame" x="0.0" y="14" width="375" height="1"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>

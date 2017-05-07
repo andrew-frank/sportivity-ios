@@ -10,13 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class UserHeaderTableViewCell: UITableViewCell {
+class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
 
     @IBOutlet fileprivate weak var avatarImageVIew: UserAvatarImageView!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var followersLabel: UILabel!
     
     fileprivate var reuseBag = DisposeBag()
+    
+    var viewModel: UserProfileHeaderViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +29,7 @@ class UserHeaderTableViewCell: UITableViewCell {
         reuseBag = DisposeBag()
     }
     
-    func configure(with viewModel: UserHeaderViewModel) {
+    func configure(with viewModel: UserProfileHeaderViewModel) {
         viewModel
             .name
             .bind(to: nameLabel.rx.text)

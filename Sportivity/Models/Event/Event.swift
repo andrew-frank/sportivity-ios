@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import RxSwift
 
 struct Event {
-    let name : String
+    let name : Variable<String>
+    
+    init(name: String = "Event default name") {
+        self.name = Variable<String>(name)
+    }
 }

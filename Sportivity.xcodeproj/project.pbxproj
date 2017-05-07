@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4900B1561EBEA2210090FEA4 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B1551EBEA2210090FEA4 /* EventViewController.swift */; };
+		4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */; };
 		4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B15A1EBEAC2E0090FEA4 /* EventTableViewCell.swift */; };
 		4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4916F31F1EA676660053C3E2 /* MainTab.storyboard */; };
 		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
@@ -25,11 +25,11 @@
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		494DF0B51EA7F1E200583DBB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494DF0B41EA7F1E200583DBB /* MapKit.framework */; };
 		494DF0B81EA7F61E00583DBB /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DF0B71EA7F61E00583DBB /* User.storyboard */; };
-		494DF0BA1EA7F62900583DBB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0B91EA7F62900583DBB /* UserViewController.swift */; };
+		494DF0BA1EA7F62900583DBB /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0B91EA7F62900583DBB /* UserProfileViewController.swift */; };
 		494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BB1EA7F93800583DBB /* UserAvatarImageView.swift */; };
-		494DF0BE1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */; };
-		494DF0C01EA7FCC400583DBB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */; };
-		494DF0C21EA7FD4100583DBB /* UserHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */; };
+		494DF0BE1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BD1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift */; };
+		494DF0C01EA7FCC400583DBB /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0BF1EA7FCC400583DBB /* UserProfileViewModel.swift */; };
+		494DF0C21EA7FD4100583DBB /* UserProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C11EA7FD4100583DBB /* UserProfileHeaderViewModel.swift */; };
 		494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C51EA8046100583DBB /* ActionButton.swift */; };
 		494DF0C81EA8047700583DBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C71EA8047700583DBB /* GradientView.swift */; };
 		494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */; };
@@ -49,7 +49,7 @@
 		49B89E631EA0D56A0004BCB3 /* SportivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E621EA0D56A0004BCB3 /* SportivityTests.swift */; };
 		49B89E6E1EA0D56A0004BCB3 /* SportivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */; };
 		49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */; };
-		49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */; };
+		49CD2A9E1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
 		F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617642F456594DE78CA04236 /* Pods_Sportivity.framework */; };
@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		20A9D25DEA3CD01FDD5C43BD /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
-		4900B1551EBEA2210090FEA4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Event/EventViewController.swift; sourceTree = "<group>"; };
+		4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileViewController.swift; path = Event/EventProfileViewController.swift; sourceTree = "<group>"; };
 		4900B15A1EBEAC2E0090FEA4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = Views/EventCell/EventTableViewCell.swift; sourceTree = "<group>"; };
 		4916F31F1EA676660053C3E2 /* MainTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTab.storyboard; path = MainTab/MainTab.storyboard; sourceTree = "<group>"; };
 		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
@@ -92,11 +92,11 @@
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		494DF0B41EA7F1E200583DBB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		494DF0B71EA7F61E00583DBB /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = User/User.storyboard; sourceTree = "<group>"; };
-		494DF0B91EA7F62900583DBB /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = User/UserViewController.swift; sourceTree = "<group>"; };
+		494DF0B91EA7F62900583DBB /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = User/UserProfileViewController.swift; sourceTree = "<group>"; };
 		494DF0BB1EA7F93800583DBB /* UserAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAvatarImageView.swift; path = Views/UserAvatarImageView.swift; sourceTree = "<group>"; };
-		494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHeaderTableViewCell.swift; path = User/UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = User/UserViewModel.swift; sourceTree = "<group>"; };
-		494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHeaderViewModel.swift; path = User/UserHeaderViewModel.swift; sourceTree = "<group>"; };
+		494DF0BD1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHeaderTableViewCell.swift; path = User/UserProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		494DF0BF1EA7FCC400583DBB /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewModel.swift; path = User/UserProfileViewModel.swift; sourceTree = "<group>"; };
+		494DF0C11EA7FD4100583DBB /* UserProfileHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHeaderViewModel.swift; path = User/UserProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		494DF0C51EA8046100583DBB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = Views/ActionButton.swift; sourceTree = "<group>"; };
 		494DF0C71EA8047700583DBB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Views/GradientView.swift; sourceTree = "<group>"; };
 		494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorButton.swift; path = Views/ActivityIndicatorButton.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportivityUITests.swift; sourceTree = "<group>"; };
 		49B89E6F1EA0D56A0004BCB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginChoiceViewController.swift; path = Authorization/LoginChoiceViewController.swift; sourceTree = "<group>"; };
-		49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HairlineView.swift; path = Views/HairlineView.swift; sourceTree = "<group>"; };
+		49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventViewModel+ListingProtocol.swift"; path = "ViewModels/EventViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
 		617642F456594DE78CA04236 /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F3511EA6B8690053C3E2 /* EventViewModel.swift */,
+				49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -277,10 +278,10 @@
 		494DF0B61EA7F61100583DBB /* User */ = {
 			isa = PBXGroup;
 			children = (
-				494DF0BF1EA7FCC400583DBB /* UserViewModel.swift */,
-				494DF0B91EA7F62900583DBB /* UserViewController.swift */,
-				494DF0C11EA7FD4100583DBB /* UserHeaderViewModel.swift */,
-				494DF0BD1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift */,
+				494DF0BF1EA7FCC400583DBB /* UserProfileViewModel.swift */,
+				494DF0B91EA7F62900583DBB /* UserProfileViewController.swift */,
+				494DF0C11EA7FD4100583DBB /* UserProfileHeaderViewModel.swift */,
+				494DF0BD1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift */,
 				494DF0B71EA7F61E00583DBB /* User.storyboard */,
 			);
 			name = User;
@@ -336,7 +337,7 @@
 		4996AC091EBE9B200062A087 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				4900B1551EBEA2210090FEA4 /* EventViewController.swift */,
+				4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */,
 				4996AC0A1EBE9B310062A087 /* Event.storyboard */,
 			);
 			name = Events;
@@ -416,7 +417,6 @@
 				494DF0C41EA8041000583DBB /* Buttons */,
 				496560681EA7949A003454F5 /* ListingCell */,
 				494DF0C31EA803FF00583DBB /* Avatars */,
-				49C0C3D51EA526F900F7B5F5 /* HairlineView.swift */,
 				494DF0C71EA8047700583DBB /* GradientView.swift */,
 			);
 			name = Views;
@@ -698,12 +698,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
-				494DF0BA1EA7F62900583DBB /* UserViewController.swift in Sources */,
+				494DF0BA1EA7F62900583DBB /* UserProfileViewController.swift in Sources */,
 				494DF0C81EA8047700583DBB /* GradientView.swift in Sources */,
 				494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */,
 				4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
-				49C0C3D61EA526F900F7B5F5 /* HairlineView.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
@@ -714,13 +713,13 @@
 				494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
-				494DF0BE1EA7FC4D00583DBB /* UserHeaderTableViewCell.swift in Sources */,
-				494DF0C21EA7FD4100583DBB /* UserHeaderViewModel.swift in Sources */,
+				494DF0BE1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift in Sources */,
+				494DF0C21EA7FD4100583DBB /* UserProfileHeaderViewModel.swift in Sources */,
 				4965605E1EA79204003454F5 /* EventAPI+Requests.swift in Sources */,
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
-				4900B1561EBEA2210090FEA4 /* EventViewController.swift in Sources */,
+				4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
@@ -729,7 +728,8 @@
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
 				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
 				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,
-				494DF0C01EA7FCC400583DBB /* UserViewModel.swift in Sources */,
+				494DF0C01EA7FCC400583DBB /* UserProfileViewModel.swift in Sources */,
+				49CD2A9E1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift in Sources */,
 				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

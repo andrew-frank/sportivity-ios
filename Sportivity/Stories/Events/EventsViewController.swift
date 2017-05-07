@@ -59,7 +59,6 @@ private extension EventsViewController {
         viewModel
             .categories
             .asObservable()
-            .debug()
             .bind(to: categoryFilterCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier, cellType: EventsCategoryFilterCollectionViewCell.self)) {
                 index, category, cell in
                 cell.set(categorySelection: category)
@@ -70,7 +69,7 @@ private extension EventsViewController {
     func bindTableView() {
         tableDataSource.configureCell = { dataSource, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)! as! EventTableViewCell
-            cell.viewModel = item
+            cell.configure(with: item)
             return cell
         }
         
