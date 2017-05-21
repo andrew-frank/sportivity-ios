@@ -144,7 +144,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="8dO-bf-Pig"/>
                     <connections>
+                        <outlet property="email" destination="ta2-R7-LoL" id="CRo-8Z-Piz"/>
                         <outlet property="loginButton" destination="ISJ-dh-kZo" id="BA8-Ya-BU3"/>
+                        <outlet property="password" destination="ua3-e0-1GG" id="TKo-wh-JdA"/>
+                        <outlet property="signupButton" destination="SVJ-0a-Ec4" id="a1l-wV-byQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmW-et-oyT" userLabel="First Responder" sceneMemberID="firstResponder"/>

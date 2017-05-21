@@ -23,12 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.router = Router(window: window)
         self.window = window
         
-        // APPEARANCE
+        // WINDOW APPEARANCE
         
         // Disabling, cos Back button title is glitching (...)
         //let titleTextAttributes = [ NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold) ]
         //UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
         self.window?.tintColor = R.color.sportivity.sunsetOrange()
+        
+        // BOOTSTRAP
+        
+        Bootstrap.bootstrap()
         
         return true
     }
