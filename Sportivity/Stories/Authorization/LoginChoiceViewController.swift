@@ -19,7 +19,7 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
-    @IBOutlet fileprivate weak var facebookButton: UIButton!
+    @IBOutlet fileprivate weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
 
 private extension LoginChoiceViewController {
     func bind() {
-        facebookButton
+        loginButton
             .rx
             .tap
             .map {

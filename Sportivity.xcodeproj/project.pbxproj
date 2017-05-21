@@ -22,6 +22,7 @@
 		4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35A1EA6BB750053C3E2 /* Configurable.swift */; };
 		4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */; };
 		4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */; };
+		492A99911ED1EA65006A6721 /* UIView+IBInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99901ED1EA65006A6721 /* UIView+IBInspectables.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		494DF0B51EA7F1E200583DBB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494DF0B41EA7F1E200583DBB /* MapKit.framework */; };
 		494DF0B81EA7F61E00583DBB /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DF0B71EA7F61E00583DBB /* User.storyboard */; };
@@ -89,6 +90,7 @@
 		4916F35A1EA6BB750053C3E2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Protocols/Configurable.swift; sourceTree = "<group>"; };
 		4916F35C1EA6BC680053C3E2 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerProtocol.swift; path = Protocols/ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+Extensions.swift"; path = "UITools/UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		492A99901ED1EA65006A6721 /* UIView+IBInspectables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectables.swift"; path = "UITools/UIView+IBInspectables.swift"; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		494DF0B41EA7F1E200583DBB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		494DF0B71EA7F61E00583DBB /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = User/User.storyboard; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */,
+				492A99901ED1EA65006A6721 /* UIView+IBInspectables.swift */,
 			);
 			name = UITools;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
+				492A99911ED1EA65006A6721 /* UIView+IBInspectables.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
 				4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */,
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
