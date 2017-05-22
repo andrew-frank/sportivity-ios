@@ -51,7 +51,7 @@ extension URLRequestConvertible {
     ///
     ///  - returns: Request.
     func request() ->  DataRequest {
-        return Alamofire.request(self)
+        return Alamofire.request(self).log()
     }
     
     ///  Converts URLRequestConvertible to Request with additional HTTP status validation
@@ -59,5 +59,13 @@ extension URLRequestConvertible {
     ///  - returns: Requests.
     func validatedRequest() -> DataRequest {
         return self.request().validate(statusCode: 200 ..< 300)
+    }
+}
+
+extension DataRequest {
+    func log() -> Self {
+        let message = self.debugDescription
+        Logger.shared.log(.verbose, className: "\(type(of: self))", message: message)
+        return self
     }
 }

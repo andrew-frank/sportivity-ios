@@ -8,7 +8,9 @@
 
 import Foundation
 
-extension Error {
+protocol SportivityError : Error { }
+
+extension SportivityError {
     var defaultMessage : String {
         return "Oops something went wrong..."
     }

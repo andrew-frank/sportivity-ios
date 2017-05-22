@@ -12,10 +12,11 @@ def shared_pods
     pod 'R.swift', '~> 3.2.0'
     pod 'Unbox', '~> 2.3.0'
     pod 'Wrap', '~> 2.1.0'
+    pod 'Result', '~> 3.2.2'
 
     #pod 'ACFloatingTextfield-Swift', '~> 1.1'
     #pod 'SwiftDate', '~> 4.1.1'
-    #pod 'Whisper', '~> 4.0.0'
+    pod 'Whisper', '~> 4.0.0'
     #pod 'Kingfisher', '~> 3.3.4'
 end
 

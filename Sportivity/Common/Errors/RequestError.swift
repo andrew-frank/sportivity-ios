@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RequestError: Error {
+enum RequestError: SportivityError {
     case noInternetConnection
     case timeout
     case networkConnectionLost

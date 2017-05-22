@@ -5,6 +5,7 @@ PODS:
   - R.swift (3.2.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
+  - Result (3.2.2)
   - RxCocoa (3.4.0):
     - RxSwift (~> 3.4)
   - RxDataSources (1.0.3):
@@ -12,16 +13,19 @@ PODS:
     - RxSwift (~> 3.0)
   - RxSwift (3.4.0)
   - Unbox (2.3.1)
+  - Whisper (4.0.0)
   - Wrap (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
   - AlamofireNetworkActivityIndicator (~> 2.1.0)
   - R.swift (~> 3.2.0)
+  - Result (~> 3.2.2)
   - RxCocoa (~> 3.4.0)
   - RxDataSources (~> 1.0.3)
   - RxSwift (~> 3.4.0)
   - Unbox (~> 2.3.0)
+  - Whisper (~> 4.0.0)
   - Wrap (~> 2.1.0)
 
 SPEC CHECKSUMS:
@@ -29,12 +33,14 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  Result: 4edd39003fdccf281d418ee1b006571f70123250
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   Unbox: 96e54c15284b97244a1daf8ea560f648dd08f0db
+  Whisper: 08be92623311f8e53201e62e17f6d7b9599a4714
   Wrap: 731fe4fe3c2429c913a8252a17dbe8bb191e69e1
 
-PODFILE CHECKSUM: e44616b9f2bd8dfc81b0979e46852a22f9569155
+PODFILE CHECKSUM: 353661938074be282d9651d62c7920528113f112
 
 COCOAPODS: 1.2.0

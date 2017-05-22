@@ -90,6 +90,7 @@ class Router {
         switch destination.view {
         case .loginChoice:
             let vc = R.storyboard.authorization.loginChoice()!
+            vc.configure(with: LoginChoiceViewModel())
             window.set(rootViewController: vc)
             destinationVC = vc
         case .mainTab:

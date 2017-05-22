@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */; };
 		4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900B15A1EBEAC2E0090FEA4 /* EventTableViewCell.swift */; };
+		4902FF1C1ED364F500A49925 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1B1ED364F500A49925 /* APIError.swift */; };
+		4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1D1ED398B900A49925 /* ShowsError.swift */; };
+		4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1F1ED3A8FF00A49925 /* API+RxResult.swift */; };
 		4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4916F31F1EA676660053C3E2 /* MainTab.storyboard */; };
 		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
 		4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */; };
@@ -92,6 +95,9 @@
 		20A9D25DEA3CD01FDD5C43BD /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
 		4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileViewController.swift; path = Event/EventProfileViewController.swift; sourceTree = "<group>"; };
 		4900B15A1EBEAC2E0090FEA4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = Views/EventCell/EventTableViewCell.swift; sourceTree = "<group>"; };
+		4902FF1B1ED364F500A49925 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = Errors/APIError.swift; sourceTree = "<group>"; };
+		4902FF1D1ED398B900A49925 /* ShowsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowsError.swift; path = UITools/ShowsError.swift; sourceTree = "<group>"; };
+		4902FF1F1ED3A8FF00A49925 /* API+RxResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "API+RxResult.swift"; path = "Misc/API+RxResult.swift"; sourceTree = "<group>"; };
 		4916F31F1EA676660053C3E2 /* MainTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTab.storyboard; path = MainTab/MainTab.storyboard; sourceTree = "<group>"; };
 		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
 		4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = MainTab/MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +301,7 @@
 			children = (
 				4918C1311EA51E4A0081F43D /* UIWindow+Extensions.swift */,
 				492A99901ED1EA65006A6721 /* UIView+IBInspectables.swift */,
+				4902FF1D1ED398B900A49925 /* ShowsError.swift */,
 			);
 			name = UITools;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 				492A99A71ED1FDF1006A6721 /* NetworkHelpers.swift */,
 				492A99AC1ED1FFB2006A6721 /* Request+Mapping.swift */,
 				492A99AE1ED1FFDA006A6721 /* Logger.swift */,
+				4902FF1F1ED3A8FF00A49925 /* API+RxResult.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -333,6 +341,7 @@
 				492A99B11ED200C4006A6721 /* ModelError.swift */,
 				492A99B51ED20191006A6721 /* ResponseError.swift */,
 				492A99B71ED202D9006A6721 /* RequestError.swift */,
+				4902FF1B1ED364F500A49925 /* APIError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -770,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492A999E1ED1F962006A6721 /* AuthenitcateAPI.swift in Sources */,
+				4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */,
 				492A99AD1ED1FFB2006A6721 /* Request+Mapping.swift in Sources */,
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				492A99B21ED200C4006A6721 /* ModelError.swift in Sources */,
@@ -782,6 +792,7 @@
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				492A99AF1ED1FFDA006A6721 /* Logger.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
+				4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
@@ -791,6 +802,7 @@
 				492A99A01ED1FA69006A6721 /* LoginChoiceViewModel.swift in Sources */,
 				494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
+				4902FF1C1ED364F500A49925 /* APIError.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
 				492A99951ED1F916006A6721 /* EventAPI.swift in Sources */,
 				494DF0BE1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift in Sources */,

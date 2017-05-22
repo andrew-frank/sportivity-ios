@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
+class LoginChoiceViewController: UIViewController, ViewControllerProtocol, Configurable, ShowsError {
 
     /// Tag of the view
     let viewTag : ViewTag = .loginChoice
@@ -24,6 +24,8 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet fileprivate weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    var viewModel: LoginChoiceViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
@@ -32,13 +34,24 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol {
 
 private extension LoginChoiceViewController {
     func bind() {
+        email.rx.text <-> viewModel.email
+        password.rx.text <-> viewModel.password
+        
         loginButton
             .rx
             .tap
-            .map {
-                return Route(to: .mainTab, type: nil)
+            .flatMap { [unowned self] () -> Observable<LoginResult> in
+                return self.viewModel.login()
             }
-            .bind(to: onRouteTo.asPublishSubject()!)
+            .subscribeNext { (result: LoginResult) in
+                switch result {
+                case .error(let message):
+                    self.showQuickError(message: message)
+                case .success:
+                    let route = Route(to: .mainTab, type: nil)
+                    self.onRouteTo.asPublishSubject()!.onNext(route)
+                }
+            }
             .addDisposableTo(disposeBag)
     }
 }

@@ -8,11 +8,13 @@
 
 import Foundation
 import RxSwift
+import Result
 
 extension AuthenticateAPI {
-    static func rx_login(email: String, password: String) -> Observable<User> {
+    static func rx_login(email: String, password: String) -> Observable<Result<User, APIError>> {
         return AuthenticateAPI.login(email: email, password: password)
             .validatedRequest()
-            .rx_responseModel(User.self)
+            .rx_responseModel(User.self, at: "Data")
+            .resultify()
     }
 }

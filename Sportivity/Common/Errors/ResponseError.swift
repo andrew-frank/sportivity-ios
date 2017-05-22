@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ResponseError: Error {
+enum ResponseError: SportivityError {
     case badRequest(code: Int, message: String?)
     case forbidden(code: Int, message: String?)
     case notFound(code: Int, message: String?)
@@ -61,31 +61,17 @@ enum ResponseError: Error {
         }
         
         switch self {
-        case let .badRequest(_, message):
-            return message ?? ""
-        case let .badRequest(code, _):
-            return defaultMessageWithStatusCode(code)
-        case let .unauthorized(_, message):
-            return message ?? ""
-        case let .unauthorized(code, _):
-            return defaultMessageWithStatusCode(code)
-        case let .forbidden(_, message):
-            return message ?? ""
-        case let .forbidden(code, _):
-            return defaultMessageWithStatusCode(code)
-        case let .notFound(_, message):
-            return message ?? ""
-        case let .notFound(code, message):
-            return message ?? (self.defaultMessage + " (\(code))")
-        case let .conflict(_, message):
-            return message ?? ""
-        case let .conflict(code, _):
-            return defaultMessageWithStatusCode(code)
-        case let .unrecognizedSuccessStatusCode(_, message):
-            return message ?? ""
-        case let .unrecognizedSuccessStatusCode(code, message):
+        case let .badRequest(code, message):
             return message ?? defaultMessageWithStatusCode(code)
-        case let .unrecognizedFailureStatusCode(code, message):
+        case let .unauthorized(code, message):
+            return message ?? defaultMessageWithStatusCode(code)
+        case let .forbidden(code, message):
+            return message ?? defaultMessageWithStatusCode(code)
+        case let .notFound(code, message):
+            return message ?? defaultMessageWithStatusCode(code)
+        case let .conflict(code, message):
+            return message ?? defaultMessageWithStatusCode(code)
+        case let .unrecognizedSuccessStatusCode(code, message):
             return message ?? defaultMessageWithStatusCode(code)
         case let .unrecognizedFailureStatusCode(code, message):
             return message ?? defaultMessageWithStatusCode(code)

@@ -8,20 +8,12 @@
 
 import Foundation
 
-enum ModelError: Error {
-    
+enum SerializationError: SportivityError {
     case serializationError(response: HTTPURLResponse?)
     case mappingError(error: Error, type: Any)
     case wrappingError(error: Error, type: Any)
-    case socketSerializationError
-    case validationError(message: String)
     
     var description: String {
-        switch self {
-        case .validationError(let message):
-            return message
-        default:
-            return self.defaultMessage
-        }
+        return self.defaultMessage
     }
 }

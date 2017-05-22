@@ -41,11 +41,11 @@ protocol LoggerType {
 class Logger {
     public static var shared = Logger()
     
-    func log(_ level: LogLevel, className: String, function: String = #function, file: String = #file, line: Int = #line, message: String) {
+    func log(_ level: LogLevel, className: String? = nil, function: String = #function, file: String = #file, line: Int = #line, message: String) {
 //        let dateFormat = DateFormat.custom("yyyy-MM-dd'T'HH:mm:ss")
 //        let datePrefix = Date().string(format: dateFormat)
-        let datePrefix = ""
+//        let datePrefix = ""
         let level = level.description
-        print("\(datePrefix) \(level) \(className).\(function):\(line) - \(message)")
+        print("\(level) - \(message)") //\(className).\(function):\(line)
     }
 }

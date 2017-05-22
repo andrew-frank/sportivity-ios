@@ -15,19 +15,19 @@ extension DataRequest {
     
     func rx_responseModel<T: Unboxable>(_ type: T.Type, at location: String = "") -> Observable<T> {
         return self
-            .rx_partyResponseJSON()
+            .rx_responseJSON()
             .flatMap { (response, json) -> Observable<T> in
                 guard let dict = json as? [ String: Any ] else {
                     Logger.shared.log(.warning, className: String(describing: type(of: self)), message: "Couldn't serialize \(T.self) from JSON")
-                    return Observable.error(ModelError.serializationError(response: response))
+                    return Observable.error(SerializationError.serializationError(response: response))
                 }
                 
                 do {
                     let mappedModel: T = try (location.isEmpty ? unbox(dictionary: dict) : unbox(dictionary: dict, atKey: location))
                     return Observable.just(mappedModel)
-                } catch let error {
-                    Logger.shared.log(.info, className: String(describing: type(of: self)), message: "Mapping for \(T.self) failed!")
-                    return Observable.error(ModelError.mappingError(error: error, type: T.self))
+                } catch let error as UnboxError {
+                    Logger.shared.log(.info, className: String(describing: type(of: self)), message: "Mapping for \(T.self) failed! \(error.description)")
+                    return Observable.error(SerializationError.mappingError(error: error, type: T.self))
                 }
             }
             .shareReplay(1)
@@ -35,19 +35,19 @@ extension DataRequest {
     
     func rx_responseModelsArray<T: Unboxable>(_ type: T.Type, at location: String = "") -> Observable<[T]> {
         return self
-            .rx_partyResponseJSON()
+            .rx_responseJSON()
             .flatMap { (response, json) -> Observable<[T]> in
                 guard let dict = json as? [ String: Any ] else {
                     Logger.shared.log(.warning, className: String(describing: type(of: self)), message: "Couldn't serialize array of \(T.self) from JSON")
-                    return Observable.error(ModelError.serializationError(response: response))
+                    return Observable.error(SerializationError.serializationError(response: response))
                 }
                 
                 do {
                     let mappedModel: [T] = try (location.isEmpty ? unbox(dictionaries: [dict]) : unbox(dictionary: dict, atKey: location))
                     return Observable.just(mappedModel)
                 } catch let error as UnboxError {
-                    Logger.shared.log(.verbose, className: String(describing: type(of: self)), message: "Mapping of array of \(T.self) objects failed!")
-                    return Observable.error(ModelError.mappingError(error: error, type: T.self))
+                    Logger.shared.log(.verbose, className: String(describing: type(of: self)), message: "Mapping of array of \(T.self) objects failed! \(error.description)")
+                    return Observable.error(SerializationError.mappingError(error: error, type: T.self))
                 }
             }
             .shareReplay(1)
@@ -55,7 +55,7 @@ extension DataRequest {
     
     func rx_responseNone() -> Observable<Void> {
         return self
-            .rx_partyResponseData()
+            .rx_responseData()
             .retry(2)
             .flatMap { (response, data) -> Observable<Void> in
                 return Observable.just()
@@ -65,7 +65,7 @@ extension DataRequest {
     
     func rx_responseString() -> Observable<String> {
         return self
-            .rx_partyResponseString()
+            .rx_responseString()
             .retry(2)
             .flatMap { (response, string) -> Observable<String> in
                 return Observable.just(string)
@@ -76,21 +76,21 @@ extension DataRequest {
     
 }
 
-extension DataRequest {
+private extension DataRequest {
     
-    func rx_partyResponseData() -> Observable<(HTTPURLResponse, Data)> {
-        return rx_partyResponseResult(responseSerializer: DataRequest.dataResponseSerializer())
+    func rx_responseData() -> Observable<(HTTPURLResponse, Data)> {
+        return rx_responseResult(responseSerializer: DataRequest.dataResponseSerializer())
     }
     
-    func rx_partyResponseJSON(_ options: JSONSerialization.ReadingOptions = .allowFragments) -> Observable<(HTTPURLResponse, Any)> {
-        return rx_partyResponseResult(responseSerializer: DataRequest.jsonResponseSerializer(options: options))
+    func rx_responseJSON(_ options: JSONSerialization.ReadingOptions = .allowFragments) -> Observable<(HTTPURLResponse, Any)> {
+        return rx_responseResult(responseSerializer: DataRequest.jsonResponseSerializer(options: options))
     }
 
-    func rx_partyResponseString() -> Observable<(HTTPURLResponse, String)> {
-        return rx_partyResponseResult(responseSerializer: DataRequest.stringResponseSerializer())
+    func rx_responseString() -> Observable<(HTTPURLResponse, String)> {
+        return rx_responseResult(responseSerializer: DataRequest.stringResponseSerializer())
     }
     
-    public func rx_partyResponseResult<T: DataResponseSerializerProtocol>(queue: DispatchQueue? = nil, responseSerializer: T) -> Observable<(HTTPURLResponse, T.SerializedObject)> {
+    func rx_responseResult<T: DataResponseSerializerProtocol>(queue: DispatchQueue? = nil, responseSerializer: T) -> Observable<(HTTPURLResponse, T.SerializedObject)> {
         return Observable.create { observer in
             let dataRequest = self.response(queue: queue, responseSerializer: responseSerializer) {
                 (packedResponse) -> Void in
