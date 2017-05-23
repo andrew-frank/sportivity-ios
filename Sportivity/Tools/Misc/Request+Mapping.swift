@@ -13,7 +13,7 @@ import Unbox
 
 extension DataRequest {
     
-    func rx_responseModel<T: Unboxable>(_ type: T.Type, at location: String = "") -> Observable<T> {
+    func rx_responseModel<T: Unboxable>(_ type: T.Type, at location: String = "data") -> Observable<T> {
         return self
             .rx_responseJSON()
             .flatMap { (response, json) -> Observable<T> in
@@ -33,7 +33,7 @@ extension DataRequest {
             .shareReplay(1)
     }
     
-    func rx_responseModelsArray<T: Unboxable>(_ type: T.Type, at location: String = "") -> Observable<[T]> {
+    func rx_responseModelsArray<T: Unboxable>(_ type: T.Type, at location: String = "data") -> Observable<[T]> {
         return self
             .rx_responseJSON()
             .flatMap { (response, json) -> Observable<[T]> in

@@ -55,13 +55,20 @@ struct Route {
 }
 
 class Router {
+    
+    // MARK: - Public properties
+    
     let window : UIWindow
+    
+    // MARK: - Private properties
+    
+    fileprivate let userManager : UserManagerProtocol
+    fileprivate let disposeBag = DisposeBag()
+    
     fileprivate var currentNavigationController : UINavigationController? = nil
     fileprivate var mainTabBarController : MainTabBarViewController? = nil {
         didSet {
-            guard let mainTabBarController = self.mainTabBarController else {
-                return
-            }
+            guard let mainTabBarController = self.mainTabBarController else { return }
             mainTabBarController
                 .didSelect
                 .subscribeNext { [unowned self] (viewController) in
@@ -73,14 +80,29 @@ class Router {
                 .addDisposableTo(disposeBag)
         }
     }
-    fileprivate let disposeBag = DisposeBag()
     
-    init(window: UIWindow) {
+    // MARK: - Public methods
+    
+    init(window: UIWindow, userManager: UserManagerProtocol = UserManager.shared) {
         self.window = window
-        let route = Route(to: .loginChoice)
-        let vc = self.route(to: route)
-        self.window.rootViewController = vc
+        self.userManager = userManager
+        
         self.window.makeKeyAndVisible()
+        
+        self.userManager
+            .rx_isLoggedIn
+            .subscribeNext { [unowned self] (isLoggedIn) in
+                
+                var route : Route!
+                if isLoggedIn {
+                    route = Route(to: .mainTab)
+                } else {
+                    route = Route(to: .loginChoice)
+                }
+                
+                self.route(to: route)
+            }
+            .addDisposableTo(disposeBag)
     }
     
     @discardableResult

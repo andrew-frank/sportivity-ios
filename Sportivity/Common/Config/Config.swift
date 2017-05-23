@@ -9,5 +9,5 @@
 import Foundation
 
 struct Config {
-    static let APIBaseURL = "https://sportivity-app.herokuapp.com"
+    static let APIBaseURL = "https://sportivity-app.herokuapp.com/api"
 }

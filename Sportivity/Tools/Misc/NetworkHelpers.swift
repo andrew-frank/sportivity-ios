@@ -34,11 +34,11 @@ extension NetworkHelpers {
         var urlRequest = URLRequest(url: URL)
         urlRequest.httpMethod = method.rawValue
         
-//        if let accessToken = AuthManager.credentials()?.accessToken {
-//            urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-//        } else {
-//            Logger.shared.log(.warning, tag: .networking, className: String(describing: type(of: self)), message: "Access token is missing during NSMutableURLRequest creation")
-//        }
+        if let token = UserManager.shared.token {
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        } else {
+            Logger.shared.log(.warning, className: String(describing: type(of: self)), message: "Access token is missing during NSMutableURLRequest creation")
+        }
         
         return try parametersEncoding.encode(urlRequest, with: parameters)
     }

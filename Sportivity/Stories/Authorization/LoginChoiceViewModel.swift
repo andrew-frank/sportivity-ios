@@ -34,6 +34,24 @@ class LoginChoiceViewModel {
         guard let mail = self.email.value, let pass = password.value, !mail.isEmpty, !pass.isEmpty else {
             return Observable<LoginResult>.just(LoginResult.error("Email and password cannot be empty!"))
         }
-        return AuthenticateAPI.rx_login(email: mail, password: pass).map { return LoginResult(result: $0) }
+        return AuthenticateAPI
+            .rx_login(email: mail, password: pass)
+            .flatMap({ (result) -> Observable<LoginResult> in
+                switch result {
+                case .success(let user):
+                    do {
+                        try UserManager.shared.login(user: user)
+                    } catch let error {
+                        var message = error.localizedDescription
+                        if let error = error as? UserManagerError {
+                            message = error.description
+                        }
+                        return Observable.just(LoginResult.error(message))
+                    }
+                case .failure(_):
+                    break
+                }
+                return Observable.just(LoginResult(result: result))
+            })
     }
 }

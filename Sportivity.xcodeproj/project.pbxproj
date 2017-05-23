@@ -69,6 +69,9 @@
 		49B89E6E1EA0D56A0004BCB3 /* SportivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E6D1EA0D56A0004BCB3 /* SportivityUITests.swift */; };
 		49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */; };
 		49CD2A9E1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */; };
+		49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2332C1ED49D1D00FA1B22 /* UserManager.swift */; };
+		49D2332F1ED49E3000FA1B22 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2332E1ED49E3000FA1B22 /* AuthManager.swift */; };
+		49D233311ED49F2E00FA1B22 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
 		F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617642F456594DE78CA04236 /* Pods_Sportivity.framework */; };
@@ -161,6 +164,9 @@
 		49B89E6F1EA0D56A0004BCB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginChoiceViewController.swift; path = Authorization/LoginChoiceViewController.swift; sourceTree = "<group>"; };
 		49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventViewModel+ListingProtocol.swift"; path = "ViewModels/EventViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
+		49D2332C1ED49D1D00FA1B22 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = Managers/UserManager.swift; sourceTree = "<group>"; };
+		49D2332E1ED49E3000FA1B22 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = Managers/AuthManager.swift; sourceTree = "<group>"; };
+		49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCredentials.swift; path = User/AuthCredentials.swift; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
 		617642F456594DE78CA04236 /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +262,8 @@
 		4916F3431EA6915F0053C3E2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				49D2332C1ED49D1D00FA1B22 /* UserManager.swift */,
+				49D2332E1ED49E3000FA1B22 /* AuthManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				492A99AA1ED1FEAA006A6721 /* User.swift */,
+				49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -794,8 +803,11 @@
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
+				49D233311ED49F2E00FA1B22 /* AuthCredentials.swift in Sources */,
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
+				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
+				49D2332F1ED49E3000FA1B22 /* AuthManager.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
 				492A99A51ED1FC33006A6721 /* Bootstrap.swift in Sources */,
