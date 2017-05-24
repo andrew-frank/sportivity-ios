@@ -15,6 +15,6 @@ extension AuthenticateAPI {
         return AuthenticateAPI.login(email: email, password: password)
             .validatedRequest()
             .rx_responseModel(User.self)
-            .resultify()
+            .resultifyAPIResponse()
     }
 }

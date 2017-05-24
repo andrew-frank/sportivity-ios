@@ -61,6 +61,7 @@
 		4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */; };
 		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
 		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
+		4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD951ED5E598001BB924 /* EventsParameters.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -150,6 +151,7 @@
 		4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModelProtocol.swift; sourceTree = "<group>"; };
 		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
+		4980BD951ED5E598001BB924 /* EventsParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsParameters.swift; path = Event/EventsParameters.swift; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F3381EA68B7E0053C3E2 /* Event.swift */,
+				4980BD951ED5E598001BB924 /* EventsParameters.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -365,7 +368,7 @@
 			name = Authorization;
 			sourceTree = "<group>";
 		};
-		494DF0B61EA7F61100583DBB /* User */ = {
+		494DF0B61EA7F61100583DBB /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				494DF0BF1EA7FCC400583DBB /* UserProfileViewModel.swift */,
@@ -374,7 +377,7 @@
 				494DF0BD1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift */,
 				494DF0B71EA7F61E00583DBB /* User.storyboard */,
 			);
-			name = User;
+			name = UserProfile;
 			sourceTree = "<group>";
 		};
 		494DF0C31EA803FF00583DBB /* Avatars */ = {
@@ -415,13 +418,13 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
-		4996AC091EBE9B200062A087 /* Events */ = {
+		4996AC091EBE9B200062A087 /* EventProfile */ = {
 			isa = PBXGroup;
 			children = (
 				4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */,
 				4996AC0A1EBE9B310062A087 /* Event.storyboard */,
 			);
-			name = Events;
+			name = EventProfile;
 			sourceTree = "<group>";
 		};
 		49A0BE0F4A7F77AB90C84BF0 /* Pods */ = {
@@ -532,8 +535,8 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				4996AC091EBE9B200062A087 /* Events */,
-				494DF0B61EA7F61100583DBB /* User */,
+				4996AC091EBE9B200062A087 /* EventProfile */,
+				494DF0B61EA7F61100583DBB /* UserProfile */,
 				4965606F1EA79A05003454F5 /* Search */,
 				4916F3461EA6B6B50053C3E2 /* Events */,
 				4916F31E1EA676480053C3E2 /* MainTab */,
@@ -807,6 +810,7 @@
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
 				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
+				4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */,
 				49D2332F1ED49E3000FA1B22 /* AuthManager.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,

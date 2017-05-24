@@ -46,6 +46,10 @@ class Logger {
 //        let datePrefix = Date().string(format: dateFormat)
 //        let datePrefix = ""
         let level = level.description
-        print("\(level) - \(message)") //\(className).\(function):\(line)
+        var log = "\(level) - \(message)"
+        if let className = className {
+            log = "\(level) \(className).\(function):\(line) - \(message)"
+        }
+        print(log)
     }
 }

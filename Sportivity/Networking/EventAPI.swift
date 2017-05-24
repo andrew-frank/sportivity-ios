@@ -7,45 +7,49 @@
 //
 
 import Foundation
-//import Alamofire
-//
-//enum EventsAPI {
-//    //case getOne(id: String)
-//    case getEvents(parameters: [String : Any]?)
-//    //case create(parameters: [String : Any])
-//    //case update(id: String, parameters: [String : Any])
-//}
-//
-//extension EventsAPI: NetworkHelpers {
-//    var baseURLString: String {
-//        return Config.sharedInstance.APIBaseURL + "/event"
-//    }
-//    
-//    var method: Alamofire.HTTPMethod {
-//        switch self {
-//        case .getEvents:
-//            return .get
-//        }
-//    }
-//    
-//    var relativePath: String? {
-//        switch self {
-//        case .getEvents:
-//            return nil
-//        }
-//    }
-//    
-//    var parameters: Alamofire.Parameters? {
-//        switch self {
-//        case .getEvents(let params):
-//            return params
-//        }
-//    }
-//    
-//    var parametersEncoding: Alamofire.ParameterEncoding {
-//        switch self {
-//        case .getEvents:
-//            return URLEncoding.queryString
-//        }
-//    }
-//}
+import Alamofire
+
+enum EventsAPI {
+    case fetchEvent(id: String)
+    case fetchEvents(parameters: [String : Any]?)
+    //case create(parameters: [String : Any])
+    //case update(id: String, parameters: [String : Any])
+}
+
+extension EventsAPI: NetworkHelpers {
+    var baseURLString: String {
+        return Config.APIBaseURL + "/events"
+    }
+    
+    var method: Alamofire.HTTPMethod {
+        switch self {
+        case .fetchEvent, .fetchEvents:
+            return .get
+        }
+    }
+    
+    var relativePath: String? {
+        switch self {
+        case .fetchEvent(let id):
+            return "/\(id)"
+        case .fetchEvents:
+            return nil
+        }
+    }
+    
+    var parameters: Alamofire.Parameters? {
+        switch self {
+        case .fetchEvent:
+            return nil
+        case .fetchEvents(let params):
+            return params
+        }
+    }
+    
+    var parametersEncoding: Alamofire.ParameterEncoding {
+        switch self {
+        case .fetchEvent, .fetchEvents:
+            return URLEncoding.queryString
+        }
+    }
+}

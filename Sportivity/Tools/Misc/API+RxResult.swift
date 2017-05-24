@@ -11,8 +11,8 @@ import Result
 import RxSwift
 import Unbox
 
-extension Observable where Element: Unboxable {
-    func resultify() -> Observable<Result<Element, APIError>> {
+extension Observable {
+    func resultifyAPIResponse() -> Observable<Result<Element, APIError>> {
         return self
             .map { Result.success($0) }
             .catchError { (error) -> Observable<Result<Element, APIError>> in

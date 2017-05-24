@@ -30,7 +30,7 @@ enum RouteType {
     case windowRootSwap
 }
 
-struct Route {
+struct Route : CustomStringConvertible {
     let view : ViewTag
     let type : RouteType?
     /// Any data we want to pass, e.g. EventViewModel
@@ -51,6 +51,10 @@ struct Route {
         case .events:
             return .tabSwitch
         }
+    }
+    
+    var description : String {
+        return "Route(view: \(view))"
     }
 }
 
@@ -92,7 +96,7 @@ class Router {
         self.userManager
             .rx_isLoggedIn
             .subscribeNext { [unowned self] (isLoggedIn) in
-                
+                Logger.shared.log(.info, className: "Router", message: "`isLoggedIn` change to \(isLoggedIn).")
                 var route : Route!
                 if isLoggedIn {
                     route = Route(to: .mainTab)
@@ -107,8 +111,9 @@ class Router {
     
     @discardableResult
     func route(to destination: Route) -> UIViewController {
-        var destinationVC : UIViewController? = nil
+        Logger.shared.log(.info, className: "Router", message: "Routing to \(destination).")
         
+        var destinationVC : UIViewController? = nil
         switch destination.view {
         case .loginChoice:
             let vc = R.storyboard.authorization.loginChoice()!

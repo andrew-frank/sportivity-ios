@@ -13,6 +13,8 @@ protocol UserManagerProtocol {
     var isLoggedIn: Bool { get }
     var rx_isLoggedIn: Observable<Bool> { get }
     var token : String? { get }
+    var user : User? { get }
+    var rx_user : Observable<User?> { get }
     init(authManager: AuthManagerProtocol)
     func login(user: User) throws
     func update(user: User)
@@ -50,9 +52,17 @@ class UserManager : UserManagerProtocol {
         return authManager.credentials?.token
     }
     
+    var user : User? {
+        return _user.value
+    }
+    
+    var rx_user : Observable<User?> {
+        return _user.asObservable()
+    }
+    
     // MARK: - Private
 
-    fileprivate let user = Variable<User?>(nil)
+    fileprivate let _user = Variable<User?>(nil)
     fileprivate let authManager : AuthManagerProtocol
     fileprivate let _isLoggedIn = Variable<Bool>(false)
     fileprivate let disposeBag = DisposeBag()
@@ -62,7 +72,7 @@ class UserManager : UserManagerProtocol {
     required init(authManager: AuthManagerProtocol = AuthManager.instance) {
         self.authManager = authManager
         Observable
-            .combineLatest(user.asObservable(), authManager.rx_credentials, resultSelector: { (user, credentials) -> Bool in
+            .combineLatest(_user.asObservable(), authManager.rx_credentials, resultSelector: { (user, credentials) -> Bool in
                 guard let credentials = credentials else {
                     return false
                 }
@@ -80,7 +90,7 @@ class UserManager : UserManagerProtocol {
     }
     
     func login(user: User) throws {
-        assert(self.user.value == nil)
+        assert(self._user.value == nil)
         guard let token = user.token else {
             assert(false, "Missing token")
             throw UserManagerError.missingToken
@@ -93,17 +103,17 @@ class UserManager : UserManagerProtocol {
     }
     
     func update(user: User) {
-        if let current = self.user.value {
+        if let current = self._user.value {
             guard current.id == user.id else {
                 assert(false, "New user has different id from current user")
                 return
             }
         }
-        self.user.value = user
+        self._user.value = user
     }
     
     func logout() {
-        user.value = nil
+        _user.value = nil
         authManager.clear()
     }
 }

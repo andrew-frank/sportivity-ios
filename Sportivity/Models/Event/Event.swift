@@ -8,11 +8,20 @@
 
 import Foundation
 import RxSwift
+import Unbox
 
-struct Event {
-    let name : Variable<String>
+struct Event : Unboxable {
+    let id: String
+    let name: Variable<String>
     
     init(name: String = "Event default name") {
+        self.id = "0"
+        self.name = Variable<String>(name)
+    }
+    
+    init(unboxer: Unboxer) throws {
+        self.id = try unboxer.unbox(key: "_id")
+        let name : String = try unboxer.unbox(key: "name")
         self.name = Variable<String>(name)
     }
 }

@@ -35,7 +35,7 @@ extension NetworkHelpers {
         urlRequest.httpMethod = method.rawValue
         
         if let token = UserManager.shared.token {
-            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("\(token)", forHTTPHeaderField: "x-access-token")
         } else {
             Logger.shared.log(.warning, className: String(describing: type(of: self)), message: "Access token is missing during NSMutableURLRequest creation")
         }
@@ -65,7 +65,7 @@ extension URLRequestConvertible {
 extension DataRequest {
     func log() -> Self {
         let message = self.debugDescription
-        Logger.shared.log(.verbose, className: "\(type(of: self))", message: message)
+        Logger.shared.log(.verbose, message: message)
         return self
     }
 }

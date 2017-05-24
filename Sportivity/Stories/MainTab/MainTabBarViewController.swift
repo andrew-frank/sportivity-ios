@@ -57,5 +57,10 @@ class MainTabBarViewController: UITabBarController, ViewControllerProtocol {
 extension MainTabBarViewController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         self.didSelect.asPublishSubject()!.onNext(viewController)
+        
+        // TEMP!!!
+        if viewController === self.viewControllers![2] {
+            UserManager.shared.logout()
+        }
     }
 }

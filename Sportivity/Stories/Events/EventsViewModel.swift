@@ -9,19 +9,59 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Result
+
+enum EventsFetchResult {
+    case success
+    case error(String)
+    
+    init(result: Result<[Event], APIError>) {
+        switch result {
+        case .success(_):
+            self = .success
+        case .failure(let error):
+            self = .error(error.description)
+        }
+    }
+}
 
 class EventsViewModel {
     let events = Variable<[EventViewModel]>([ ])
     let categories = Variable<[CategorySelection]>(CategorySelection.all())
     
-    init() {
-        var arr = [EventViewModel]()
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        events.value = arr
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let userManager : UserManagerProtocol
+    
+    init(userManager: UserManagerProtocol = UserManager.shared) {
+        self.userManager = userManager
+        // TODO: get the categories, listen to changes and fetch for every change
+        _ = fetch()
+    }
+    
+    func fetch() -> Observable<EventsFetchResult> {
+        let categories : [String] = [ ]
+        let params = EventsParameters(howMany: nil, from: nil, categories: categories)
+        let observable = EventsAPI.rx_fetchEvents(with: params).share()
+        
+        observable
+            .map { (result) -> [EventViewModel] in
+                var vms = [EventViewModel]()
+                switch result {
+                case .success(let events):
+                    for event in events {
+                        let vm = EventViewModel(event: event)
+                        vms.append(vm)
+                    }
+                default:
+                    break
+                }
+                return vms
+            }
+            .bind(to: events)
+            .addDisposableTo(disposeBag)
+        
+        return observable.map { (result) -> EventsFetchResult in
+            return EventsFetchResult(result: result)
+        }
     }
 }
