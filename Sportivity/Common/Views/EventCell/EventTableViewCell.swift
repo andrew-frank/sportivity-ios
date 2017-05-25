@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class EventTableViewCell: UITableViewCell, Configurable {
 
@@ -19,11 +20,6 @@ class EventTableViewCell: UITableViewCell, Configurable {
     
     var viewModel: EventViewModel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         reuseBag = DisposeBag()
@@ -33,6 +29,12 @@ class EventTableViewCell: UITableViewCell, Configurable {
         viewModel
             .name
             .drive(nameLabel.rx.text)
+            .addDisposableTo(reuseBag)
+        viewModel
+            .photoUrl
+            .driveNext { [unowned self] (url) in
+                self.photoImageView.kf.setImage(with: url)
+            }
             .addDisposableTo(reuseBag)
     }
 }

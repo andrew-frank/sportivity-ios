@@ -38,7 +38,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
-                                                        <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-cg-Hqi">
+                                                        <view clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-cg-Hqi">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -128,16 +128,20 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="199-ii-auF" userLabel="Place Holder">
                                                     <rect key="frame" x="0.0" y="295" width="375" height="175"/>
                                                     <subviews>
-                                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gFj-0N-RaL">
+                                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gFj-0N-RaL">
                                                             <rect key="frame" x="0.0" y="78.5" width="375" height="96.5"/>
                                                         </mapView>
+                                                        <view userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcB-oY-R9i">
+                                                            <rect key="frame" x="0.0" y="78.5" width="375" height="96.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marszałkowska 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-EI-Agl">
                                                             <rect key="frame" x="15" y="35.5" width="99.5" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orlik przy budzie #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxG-1q-G1g">
-                                                            <rect key="frame" x="15" y="8" width="152.5" height="19.5"/>
+                                                            <rect key="frame" x="15" y="8" width="345" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -149,10 +153,15 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="vcB-oY-R9i" firstAttribute="top" secondItem="gFj-0N-RaL" secondAttribute="top" id="9ae-k3-hG2"/>
                                                         <constraint firstAttribute="trailing" secondItem="gFj-0N-RaL" secondAttribute="trailing" id="9lH-ZB-9PS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rxG-1q-G1g" secondAttribute="trailing" constant="15" id="B6k-BI-LVt"/>
                                                         <constraint firstAttribute="bottom" secondItem="gFj-0N-RaL" secondAttribute="bottom" id="BJ8-Zc-yB0"/>
+                                                        <constraint firstItem="vcB-oY-R9i" firstAttribute="leading" secondItem="gFj-0N-RaL" secondAttribute="leading" id="Btm-CG-vMs"/>
                                                         <constraint firstItem="rxG-1q-G1g" firstAttribute="leading" secondItem="199-ii-auF" secondAttribute="leading" constant="15" id="CeK-uq-LUa"/>
+                                                        <constraint firstItem="vcB-oY-R9i" firstAttribute="bottom" secondItem="gFj-0N-RaL" secondAttribute="bottom" id="FOf-ta-QeB"/>
                                                         <constraint firstItem="z9F-um-OSD" firstAttribute="leading" secondItem="199-ii-auF" secondAttribute="leading" constant="15" id="JAZ-JT-CFj"/>
+                                                        <constraint firstItem="vcB-oY-R9i" firstAttribute="trailing" secondItem="gFj-0N-RaL" secondAttribute="trailing" id="KCH-BY-nFa"/>
                                                         <constraint firstItem="rxG-1q-G1g" firstAttribute="top" secondItem="199-ii-auF" secondAttribute="top" constant="8" id="Kh6-zV-3rd"/>
                                                         <constraint firstAttribute="height" constant="175" id="ZwU-En-4EM"/>
                                                         <constraint firstItem="gFj-0N-RaL" firstAttribute="leading" secondItem="199-ii-auF" secondAttribute="leading" id="e0b-Gz-bRj"/>

@@ -27,6 +27,11 @@ class EventViewModel : IdentifiableType, Equatable {
     init(event: Event) {
         self.event = event
         name = event.name.asDriver()
-        photoUrl = event.photoUrl.asDriver()
+        let placePhotos = event.place.asDriver().map { (place) -> [URL] in
+            return place.photosURL.value ?? [URL]()
+        }
+        photoUrl = Driver.combineLatest(event.photoUrl.asDriver(), placePhotos, resultSelector: { (eventPhoto, placePhotos) in
+            return eventPhoto ?? placePhotos.first
+        })
     }
 }
