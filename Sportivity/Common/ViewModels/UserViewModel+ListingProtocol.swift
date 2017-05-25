@@ -1,8 +1,8 @@
 //
-//  EventViewModel+ListingProtocol.swift
+//  UserViewModel+ListingProtocol.swift
 //  Sportivity
 //
-//  Created by Andrzej Frankowski on 07/05/2017.
+//  Created by Andrzej Frankowski on 25/05/2017.
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-extension EventViewModel : ListingViewModelProtocol {
-        
+extension UserViewModel : ListingViewModelProtocol {
+    
     var id : String {
         return identity
     }
@@ -25,6 +25,6 @@ extension EventViewModel : ListingViewModelProtocol {
     }
 }
 
-func ==(lhs: EventViewModel, rhs: EventViewModel) -> Bool {
-    return lhs.identity == rhs.identity
-}
+//func ==(lhs: UserViewModel, rhs: UserViewModel) -> Bool {
+//    return lhs.identity == rhs.identity
+//}

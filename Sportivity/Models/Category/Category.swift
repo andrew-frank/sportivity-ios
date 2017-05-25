@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import Unbox
 
-enum Category {
-    case basketball
-    case boxing
-    case fitness
-    case football
-    case pingPong
-    case tennis
-    case volleyball
+enum Category : String, UnboxableEnum {
+    case basketball = "Basketball"
+    case boxing = "Boxing"
+    case fitness = "Fitness"
+    case football = "Football"
+    case pingPong = "Ping Pong"
+    case tennis = "Tennis"
+    case volleyball = "Volleyball"
     
     var name : String {
         switch self {

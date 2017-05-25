@@ -1,19 +1,16 @@
 //
-//  EventViewModel.swift
+//  UserViewModel.swift
 //  Sportivity
 //
-//  Created by Andrzej Frankowski on 18/04/2017.
+//  Created by Andrzej Frankowski on 25/05/2017.
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
 import Foundation
-import RxDataSources
 import RxSwift
 import RxCocoa
 
-class EventViewModel : IdentifiableType, Equatable {
-    
-    let event: Event
+class UserViewModel {
     
     typealias Identity = String
     let identityID: String = UUID().uuidString
@@ -23,10 +20,14 @@ class EventViewModel : IdentifiableType, Equatable {
     
     let name: Driver<String>
     let photoUrl: Driver<URL?>
-
-    init(event: Event) {
-        self.event = event
-        name = event.name.asDriver()
-        photoUrl = event.photoUrl.asDriver()
+    
+    init(user: User) {
+        name = user.name.asDriver()
+        photoUrl = user.photoUrl.asDriver()
+    }
+    
+    init(attendee: EventAttendee) {
+        name = attendee.name.asDriver()
+        photoUrl = attendee.photoUrl.asDriver()
     }
 }

@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RxSwift
+import RxCocoa
 
 protocol ListingViewModelProtocol {
     var id : String { get }
-    var title : Observable<String> { get }
-    var imageUrl : Observable<NSURL?> { get }
+    var title : Driver<String> { get }
+    var imageUrl : Driver<URL?> { get }
 }

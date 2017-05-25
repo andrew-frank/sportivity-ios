@@ -130,7 +130,8 @@ class Router {
             destinationVC = vc
         case .event:
             let vc = R.storyboard.event.event()!
-            let viewModel = destination.data as! EventViewModel
+            let eventViewModel = destination.data as! EventViewModel
+            let viewModel = EventProfileViewModel(event: eventViewModel.event)
             vc.configure(with: viewModel)
             currentNavigationController?.pushViewController(vc, animated: true)
             destinationVC = vc

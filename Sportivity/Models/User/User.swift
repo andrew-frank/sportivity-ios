@@ -17,7 +17,8 @@ struct User: Unboxable {
     let name = Variable<String>("")
     let city = Variable<String?>(nil)
     let photoUrl = Variable<URL?>(nil)
-    let sportsCategories = Variable<[String]>([ ])
+    let isFriend = Variable<Bool?>(nil)
+    let sportCategories: Variable<[Category]>
     let token : String?
     
     init(unboxer: Unboxer) throws {
@@ -26,7 +27,15 @@ struct User: Unboxable {
         name.value = try unboxer.unbox(key: "name")
         city.value = unboxer.unbox(key: "city")
         photoUrl.value = unboxer.unbox(key: "photoUrl")
-        sportsCategories.value = try unboxer.unbox(key: "sportsCategories")
+        isFriend.value = try? unboxer.unbox(key: "isFriend")
+        
+        let sportCategories: [Category]? = try? unboxer.unbox(key: "sportsCategories")
+        if let sportCategories = sportCategories {
+            self.sportCategories = Variable<[Category]>(sportCategories)
+        } else {
+            self.sportCategories = Variable<[Category]>([ ])
+        }
+        
         token = unboxer.unbox(key: "token")
     }
 }

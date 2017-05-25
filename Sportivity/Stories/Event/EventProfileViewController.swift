@@ -19,30 +19,54 @@ class EventProfileViewController: UIViewController, ViewControllerProtocol, Conf
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
-    var viewModel: EventViewModel!
+    var viewModel: EventProfileViewModel!
     
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Event"
+        tableView.register(R.nib.listingTableViewCell(), forCellReuseIdentifier: R.reuseIdentifier.listingTableCell.identifier)
+        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
         bind()
     }
-}
-
-private extension EventProfileViewController {
-    func bind() {
-        Observable<[EventViewModel]>.just([viewModel])
+    
+    private func bind() {
+        viewModel
+            .cellsData
+            .asObservable()
             .bind(to: tableView.rx.items) {
-                tableView, row, viewModel in
+                tableView, row, item in
                 let indexPath = IndexPath(item: row, section: 0)
                 
-                let reuseId = R.reuseIdentifier.eventHeaderTableCell.identifier
-                let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) //as! UserHeaderTableViewCell
-                //cell.configure(with: viewModel)
+                var cell: UITableViewCell!
+                switch item {
+                case let vm as EventProfileHeaderViewModel:
+                    let reuseId = R.reuseIdentifier.eventHeaderTableCell.identifier
+                    cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
+                    let cell = cell as! EventProfileHeaderTableViewCell
+                    cell.configure(with: vm)
+                case let vm as ListingViewModelProtocol:
+                    let reuseId = R.reuseIdentifier.listingTableCell.identifier
+                    cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
+                    let cell = cell as! ListingTableViewCell
+                    cell.configure(with: vm)
+                default:
+                    assert(false)
+                    break
+                }
                 
                 return cell
             }
             .addDisposableTo(disposeBag)
+    }
+}
+
+extension EventProfileViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:     return 516
+        default:    return 50
+        }
     }
 }

@@ -14,13 +14,6 @@ class SearchViewModel {
     let data = Variable<[ListingViewModelProtocol]>([ ])
     
     init() {
-        var arr = [EventViewModel]()
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        arr.append(EventViewModel(event: Event()))
-        data.value = arr
+        
     }
 }

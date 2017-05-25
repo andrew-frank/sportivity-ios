@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import RxSwift
 
-class ListingTableViewCell: UITableViewCell {
+class ListingTableViewCell: UITableViewCell, Configurable {
     
     @IBOutlet fileprivate weak var avatarImageView: AvatarImageView!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     
-    fileprivate var viewModel: ListingViewModelProtocol?
+    var viewModel: ListingViewModelProtocol!
+    
+    fileprivate var reuseBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reuseBag = DisposeBag()
+    }
+    
     func set(viewModel: ListingViewModelProtocol) {
         self.viewModel = viewModel
         // TODO: configure
+    }
+    
+    func configure() {
+        viewModel.title.drive(titleLabel.rx.text).addDisposableTo(reuseBag)
     }
 }

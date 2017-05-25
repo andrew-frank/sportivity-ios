@@ -62,6 +62,14 @@
 		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
 		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
 		4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD951ED5E598001BB924 /* EventsParameters.swift */; };
+		4980BD981ED624AA001BB924 /* EventProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD971ED624AA001BB924 /* EventProfileViewModel.swift */; };
+		4980BD9C1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD9B1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift */; };
+		4980BD9E1ED6627F001BB924 /* EventAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD9D1ED6627F001BB924 /* EventAttendee.swift */; };
+		4980BDA11ED76C3F001BB924 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA01ED76C3F001BB924 /* Place.swift */; };
+		4980BDA41ED76F3C001BB924 /* Loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA31ED76F3C001BB924 /* Loc.swift */; };
+		4980BDA61ED7765B001BB924 /* EventProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA51ED7765B001BB924 /* EventProfileHeaderViewModel.swift */; };
+		4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA71ED78A45001BB924 /* UserViewModel.swift */; };
+		4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -152,6 +160,14 @@
 		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
 		4980BD951ED5E598001BB924 /* EventsParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsParameters.swift; path = Event/EventsParameters.swift; sourceTree = "<group>"; };
+		4980BD971ED624AA001BB924 /* EventProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileViewModel.swift; path = Event/EventProfileViewModel.swift; sourceTree = "<group>"; };
+		4980BD9B1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileHeaderTableViewCell.swift; path = Event/EventProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		4980BD9D1ED6627F001BB924 /* EventAttendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAttendee.swift; path = Event/EventAttendee.swift; sourceTree = "<group>"; };
+		4980BDA01ED76C3F001BB924 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Place/Place.swift; sourceTree = "<group>"; };
+		4980BDA31ED76F3C001BB924 /* Loc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loc.swift; path = Misc/Loc.swift; sourceTree = "<group>"; };
+		4980BDA51ED7765B001BB924 /* EventProfileHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileHeaderViewModel.swift; path = Event/EventProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		4980BDA71ED78A45001BB924 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ViewModels/UserViewModel.swift; sourceTree = "<group>"; };
+		4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserViewModel+ListingProtocol.swift"; path = "ViewModels/UserViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -244,15 +260,6 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
-		4916F3361EA68ADC0053C3E2 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				4916F3341EA68AD80053C3E2 /* Category.swift */,
-				494DF0CB1EA816DF00583DBB /* CategorySelection.swift */,
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
 		4916F3371EA68B730053C3E2 /* Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +301,8 @@
 			children = (
 				4916F3511EA6B8690053C3E2 /* EventViewModel.swift */,
 				49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */,
+				4980BDA71ED78A45001BB924 /* UserViewModel.swift */,
+				4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 			children = (
 				492A99AA1ED1FEAA006A6721 /* User.swift */,
 				49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */,
+				4980BD9D1ED6627F001BB924 /* EventAttendee.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -418,11 +428,32 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		4980BD9F1ED76C36001BB924 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				4980BDA01ED76C3F001BB924 /* Place.swift */,
+			);
+			name = Place;
+			sourceTree = "<group>";
+		};
+		4980BDA21ED76F2F001BB924 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4980BDA31ED76F3C001BB924 /* Loc.swift */,
+				4916F3341EA68AD80053C3E2 /* Category.swift */,
+				494DF0CB1EA816DF00583DBB /* CategorySelection.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		4996AC091EBE9B200062A087 /* EventProfile */ = {
 			isa = PBXGroup;
 			children = (
+				4980BD971ED624AA001BB924 /* EventProfileViewModel.swift */,
 				4900B1551EBEA2210090FEA4 /* EventProfileViewController.swift */,
 				4996AC0A1EBE9B310062A087 /* Event.storyboard */,
+				4980BD9B1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift */,
+				4980BDA51ED7765B001BB924 /* EventProfileHeaderViewModel.swift */,
 			);
 			name = EventProfile;
 			sourceTree = "<group>";
@@ -525,9 +556,10 @@
 		49D559451EA510E40000C712 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4980BDA21ED76F2F001BB924 /* Misc */,
+				4980BD9F1ED76C36001BB924 /* Place */,
 				492A99A91ED1FE9C006A6721 /* User */,
 				4916F3371EA68B730053C3E2 /* Event */,
-				4916F3361EA68ADC0053C3E2 /* Category */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -793,6 +825,7 @@
 				492A999E1ED1F962006A6721 /* AuthenitcateAPI.swift in Sources */,
 				4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */,
 				492A99AD1ED1FFB2006A6721 /* Request+Mapping.swift in Sources */,
+				4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */,
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				492A99B21ED200C4006A6721 /* ModelError.swift in Sources */,
 				492A99B41ED20137006A6721 /* Errors.swift in Sources */,
@@ -803,6 +836,7 @@
 				4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				492A99AF1ED1FFDA006A6721 /* Logger.swift in Sources */,
+				4980BD981ED624AA001BB924 /* EventProfileViewModel.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
@@ -811,7 +845,9 @@
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
 				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
 				4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */,
+				4980BD9C1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift in Sources */,
 				49D2332F1ED49E3000FA1B22 /* AuthManager.swift in Sources */,
+				4980BDA61ED7765B001BB924 /* EventProfileHeaderViewModel.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4916F34E1EA6B6B50053C3E2 /* EventsCategoryFilterCollectionViewCell.swift in Sources */,
 				492A99A51ED1FC33006A6721 /* Bootstrap.swift in Sources */,
@@ -820,12 +856,14 @@
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				4902FF1C1ED364F500A49925 /* APIError.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
+				4980BDA41ED76F3C001BB924 /* Loc.swift in Sources */,
 				492A99951ED1F916006A6721 /* EventAPI.swift in Sources */,
 				494DF0BE1EA7FC4D00583DBB /* UserProfileHeaderTableViewCell.swift in Sources */,
 				492A99981ED1F91D006A6721 /* UserAPI.swift in Sources */,
 				494DF0C21EA7FD4100583DBB /* UserProfileHeaderViewModel.swift in Sources */,
 				492A99B61ED20191006A6721 /* ResponseError.swift in Sources */,
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
+				4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
 				492A999A1ED1F927006A6721 /* UserAPI+Requests.swift in Sources */,
@@ -834,6 +872,7 @@
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
 				492A99B81ED202D9006A6721 /* RequestError.swift in Sources */,
+				4980BDA11ED76C3F001BB924 /* Place.swift in Sources */,
 				492A99911ED1EA65006A6721 /* UIView+IBInspectables.swift in Sources */,
 				492A99AB1ED1FEAA006A6721 /* User.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
@@ -842,6 +881,7 @@
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
 				4916F3391EA68B7E0053C3E2 /* Event.swift in Sources */,
 				492A99A81ED1FDF1006A6721 /* NetworkHelpers.swift in Sources */,
+				4980BD9E1ED6627F001BB924 /* EventAttendee.swift in Sources */,
 				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,
 				494DF0C01EA7FCC400583DBB /* UserProfileViewModel.swift in Sources */,
 				49CD2A9E1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift in Sources */,

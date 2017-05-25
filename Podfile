@@ -13,11 +13,9 @@ def shared_pods
     pod 'Unbox', '~> 2.3.0'
     pod 'Wrap', '~> 2.1.0'
     pod 'Result', '~> 3.2.2'
-
-    #pod 'ACFloatingTextfield-Swift', '~> 1.1'
-    #pod 'SwiftDate', '~> 4.1.1'
+    pod 'SwiftDate', '~> 4.1.1'
     pod 'Whisper', '~> 4.0.0'
-    #pod 'Kingfisher', '~> 3.3.4'
+    pod 'Kingfisher', '~> 3.3.4'
 end
 
 target 'Sportivity' do
