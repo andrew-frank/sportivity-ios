@@ -8,8 +8,9 @@
 
 import UIKit
 import Unbox
+import Wrap
 
-enum Category : String, UnboxableEnum {
+enum Category : String, UnboxableEnum, WrappableEnum {
     case basketball = "Basketball"
     case boxing = "Boxing"
     case fitness = "Fitness"

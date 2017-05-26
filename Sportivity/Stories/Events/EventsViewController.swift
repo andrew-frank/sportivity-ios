@@ -48,6 +48,7 @@ class EventsViewController: UIViewController, ViewControllerProtocol, Configurab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(R.nib.eventTableViewCell(), forCellReuseIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)
         tableDataSource.animationConfiguration = AnimationConfiguration()
         bindTableView()
         bindFilter()

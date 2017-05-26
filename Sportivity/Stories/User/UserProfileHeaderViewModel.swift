@@ -7,9 +7,23 @@
 //
 
 import Foundation
+import RxCocoa
 import RxSwift
 
 class UserProfileHeaderViewModel {
-    let name : Observable<String> = Observable.just("Andrew Frank")
-    let followesLine : Observable<String> = Observable.just("12 Followers / 8 Following")
+    
+    let name: Driver<String>
+    let photoURL: Driver<URL?>
+    let followers : Driver<String> = Driver.just("12 Followers / 8 Following")
+    let isFollowing: Variable<Bool>
+    let isItMe: Driver<Bool>
+    let sports: Driver<[Category]>
+    
+    init(user: User, isItMe: Driver<Bool>) {
+        self.name = user.name.asDriver()
+        self.photoURL = user.photoUrl.asDriver()
+        self.isFollowing = user.isFollowing
+        self.isItMe = isItMe
+        self.sports = user.sportCategories.asDriver()
+    }
 }

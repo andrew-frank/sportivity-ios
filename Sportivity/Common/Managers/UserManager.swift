@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import Unbox
+import Wrap
 
 protocol UserManagerProtocol {
     var isLoggedIn: Bool { get }
@@ -24,6 +26,9 @@ protocol UserManagerProtocol {
 enum UserManagerError : SportivityError {
     case missingToken
     case failedSavingCredentials
+    case userDictionaryMissing
+    case userMapping(Error)
+    case userWrapping(Error)
     
     var description: String {
         return self.defaultMessage
@@ -71,6 +76,15 @@ class UserManager : UserManagerProtocol {
     
     required init(authManager: AuthManagerProtocol = AuthManager.instance) {
         self.authManager = authManager
+        do {
+           try read()
+        } catch UserManagerError.userDictionaryMissing {
+            Logger.shared.log(.error, className: "UserManager", message: "There's no persisted user dictionary for the logged in user. Logging out.")
+            logout()
+        } catch let error {
+            Logger.shared.log(.severe, className: "UserManager", message: error.localizedDescription)
+            assert(false, error.localizedDescription)
+        }
         Observable
             .combineLatest(_user.asObservable(), authManager.rx_credentials, resultSelector: { (user, credentials) -> Bool in
                 guard let credentials = credentials else {
@@ -100,6 +114,14 @@ class UserManager : UserManagerProtocol {
         } catch {
             throw UserManagerError.failedSavingCredentials
         }
+        
+        do {
+            try save(user: user)
+        } catch {
+            throw UserManagerError.userWrapping(error)
+        }
+        
+        _user.value = user
     }
     
     func update(user: User) {
@@ -110,10 +132,36 @@ class UserManager : UserManagerProtocol {
             }
         }
         self._user.value = user
+        try? save(user: user)
     }
     
     func logout() {
         _user.value = nil
+        clear()
         authManager.clear()
+    }
+}
+
+private extension UserManager {
+    func save(user: User) throws {
+        let dict : WrappedDictionary = try wrap(user)
+        UserDefaults.standard.setValue(dict, forKey: "user")
+    }
+    
+    func clear() {
+        UserDefaults.standard.removeObject(forKey: "user")
+    }
+    
+    func read() throws {
+        let dict = UserDefaults.standard.dictionary(forKey: "user")
+        guard let dictionary = dict else {
+            throw UserManagerError.userDictionaryMissing
+        }
+        do {
+            let user: User = try unbox(dictionary: dictionary)
+            _user.value = user
+        } catch let error {
+            throw UserManagerError.userMapping(error)
+        }
     }
 }

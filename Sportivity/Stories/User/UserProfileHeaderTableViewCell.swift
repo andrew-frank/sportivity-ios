@@ -15,6 +15,7 @@ class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
     @IBOutlet fileprivate weak var avatarImageVIew: UserAvatarImageView!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var followersLabel: UILabel!
+    @IBOutlet weak var actionButton: ActionButton!
     
     fileprivate var reuseBag = DisposeBag()
     
@@ -32,12 +33,25 @@ class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
     func configure(with viewModel: UserProfileHeaderViewModel) {
         viewModel
             .name
-            .bind(to: nameLabel.rx.text)
+            .drive(nameLabel.rx.text)
             .addDisposableTo(reuseBag)
         
         viewModel
-            .followesLine
-            .bind(to: followersLabel.rx.text)
+            .photoURL
+            .driveNext { [unowned self] (url) in
+                self.avatarImageVIew.kf.setImage(with: url)
+            }
+            .addDisposableTo(reuseBag)
+        
+        viewModel
+            .followers
+            .drive(followersLabel.rx.text)
+            .addDisposableTo(reuseBag)
+        
+        viewModel
+            .isItMe
+            .map { $0 ? "EDIT" : "FOLLOW" }
+            .drive(actionButton.rx.title())
             .addDisposableTo(reuseBag)
     }
 }
