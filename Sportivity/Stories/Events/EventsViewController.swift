@@ -31,11 +31,6 @@ extension EventsSection: AnimatableSectionModelType  {
 
 
 class EventsViewController: UIViewController, ViewControllerProtocol, Configurable {
-
-    @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet fileprivate weak var categoryFilterCollectionView: UICollectionView!
-    
-    var viewModel: EventsViewModel! = EventsViewModel()
     
     /// Tag of the view
     let viewTag : ViewTag = .events
@@ -44,7 +39,12 @@ class EventsViewController: UIViewController, ViewControllerProtocol, Configurab
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
+    @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate let tableDataSource = RxTableViewSectionedAnimatedDataSource<EventsSection>()
+    @IBOutlet fileprivate weak var filter: CategoriesSelectionView!
+    
+    var viewModel: EventsViewModel! = EventsViewModel()
+    var filterViewModel: CategoriesSelectionViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +57,8 @@ class EventsViewController: UIViewController, ViewControllerProtocol, Configurab
 
 private extension EventsViewController {
     func bindFilter() {
-        viewModel
-            .categories
-            .asObservable()
-            .bind(to: categoryFilterCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.eventsCategoryFilterCollectionCell.identifier, cellType: EventsCategoryFilterCollectionViewCell.self)) {
-                index, category, cell in
-                cell.set(categorySelection: category)
-            }
-            .addDisposableTo(disposeBag)
+        filterViewModel = CategoriesSelectionViewModel(selections: viewModel.categories)
+        filter.configure(with: filterViewModel)
     }
     
     func bindTableView() {

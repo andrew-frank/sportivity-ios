@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 struct CategorySelection {
     let category : Category
-    let selected : Bool
+    let isSelected = Variable<Bool>(false)
     
-    init(category: Category, selected: Bool = false) {
+    init(category: Category, isSelected: Bool = false) {
         self.category = category
-        self.selected = selected
+        self.isSelected.value = isSelected
     }
 }
 
