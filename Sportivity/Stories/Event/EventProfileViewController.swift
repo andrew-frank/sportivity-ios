@@ -59,6 +59,14 @@ class EventProfileViewController: UIViewController, ViewControllerProtocol, Conf
                 return cell
             }
             .addDisposableTo(disposeBag)
+        
+        tableView
+            .rx.modelSelected(UserViewModel.self)
+            .map { (user) -> Route in
+                return Route(to: .user, type: nil, data: user)
+            }
+            .bind(to: onRouteTo.asPublishSubject()!)
+            .addDisposableTo(disposeBag)
     }
 }
 

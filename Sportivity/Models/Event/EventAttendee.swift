@@ -18,6 +18,6 @@ final class EventAttendee : Unboxable {
     init(unboxer: Unboxer) throws {
         id = try unboxer.unbox(key: "_id")
         name.value = try unboxer.unbox(key: "name")
-        photoUrl.value = unboxer.unbox(key: "photoUrl")
+        photoUrl.value = unboxer.unbox(key: "photoURL")
     }
 }

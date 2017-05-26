@@ -71,6 +71,7 @@
 		4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA71ED78A45001BB924 /* UserViewModel.swift */; };
 		4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */; };
 		4980BDAC1ED7A319001BB924 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */; };
+		4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDAD1ED7B624001BB924 /* UserRouteData.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -170,6 +171,7 @@
 		4980BDA71ED78A45001BB924 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ViewModels/UserViewModel.swift; sourceTree = "<group>"; };
 		4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserViewModel+ListingProtocol.swift"; path = "ViewModels/UserViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
 		4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventCell/EventTableViewCell.xib; sourceTree = "<group>"; };
+		4980BDAD1ED7B624001BB924 /* UserRouteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouteData.swift; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F3271EA688390053C3E2 /* Router.swift */,
+				4980BDAD1ED7B624001BB924 /* UserRouteData.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				492A99B61ED20191006A6721 /* ResponseError.swift in Sources */,
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */,
+				4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
 				492A999A1ED1F927006A6721 /* UserAPI+Requests.swift in Sources */,

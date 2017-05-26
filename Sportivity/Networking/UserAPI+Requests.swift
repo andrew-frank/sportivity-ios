@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import RxSwift
+import Wrap
+import Result
+
+extension UserAPI {
+    static func rx_fetchUser(_ id: String) -> Observable<Result<User, APIError>> {
+        return UserAPI
+            .fetch(user: id)
+            .validatedRequest()
+            .rx_responseModel(User.self)
+            .resultifyAPIResponse()
+    }
+}

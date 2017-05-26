@@ -126,6 +126,12 @@ class Router {
             destinationVC = mainTabBarController
         case .user:
             let vc = R.storyboard.user.user()!
+            var vm: UserProfileViewModel!
+            if let userData = destination.data as? UserRouteData {
+                let maybeUser = userData as? User
+                vm = UserProfileViewModel(id: userData.id, user: maybeUser)
+            }
+            vc.configure(with: vm)
             currentNavigationController?.pushViewController(vc, animated: true)
             destinationVC = vc
         case .event:

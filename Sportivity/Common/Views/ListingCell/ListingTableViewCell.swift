@@ -35,5 +35,11 @@ class ListingTableViewCell: UITableViewCell, Configurable {
     
     func configure() {
         viewModel.title.drive(titleLabel.rx.text).addDisposableTo(reuseBag)
+        viewModel.imageUrl
+            .driveNext { [unowned self] (url) in
+                guard let url = url else { return }
+                self.avatarImageView.kf.setImage(with: url)
+            }
+            .addDisposableTo(reuseBag)
     }
 }

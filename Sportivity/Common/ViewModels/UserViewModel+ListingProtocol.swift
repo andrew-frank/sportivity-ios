@@ -12,10 +12,6 @@ import RxCocoa
 
 extension UserViewModel : ListingViewModelProtocol {
     
-    var id : String {
-        return identity
-    }
-    
     var title : Driver<String> {
         return name
     }

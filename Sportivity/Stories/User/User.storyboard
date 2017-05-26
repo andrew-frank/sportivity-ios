@@ -34,7 +34,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="bIW-aP-KYO" customClass="UserAvatarImageView" customModule="Sportivity" customModuleProvider="target">
                                                     <rect key="frame" x="137" y="30" width="100" height="100"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="N6c-XR-U8f"/>
                                                         <constraint firstAttribute="width" secondItem="bIW-aP-KYO" secondAttribute="height" multiplier="1:1" id="QeS-Mv-Asn"/>

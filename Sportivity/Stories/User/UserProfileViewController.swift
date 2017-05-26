@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class UserProfileViewController: UIViewController, ViewControllerProtocol, Configurable {
+class UserProfileViewController: UIViewController, ViewControllerProtocol, Configurable, ShowsError {
     
     /// Tag of the view
     let viewTag : ViewTag = .user
@@ -29,10 +29,36 @@ class UserProfileViewController: UIViewController, ViewControllerProtocol, Confi
         tableView.register(R.nib.eventTableViewCell(), forCellReuseIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)
         bind()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 }
 
 private extension UserProfileViewController {
     func bind() {
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            let title = "Pull to refresh"
+            refreshControl.attributedTitle = NSAttributedString(string: title)
+            refreshControl
+                .rx.controlEvent(UIControlEvents.allEvents)
+                .flatMap({ [unowned self] () -> Observable<UserProfileViewModelFetchResult> in
+                    return self.viewModel.refresh()
+                })
+                .subscribeNext({ [unowned self] (result) in
+                    self.tableView.refreshControl?.endRefreshing()
+                    switch result {
+                    case .error(let message):
+                        self.showQuickError(message: message)
+                    default:
+                        break
+                    }
+                })
+                .addDisposableTo(disposeBag)
+            tableView.refreshControl = refreshControl
+        }
+        
         viewModel
             .cellsData
             .asDriver()

@@ -7,42 +7,42 @@
 //
 
 import Foundation
-//import Alamofire
-//
-//enum UserAPI {
-//    case getEvents(parameters: [String : Any]?)
-//}
-//
-//extension UserAPI: NetworkHelpers {
-//    var baseURLString: String {
-//        return Config.sharedInstance.APIBaseURL + "/user"
-//    }
-//    
-//    var method: Alamofire.HTTPMethod {
-//        switch self {
-//        case .getEvents:
-//            return .get
-//        }
-//    }
-//    
-//    var relativePath: String? {
-//        switch self {
-//        case .getEvents:
-//            return nil
-//        }
-//    }
-//    
-//    var parameters: Alamofire.Parameters? {
-//        switch self {
-//        case .getEvents(let params):
-//            return params
-//        }
-//    }
-//    
-//    var parametersEncoding: Alamofire.ParameterEncoding {
-//        switch self {
-//        case .getEvents:
-//            return URLEncoding.queryString
-//        }
-//    }
-//}
+import Alamofire
+
+enum UserAPI {
+    case fetch(user: String)
+}
+
+extension UserAPI: NetworkHelpers {
+    var baseURLString: String {
+        return Config.APIBaseURL + "/users"
+    }
+    
+    var method: Alamofire.HTTPMethod {
+        switch self {
+        case .fetch:
+            return .get
+        }
+    }
+    
+    var relativePath: String? {
+        switch self {
+        case .fetch(let id):
+            return "/\(id)"
+        }
+    }
+    
+    var parameters: Alamofire.Parameters? {
+        switch self {
+        case .fetch:
+            return nil
+        }
+    }
+    
+    var parametersEncoding: Alamofire.ParameterEncoding {
+        switch self {
+        case .fetch:
+            return URLEncoding.queryString
+        }
+    }
+}

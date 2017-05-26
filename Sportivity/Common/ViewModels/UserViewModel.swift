@@ -10,8 +10,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class UserViewModel {
+class UserViewModel: UserRouteData {
     
+    let id: String
     typealias Identity = String
     let identityID: String = UUID().uuidString
     var identity: String {
@@ -22,11 +23,13 @@ class UserViewModel {
     let photoUrl: Driver<URL?>
     
     init(user: User) {
+        self.id = user.id
         name = user.name.asDriver()
         photoUrl = user.photoUrl.asDriver()
     }
     
     init(attendee: EventAttendee) {
+        self.id = attendee.id
         name = attendee.name.asDriver()
         photoUrl = attendee.photoUrl.asDriver()
     }

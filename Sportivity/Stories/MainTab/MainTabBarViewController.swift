@@ -58,7 +58,7 @@ extension MainTabBarViewController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let nvc = viewController as? UINavigationController, let vc = nvc.childViewControllers.first as? UserProfileViewController, vc.viewModel == nil {
             let user = UserManager.shared.user!
-            let vm = UserProfileViewModel(user: user)
+            let vm = UserProfileViewModel(id: user.id, user: user)
             vc.configure(with: vm)
         }
         
