@@ -17,6 +17,7 @@ protocol UserManagerProtocol {
     var token : String? { get }
     var user : User? { get }
     var rx_user : Observable<User?> { get }
+    var categorySelections: Variable<[CategorySelection]> { get }
     init(authManager: AuthManagerProtocol)
     func login(user: User) throws
     func update(user: User)
@@ -65,12 +66,15 @@ class UserManager : UserManagerProtocol {
         return _user.asObservable()
     }
     
+    let categorySelections = Variable<[CategorySelection]>(CategorySelection.all())
+
     // MARK: - Private
 
     fileprivate let _user = Variable<User?>(nil)
     fileprivate let authManager : AuthManagerProtocol
     fileprivate let _isLoggedIn = Variable<Bool>(false)
     fileprivate let disposeBag = DisposeBag()
+    fileprivate var categoriesDisposeBag = DisposeBag()
     
     // MARK: - Public methods
     
@@ -85,6 +89,7 @@ class UserManager : UserManagerProtocol {
             Logger.shared.log(.severe, className: "UserManager", message: error.localizedDescription)
             assert(false, error.localizedDescription)
         }
+        
         Observable
             .combineLatest(_user.asObservable(), authManager.rx_credentials, resultSelector: { (user, credentials) -> Bool in
                 guard let credentials = credentials else {
@@ -101,6 +106,19 @@ class UserManager : UserManagerProtocol {
             })
             .bind(to: _isLoggedIn)
             .addDisposableTo(disposeBag)
+        
+//        Observable
+//            .combineLatest(_user.asObservable(), categorySelections.asObservable()) {
+//                [unowned self] (_, categorySelections) -> Void in
+//                self._user.value?.sportCategories.value = categorySelections
+//                return
+//            }
+//            .subscribeNext { () in
+//                Logger.shared.log(.debug, className: "UserManager", message: "Setting new User's categories")
+//            }
+//            .addDisposableTo(disposeBag)
+
+        //bindCategories()
     }
     
     func login(user: User) throws {
@@ -132,17 +150,50 @@ class UserManager : UserManagerProtocol {
             }
         }
         self._user.value = user
+        //bindCategories()
         try? save(user: user)
     }
     
     func logout() {
         _user.value = nil
+        categoriesDisposeBag = DisposeBag()
         clear()
         authManager.clear()
     }
 }
 
 private extension UserManager {
+    func configureCategorySelections(from: [Category]) {
+        
+    }
+    
+//    func bindCategories() {
+//        categoriesDisposeBag = DisposeBag()
+//        
+//        _user.value?.sportCategories
+//            .asObservable()
+//            .flatMap { (user) -> Observable<[CategorySelection]> in
+//                let selections = CategorySelection.all()
+//                guard let user = user else { return Observable.just(selections) }
+//                
+//                let userCategories = user.sportCategories.value
+//                for category in userCategories {
+//                    for selection in selections {
+//                        if category == selection.category {
+//                            selection.isSelected.value = true
+//                            break
+//                        }
+//                    }
+//                }
+//                
+//                Logger.shared.log(.debug, className: "UserManager", message: "Setting new categorySelections from new User")
+//                
+//                return Observable.just(selections)
+//            }
+//            .bind(to: categorySelections)
+//            .addDisposableTo(categoriesDisposeBag)
+//    }
+    
     func save(user: User) throws {
         let dict : WrappedDictionary = try wrap(user)
         UserDefaults.standard.setValue(dict, forKey: "user")

@@ -27,13 +27,17 @@ enum EventsFetchResult {
 
 class EventsViewModel {
     let events = Variable<[EventViewModel]>([ ])
-    let categories = Variable<[CategorySelection]>(CategorySelection.all())
+    let categories: Variable<[CategorySelection]>
     
     fileprivate let disposeBag = DisposeBag()
     fileprivate let userManager : UserManagerProtocol
     
+    let filterViewModel : CategoriesSelectionViewModel
+    
     init(userManager: UserManagerProtocol = UserManager.shared) {
         self.userManager = userManager
+        self.categories = userManager.categorySelections
+        self.filterViewModel = CategoriesSelectionViewModel(selections: categories)
         // TODO: get the categories, listen to changes and fetch for every change
         _ = fetch()
     }

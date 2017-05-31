@@ -44,7 +44,6 @@ class EventsViewController: UIViewController, ViewControllerProtocol, Configurab
     @IBOutlet fileprivate weak var filter: CategoriesSelectionView!
     
     var viewModel: EventsViewModel! = EventsViewModel()
-    var filterViewModel: CategoriesSelectionViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +56,7 @@ class EventsViewController: UIViewController, ViewControllerProtocol, Configurab
 
 private extension EventsViewController {
     func bindFilter() {
-        filterViewModel = CategoriesSelectionViewModel(selections: viewModel.categories)
-        filter.configure(with: filterViewModel)
+        filter.configure(with: viewModel.filterViewModel)
     }
     
     func bindTableView() {
