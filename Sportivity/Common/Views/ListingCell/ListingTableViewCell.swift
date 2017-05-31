@@ -29,8 +29,13 @@ class ListingTableViewCell: UITableViewCell, Configurable {
     }
     
     func configure() {
-        viewModel.title.drive(titleLabel.rx.text).addDisposableTo(reuseBag)
-        viewModel.imageUrl
+        viewModel
+            .title
+            .drive(titleLabel.rx.text)
+            .addDisposableTo(reuseBag)
+        
+        viewModel
+            .imageUrl
             .driveNext { [unowned self] (url) in
                 if let url = url {
                     self.avatarImageView.kf.setImage(with: url)
