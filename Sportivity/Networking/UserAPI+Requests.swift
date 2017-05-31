@@ -19,4 +19,11 @@ extension UserAPI {
             .rx_responseModel(User.self)
             .resultifyAPIResponse()
     }
+    
+    static func rx_search(name: String?) -> Observable<[User]> {
+        return UserAPI
+            .search(name: name)
+            .validatedRequest()
+            .rx_responseModelsArray(User.self)
+    }
 }

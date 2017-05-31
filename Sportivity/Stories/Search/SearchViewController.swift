@@ -40,8 +40,9 @@ private extension SearchViewController {
             .asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: R.reuseIdentifier.listingTableCell.identifier, cellType: ListingTableViewCell.self)) {
                 index, item, cell in
-                cell.set(viewModel: item)
+                cell.configure(with: item)
             }
             .addDisposableTo(disposeBag)
+        
     }
 }

@@ -11,6 +11,7 @@ import Alamofire
 
 enum UserAPI {
     case fetch(user: String)
+    case search(name: String?)
 }
 
 extension UserAPI: NetworkHelpers {
@@ -20,7 +21,7 @@ extension UserAPI: NetworkHelpers {
     
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .fetch:
+        case .fetch, .search:
             return .get
         }
     }
@@ -29,6 +30,8 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch(let id):
             return "/\(id)"
+        case .search:
+            return nil
         }
     }
     
@@ -36,12 +39,18 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch:
             return nil
+        case .search(let name):
+            var params = Alamofire.Parameters.init()
+            if let name = name {
+                params["name"] = name
+            }
+            return params
         }
     }
     
     var parametersEncoding: Alamofire.ParameterEncoding {
         switch self {
-        case .fetch:
+        case .fetch, .search:
             return URLEncoding.queryString
         }
     }
