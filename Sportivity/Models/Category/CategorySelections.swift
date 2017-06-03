@@ -12,7 +12,7 @@ import RxCocoa
 
 class CategorySelections {
     
-    private let _selections: Variable<[String: Bool]>
+    private let _selections = Variable<[String: Bool]>([String: Bool]())
     let rx_selections: Driver<[String: Bool]>
     var selections: [String: Bool] {
         return _selections.value
@@ -50,21 +50,6 @@ class CategorySelections {
     
     init(selected: [Category]?) {
         
-        let userCategories = selected ?? [Category]()
-        var selectionsDict = [String: Bool]()
-        let all = Category.all()
-        
-        for category in all {
-            selectionsDict[category.rawValue] = false
-            for selection in userCategories {
-                if selection.rawValue == category.rawValue {
-                    selectionsDict[category.rawValue] = true
-                    break
-                }
-            }
-        }
-        
-        _selections = Variable<[String: Bool]>(selectionsDict)
         rx_selections = _selections.asDriver()
         select.asObservable().subscribeNext { [weak self] (category) in
             self?.set(category: category, selected: true)
@@ -74,10 +59,27 @@ class CategorySelections {
             self?.set(category: category, selected: false)
         }
         .addDisposableTo(disposeBag)
+        
+        let userCategories = selected ?? [Category]()
+        set(categories: userCategories)
     }
     
     func set(categories: [Category]) {
+        var selectionsDict = [String: Bool]()
+        let all = Category.all()
         
+        for category in all {
+            selectionsDict[category.rawValue] = false
+            for selection in categories {
+                if selection.rawValue == category.rawValue {
+                    selectionsDict[category.rawValue] = true
+                    break
+                }
+            }
+        }
+        
+        _selections.value = selectionsDict
+
     }
     
     func set(category: String, selected: Bool) {

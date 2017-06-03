@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class CategoriesSelectionViewModel {
-    let _selections: CategorySelections
+    fileprivate let _selections: CategorySelections
     let selections: Driver<[CategorySelectionViewModel]>
     let categorySelected = PublishSubject<Category>()
     let categoryDeselected = PublishSubject<Category>()
