@@ -109,6 +109,7 @@ class UserManager : UserManagerProtocol {
         Observable
             .combineLatest(_user.asObservable(), categorySelections.rx_selectedCategories.asObservable() ) {
                 [unowned self] (_, categories) -> Void in
+                // Combining both, so that whenever we change authorized user, we assign selected categories too.
                 self._user.value?.sportCategories.value = categories
                 return
             }

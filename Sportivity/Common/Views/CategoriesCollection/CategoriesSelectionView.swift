@@ -35,12 +35,14 @@ class CategoriesSelectionView : NibLoadingView, Configurable {
             .addDisposableTo(disposeBag)
         
         collectionView
-            .rx.modelSelected(Category.self)
+            .rx.modelSelected(CategorySelectionViewModel.self)
+            .map { $0.category }
             .bind(to: viewModel.categorySelected)
             .addDisposableTo(disposeBag)
         
         collectionView
-            .rx.modelDeselected(Category.self)
+            .rx.modelDeselected(CategorySelectionViewModel.self)
+            .map { $0.category }
             .bind(to: viewModel.categoryDeselected)
             .addDisposableTo(disposeBag)
     }

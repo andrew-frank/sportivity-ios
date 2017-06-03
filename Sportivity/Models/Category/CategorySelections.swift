@@ -79,7 +79,6 @@ class CategorySelections {
         }
         
         _selections.value = selectionsDict
-
     }
     
     func set(category: String, selected: Bool) {
