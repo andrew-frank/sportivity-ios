@@ -19,7 +19,7 @@ struct User: Unboxable {
     let city = Variable<String?>(nil)
     let photoUrl = Variable<URL?>(nil)
     let isFollowing = Variable<Bool>(false)
-    let sportCategories: Variable<CategorySelections>
+    let sportCategories: Variable<[Category]>
     let events: Variable<[Event]>
     let token : String?
     
@@ -33,7 +33,7 @@ struct User: Unboxable {
         self.isFollowing.value = isFollowing ?? false
         
         let categories: [Category]? = try? unboxer.unbox(key: "sportsCategories")
-        self.sportCategories = Variable<CategorySelections>(CategorySelections(selected: categories))
+        self.sportCategories = Variable<[Category]>(categories ?? [Category]())
         
         let events: [Event]? = try? unboxer.unbox(key: "events")
         self.events = Variable<[Event]>(events ?? [Event]())

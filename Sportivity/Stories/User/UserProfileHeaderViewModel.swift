@@ -24,6 +24,6 @@ class UserProfileHeaderViewModel {
         self.photoURL = user.photoUrl.asDriver()
         self.isFollowing = user.isFollowing
         self.isItMe = isItMe
-        self.sports = user.sportCategories.asDriver().map { $0.selectedCategories }
+        self.sports = user.sportCategories.asDriver()
     }
 }

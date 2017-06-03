@@ -15,7 +15,7 @@ class CategorySelectionCollectionViewCell: UICollectionViewCell, Configurable {
     @IBOutlet fileprivate weak var imageView: UIImageView!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     
-    var viewModel: CategorySelection!
+    var viewModel: CategorySelections!
     
     fileprivate var reuseBag = DisposeBag()
     
@@ -26,23 +26,23 @@ class CategorySelectionCollectionViewCell: UICollectionViewCell, Configurable {
     
     override var isSelected: Bool {
         didSet {
-            if viewModel.isSelected.value != isSelected {
-                viewModel.isSelected.value = isSelected
-            }
+//            if viewModel.isSelected.value != isSelected {
+//                viewModel.isSelected.value = isSelected
+//            }
         }
     }
     
     func configure() {
-        imageView.image = viewModel.category.iconImage
-        titleLabel.text = viewModel.category.name
-        viewModel
-            .isSelected
-            .asObservable()
-            .subscribeNext { [unowned self] (isSelected) in
-                self.isSelected = isSelected
-                self.imageView.alpha = isSelected ? 1 : 0.5
-                self.titleLabel.alpha = isSelected ? 1 : 0.5
-            }
-            .addDisposableTo(reuseBag)
+//        imageView.image = viewModel.category.iconImage
+//        titleLabel.text = viewModel.category.name
+//        viewModel
+//            .isSelected
+//            .asObservable()
+//            .subscribeNext { [unowned self] (isSelected) in
+//                self.isSelected = isSelected
+//                self.imageView.alpha = isSelected ? 1 : 0.5
+//                self.titleLabel.alpha = isSelected ? 1 : 0.5
+//            }
+//            .addDisposableTo(reuseBag)
     }
 }

@@ -25,13 +25,21 @@ class CategoriesSelectionView : NibLoadingView, Configurable {
     }
     
     func configure() {
-        viewModel
-            .selections
-            .asObservable()
-            .bind(to: collectionView.rx.items(cellIdentifier: R.reuseIdentifier.categorySelectionCollectionCell.identifier, cellType: CategorySelectionCollectionViewCell.self)) {
-                index, category, cell in
-                cell.configure(with: category)
+//        viewModel
+//            .selections
+//            .asObservable()
+//            .bind(to: collectionView.rx.items(cellIdentifier: R.reuseIdentifier.categorySelectionCollectionCell.identifier, cellType: CategorySelectionCollectionViewCell.self)) {
+//                index, category, cell in
+//                cell.configure(with: category)
+//            }
+//            .addDisposableTo(disposeBag)
+        
+        collectionView
+            .rx.modelSelected(Category.self)
+            .subscribeNext { (category) in
+                
             }
-            .addDisposableTo(disposeBag)
+        
+        
     }
 }

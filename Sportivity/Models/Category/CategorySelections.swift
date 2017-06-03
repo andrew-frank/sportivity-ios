@@ -28,6 +28,25 @@ class CategorySelections {
         let categories = selectedKeys.map { Category(rawValue: $0) }
         return categories.filter { $0 != nil }.map { $0! }
     }
+    var rx_selectedCategories: Driver<[Category]> {
+        let drv = _selections
+            .asDriver()
+            .map { dict -> [String] in
+                return dict.filter({ (key: String, value: Bool) -> Bool in
+                    return value == true
+                }).map({ (key: String, value: Bool) -> String in
+                    return key
+                })
+            }
+            .flatMap({ (strings) -> SharedSequence<DriverSharingStrategy, [Category]> in
+                let asd = strings
+                    .map { Category(rawValue: $0) }
+                    .filter { $0 != nil }
+                    .map { $0! }
+                return Driver.just(asd)
+            })
+        return drv
+    }
     
     init(selected: [Category]?) {
         
@@ -57,32 +76,13 @@ class CategorySelections {
         .addDisposableTo(disposeBag)
     }
     
+    func set(categories: [Category]) {
+        
+    }
+    
     func set(category: String, selected: Bool) {
         var selections = _selections.value
         selections[category] = selected
         _selections.value = selections
-    }
-}
-
-////
-
-struct CategorySelection {
-    let category : Category
-    let isSelected = Variable<Bool>(false)
-    
-    init(category: Category, isSelected: Bool = false) {
-        self.category = category
-        self.isSelected.value = isSelected
-    }
-}
-
-extension CategorySelection {
-    static func all() -> [CategorySelection] {
-        var all = [CategorySelection]()
-        let allCategories = Category.all()
-        for category in allCategories {
-            all.append(CategorySelection(category: category))
-        }
-        return all
     }
 }
