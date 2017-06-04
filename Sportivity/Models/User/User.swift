@@ -32,12 +32,8 @@ struct User: Unboxable {
         let isFollowing: Bool? = try? unboxer.unbox(key: "isFriend")
         self.isFollowing.value = isFollowing ?? false
         
-        let sportCategories: [Category]? = try? unboxer.unbox(key: "sportsCategories")
-        if let sportCategories = sportCategories {
-            self.sportCategories = Variable<[Category]>(sportCategories)
-        } else {
-            self.sportCategories = Variable<[Category]>([ ])
-        }
+        let categories: [Category]? = try? unboxer.unbox(key: "sportsCategories")
+        self.sportCategories = Variable<[Category]>(categories ?? [Category]())
         
         let events: [Event]? = try? unboxer.unbox(key: "events")
         self.events = Variable<[Event]>(events ?? [Event]())

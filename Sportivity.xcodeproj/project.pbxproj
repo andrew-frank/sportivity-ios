@@ -59,7 +59,7 @@
 		494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C51EA8046100583DBB /* ActionButton.swift */; };
 		494DF0C81EA8047700583DBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C71EA8047700583DBB /* GradientView.swift */; };
 		494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */; };
-		494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0CB1EA816DF00583DBB /* CategorySelection.swift */; };
+		494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0CB1EA816DF00583DBB /* CategorySelections.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
 		4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560691EA7949A003454F5 /* ListingTableViewCell.swift */; };
 		4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */; };
@@ -90,6 +90,7 @@
 		49D233311ED49F2E00FA1B22 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */; };
 		49D559401EA50E050000C712 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5593F1EA50E050000C712 /* R.generated.swift */; };
 		49D559441EA50E300000C712 /* Sportivity.clr in Resources */ = {isa = PBXBuildFile; fileRef = 49D559431EA50E300000C712 /* Sportivity.clr */; };
+		49FD1D0A1EDF9DD300D24258 /* CategorySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD1D091EDF9DD300D24258 /* CategorySelectionViewModel.swift */; };
 		F74A22C4C4633B7FC8A56B28 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617642F456594DE78CA04236 /* Pods_Sportivity.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,7 +165,7 @@
 		494DF0C51EA8046100583DBB /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = Views/ActionButton.swift; sourceTree = "<group>"; };
 		494DF0C71EA8047700583DBB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Views/GradientView.swift; sourceTree = "<group>"; };
 		494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorButton.swift; path = Views/ActivityIndicatorButton.swift; sourceTree = "<group>"; };
-		494DF0CB1EA816DF00583DBB /* CategorySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelection.swift; path = Category/CategorySelection.swift; sourceTree = "<group>"; };
+		494DF0CB1EA816DF00583DBB /* CategorySelections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelections.swift; path = Category/CategorySelections.swift; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
 		496560691EA7949A003454F5 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingTableViewCell.xib; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		49D233301ED49F2E00FA1B22 /* AuthCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCredentials.swift; path = User/AuthCredentials.swift; sourceTree = "<group>"; };
 		49D5593F1EA50E050000C712 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		49D559431EA50E300000C712 /* Sportivity.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sportivity.clr; sourceTree = "<group>"; };
+		49FD1D091EDF9DD300D24258 /* CategorySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelectionViewModel.swift; path = Views/CategoriesCollection/CategorySelectionViewModel.swift; sourceTree = "<group>"; };
 		617642F456594DE78CA04236 /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7FD16BF7CE12A88B1B956B /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				4945BE0A1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift */,
+				49FD1D091EDF9DD300D24258 /* CategorySelectionViewModel.swift */,
 				4945BE061ED878FC000B4C5F /* CategoriesSelectionView.swift */,
 				4945BE041ED878C5000B4C5F /* CategoriesSelectionView.xib */,
 				4945BE101ED890D0000B4C5F /* CategorySelectionCollectionViewCell.swift */,
@@ -461,7 +464,7 @@
 			children = (
 				4980BDA31ED76F3C001BB924 /* Loc.swift */,
 				4916F3341EA68AD80053C3E2 /* Category.swift */,
-				494DF0CB1EA816DF00583DBB /* CategorySelection.swift */,
+				494DF0CB1EA816DF00583DBB /* CategorySelections.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				492A99AD1ED1FFB2006A6721 /* Request+Mapping.swift in Sources */,
 				4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */,
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
+				49FD1D0A1EDF9DD300D24258 /* CategorySelectionViewModel.swift in Sources */,
 				492A99B21ED200C4006A6721 /* ModelError.swift in Sources */,
 				492A99B41ED20137006A6721 /* Errors.swift in Sources */,
 				494DF0BA1EA7F62900583DBB /* UserProfileViewController.swift in Sources */,
@@ -893,7 +897,7 @@
 				4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */,
 				4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
-				494DF0CC1EA816DF00583DBB /* CategorySelection.swift in Sources */,
+				494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */,
 				492A999A1ED1F927006A6721 /* UserAPI+Requests.swift in Sources */,
 				4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
