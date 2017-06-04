@@ -62,6 +62,13 @@ class CategorySelections {
         
         let userCategories = selected ?? [Category]()
         set(categories: userCategories)
+        
+        rx_selections
+            .driveNext { (cats) in
+                let selected = cats.filter { $1 }.map { $0.key }
+                Logger.shared.log(.debug, message: "CategorySelections changed to:\n- all: \(cats)\n- selected: \(selected)")
+            }
+            .addDisposableTo(disposeBag)
     }
     
     func set(categories: [Category]) {

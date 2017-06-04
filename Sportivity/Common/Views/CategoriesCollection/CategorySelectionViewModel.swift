@@ -12,10 +12,10 @@ import RxCocoa
 
 class CategorySelectionViewModel {
     let category: Category
-    let isSelected: Variable<Bool>
+    let isSelected: Bool
     
     init(category: Category, isSelected: Bool) {
         self.category = category
-        self.isSelected = Variable<Bool>(isSelected)
+        self.isSelected = isSelected
     }
 }
