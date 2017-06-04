@@ -15,7 +15,7 @@ final class Place : Unboxable {
     let name: Variable<String>
     let street: Variable<String?>
     let city: Variable<String?>
-    let photosURL: Variable<[URL]?>
+    let photoURL: Variable<URL?>
     let events: Variable<[Event]>
     let loc: Variable<Loc?>
     let sportCategories: Variable<[Category]>
@@ -24,8 +24,8 @@ final class Place : Unboxable {
         self.id = try unboxer.unbox(key: "_id")
         let name : String = try unboxer.unbox(key: "name")
         self.name = Variable<String>(name)
-        let photoUrl : [URL]? = try? unboxer.unbox(key: "photosURL")
-        self.photosURL = Variable<[URL]?>(photoUrl)
+        let photoUrl : URL? = try? unboxer.unbox(key: "photoURL")
+        self.photoURL = Variable<URL?>(photoUrl)
         let street : String? = try? unboxer.unbox(key: "street")
         self.street = Variable<String?>(street)
         var city : String? = try? unboxer.unbox(key: "city")

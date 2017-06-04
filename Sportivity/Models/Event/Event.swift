@@ -18,8 +18,8 @@ final class Event : Unboxable {
     let dateStart: Variable<Date>
     let dateEnd: Variable<Date?>
     //let capacity: Variable<Int?>
-    let host: Variable<User>
-    let place: Variable<Place>
+    let host: Variable<User?>
+    let place: Variable<Place?>
     
     init(unboxer: Unboxer) throws {
         self.id = try unboxer.unbox(key: "_id")
@@ -42,9 +42,9 @@ final class Event : Unboxable {
         let dateEnd : Date? = try? unboxer.unbox(key: "dateEnd", formatter: dateFormatter)
         self.dateEnd = Variable<Date?>(dateEnd)
         
-        let host : User = try unboxer.unbox(key: "host")
-        self.host = Variable<User>(host)
-        let place : Place = try unboxer.unbox(key: "place")
-        self.place = Variable<Place>(place)
+        let host : User? = try? unboxer.unbox(key: "host")
+        self.host = Variable<User?>(host)
+        let place : Place? = try? unboxer.unbox(key: "place")
+        self.place = Variable<Place?>(place)
     }
 }

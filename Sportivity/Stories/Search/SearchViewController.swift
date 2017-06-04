@@ -16,7 +16,7 @@ private struct SearchViewControllerConstants {
 
 private typealias C = SearchViewControllerConstants
 
-class SearchViewController: UIViewController, Configurable {
+class SearchViewController: UIViewController, ViewControllerProtocol, Configurable {
 
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
@@ -27,7 +27,12 @@ class SearchViewController: UIViewController, Configurable {
     
     var viewModel: SearchViewModel! = SearchViewModel()
     
+    /// Tag of the view
+    let viewTag : ViewTag = .events
+    /// Main `DisposeBag` of the `ViewController`
     let disposeBag = DisposeBag()
+    /// Observable that informs that `Router` should route to the `Route`
+    let onRouteTo : Observable<Route> = PublishSubject<Route>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +66,16 @@ private extension SearchViewController {
                 self.placesButton.isSelected = type == .places
                 self.tableView.isHidden = type != .users
             }
+            .addDisposableTo(disposeBag)
+        
+        tableView
+            .rx.modelSelected(ListingViewModelProtocol.self)
+            .map { item -> Route in
+                let vm = (item as! UserViewModel)
+                let route = Route(to: .user, type: nil, data: vm)
+                return route
+            }
+            .bind(to: onRouteTo.asPublishSubject()!)
             .addDisposableTo(disposeBag)
     }
 }
