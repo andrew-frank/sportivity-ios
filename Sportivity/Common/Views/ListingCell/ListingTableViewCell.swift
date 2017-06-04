@@ -28,17 +28,20 @@ class ListingTableViewCell: UITableViewCell, Configurable {
         reuseBag = DisposeBag()
     }
     
-    func set(viewModel: ListingViewModelProtocol) {
-        self.viewModel = viewModel
-        // TODO: configure
-    }
-    
     func configure() {
-        viewModel.title.drive(titleLabel.rx.text).addDisposableTo(reuseBag)
-        viewModel.imageUrl
+        viewModel
+            .title
+            .drive(titleLabel.rx.text)
+            .addDisposableTo(reuseBag)
+        
+        viewModel
+            .imageUrl
             .driveNext { [unowned self] (url) in
-                guard let url = url else { return }
-                self.avatarImageView.kf.setImage(with: url)
+                if let url = url {
+                    self.avatarImageView.kf.setImage(with: url)
+                } else if self.viewModel is UserViewModel {
+                    self.avatarImageView.image = R.image.userPlaceholder()
+                }
             }
             .addDisposableTo(reuseBag)
     }

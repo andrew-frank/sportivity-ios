@@ -267,8 +267,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="vEM-yx-f7Y"/>
                     <connections>
+                        <outlet property="eventsButton" destination="6Ny-Im-w7i" id="yoT-7s-CMw"/>
+                        <outlet property="placesButton" destination="Jeu-qB-h6X" id="jS0-i0-lst"/>
                         <outlet property="searchBar" destination="5O1-Rl-QMY" id="kNP-KQ-PhV"/>
                         <outlet property="tableView" destination="qc4-Gc-KhA" id="4Lx-pK-HY5"/>
+                        <outlet property="usersButton" destination="y59-rm-49e" id="u1d-Oc-g1J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSe-LF-TD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
