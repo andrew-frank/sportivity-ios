@@ -85,5 +85,13 @@ private extension UserProfileViewController {
                 return cell
             }
             .addDisposableTo(disposeBag)
+        
+        tableView
+            .rx.itemSelected
+            .asObservable()
+            .subscribeNext { [unowned self] (indexPath) in
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            }
+            .addDisposableTo(disposeBag)
     }
 }

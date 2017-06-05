@@ -50,5 +50,11 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel.placeName.drive(placeNameLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
+        viewModel.isAttending.bind(to: attendButton.rx.isSelected).addDisposableTo(reuseBag)
+        attendButton
+            .rx.tap
+            .asObservable()
+            .bind(to: viewModel.toggleAttend)
+            .addDisposableTo(reuseBag)
     }
 }

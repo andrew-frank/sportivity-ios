@@ -12,6 +12,8 @@ import RxCocoa
 
 class EventProfileHeaderViewModel {
     fileprivate let event: Event
+    fileprivate let userManager: UserManagerProtocol
+    fileprivate let disposeBag = DisposeBag()
     
     let name: Driver<String>
     let photoUrl: Driver<URL?>
@@ -20,9 +22,15 @@ class EventProfileHeaderViewModel {
     let placeLoc: Driver<Loc?>
     let street: Driver<String?>
     let city: Driver<String?>
+    let attendees: Variable<[EventAttendee]>
+    let isAttending: Observable<Bool>
     
-    init(event: Event) {
+    let toggleAttend = PublishSubject<Void>()
+    
+    init(event: Event, userManager: UserManagerProtocol = UserManager()) {
         self.event = event
+        self.userManager = userManager
+        
         self.name = event.name.asDriver()
 //        let placePhoto = event.place.asDriver().flatMap { (place) -> Driver<URL?> in
 //            guard let place = place else {
@@ -48,5 +56,48 @@ class EventProfileHeaderViewModel {
         self.street = event.place.asDriver().map { $0?.street.value }
         self.city = event.place.asDriver().map { $0?.city.value }
         self.hostText = hostText.asDriver(onErrorJustReturn: "")
+        self.attendees = event.attendees
+        self.isAttending = Observable.combineLatest(userManager.rx_user, attendees.asObservable(), resultSelector: { (user, attendees) -> Bool in
+            guard let user = user else { return false }
+            return attendees.reduce(false, { (isAttending, attendee) -> Bool in
+                return isAttending || attendee.id == user.id
+            })
+        })
+        
+        bind()
+    }
+    
+    private func bind() {
+        toggleAttend
+            .withLatestFrom(isAttending)
+            .doOnNext { (isAttending) in
+                Logger.shared.log(.info, message: "toggleAttend from isAttending=\(isAttending) to \(!isAttending)")
+            }
+            .flatMap { (isAttending) -> Observable<Bool> in
+                var request: Observable<Void>!
+                if isAttending {
+                    // POST /attend
+                } else {
+                    // DELETE /attend //?
+                }
+                return Observable<Bool>.just(false)
+            }
+            .subscribeNext { [unowned self] (isAttending) in
+                guard let me = self.userManager.user else {
+                    assert(false)
+                    return
+                }
+                if isAttending {
+                    let meAttendee = EventAttendee(user: me)
+                    var newAttendees = self.attendees.value
+                    newAttendees.append(meAttendee)
+                    self.attendees.value = newAttendees
+                } else {
+                    let newAttendees = self.attendees.value.filter { $0.id != me.id }
+                    self.attendees.value = newAttendees
+                }
+            }
+            .addDisposableTo(disposeBag)
+        
     }
 }

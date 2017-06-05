@@ -17,7 +17,7 @@ final class Event : Unboxable {
     let attendees: Variable<[EventAttendee]>
     let dateStart: Variable<Date>
     let dateEnd: Variable<Date?>
-    //let capacity: Variable<Int?>
+    let capacity: Variable<Int?>
     let host: Variable<User?>
     let place: Variable<Place?>
     
@@ -41,6 +41,9 @@ final class Event : Unboxable {
         self.dateStart = Variable<Date>(dateStart)
         let dateEnd : Date? = try? unboxer.unbox(key: "dateEnd", formatter: dateFormatter)
         self.dateEnd = Variable<Date?>(dateEnd)
+        
+        let capacity : Int? = try? unboxer.unbox(key: "capacity")
+        self.capacity = Variable<Int?>(capacity)
         
         let host : User? = try? unboxer.unbox(key: "host")
         self.host = Variable<User?>(host)

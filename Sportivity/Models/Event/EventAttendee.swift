@@ -20,4 +20,10 @@ final class EventAttendee : Unboxable {
         name.value = try unboxer.unbox(key: "name")
         photoUrl.value = unboxer.unbox(key: "photoURL")
     }
+    
+    init(user: User) {
+        self.id = user.id
+        self.name.value = user.name.value
+        self.photoUrl.value = user.photoUrl.value
+    }
 }
