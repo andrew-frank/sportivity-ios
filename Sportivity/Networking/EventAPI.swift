@@ -12,6 +12,8 @@ import Alamofire
 enum EventsAPI {
     case fetchEvent(id: String)
     case fetchEvents(parameters: [String : Any]?)
+    case join(id: String)
+    case leave(id: String)
     //case create(parameters: [String : Any])
     //case update(id: String, parameters: [String : Any])
 }
@@ -25,6 +27,10 @@ extension EventsAPI: NetworkHelpers {
         switch self {
         case .fetchEvent, .fetchEvents:
             return .get
+        case .join:
+            return .post
+        case .leave:
+            return .delete
         }
     }
     
@@ -32,6 +38,10 @@ extension EventsAPI: NetworkHelpers {
         switch self {
         case .fetchEvent(let id):
             return "/\(id)"
+        case .join(let id):
+            return "/singUp?eventId=\(id)"
+        case .leave(let id):
+            return "/singUp?eventId=\(id)"
         case .fetchEvents:
             return nil
         }
@@ -39,7 +49,7 @@ extension EventsAPI: NetworkHelpers {
     
     var parameters: Alamofire.Parameters? {
         switch self {
-        case .fetchEvent:
+        case .fetchEvent, .join, .leave:
             return nil
         case .fetchEvents(let params):
             return params
@@ -48,7 +58,7 @@ extension EventsAPI: NetworkHelpers {
     
     var parametersEncoding: Alamofire.ParameterEncoding {
         switch self {
-        case .fetchEvent, .fetchEvents:
+        case .fetchEvent, .fetchEvents, .join, .leave:
             return URLEncoding.queryString
         }
     }

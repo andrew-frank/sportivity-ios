@@ -26,6 +26,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
     @IBOutlet weak var mapView: MKMapView!
     
     var reuseBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     var viewModel: EventProfileHeaderViewModel!
     
@@ -50,11 +51,25 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel.placeName.drive(placeNameLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
-        viewModel.isAttending.bind(to: attendButton.rx.isSelected).addDisposableTo(reuseBag)
+
+        viewModel
+            .isAttending
+            .asObservable()
+            .subscribeNext { [unowned self] (isAttending) in
+                if isAttending {
+                    self.attendButton.setTitle("LEAVE", for: .normal)
+                } else {
+                    self.attendButton.setTitle("JOIN", for: .normal)
+                }
+            }
+            .addDisposableTo(reuseBag)
+
         attendButton
             .rx.tap
             .asObservable()
-            .bind(to: viewModel.toggleAttend)
-            .addDisposableTo(reuseBag)
+            .subscribeNext { [unowned self] () in
+                self.viewModel.toggleAttend.onNext()
+            }
+            .addDisposableTo(disposeBag)
     }
 }

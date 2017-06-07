@@ -34,4 +34,12 @@ extension EventsAPI {
             return Observable.just(Result.failure(error))
         }
     }
+    
+    static func rx_join(_ id: String) -> Observable<Void> {
+        return EventsAPI.join(id: id).validatedRequest().rx_responseNone()
+    }
+    
+    static func rx_leave(_ id: String) -> Observable<Void> {
+        return EventsAPI.leave(id: id).validatedRequest().rx_responseNone()
+    }
 }
