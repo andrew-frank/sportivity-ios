@@ -73,6 +73,7 @@ private extension UserProfileViewController {
                     cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
                     let cell = cell as! UserProfileHeaderTableViewCell
                     cell.configure(with: vm)
+                    cell.onRouteTo.bind(to: self.onRouteTo.asPublishSubject()!).addDisposableTo(cell.reuseBag)
                 case let vm as EventViewModel:
                     let reuseId = R.reuseIdentifier.eventTableViewCell
                     cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)

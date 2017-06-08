@@ -12,13 +12,14 @@ import RxSwift
 enum ViewTag {
     case loginChoice
 //    case loginEmail
-//    case registerEmail
+    case register
 
     case mainTab
     case events
 //    case map
 //
     case user
+    case editUser
 //    case place
     case event
 }
@@ -46,8 +47,10 @@ struct Route : CustomStringConvertible {
         switch viewTag {
         case .loginChoice, .mainTab:
             return .windowRootSwap
-        case .user, .event:
+        case .user, .event, .register:
             return .push
+        case .editUser:
+            return .modal
         case .events:
             return .tabSwitch
         }
@@ -118,7 +121,13 @@ class Router {
         case .loginChoice:
             let vc = R.storyboard.authorization.loginChoice()!
             vc.configure(with: LoginChoiceViewModel())
-            window.set(rootViewController: vc)
+            let nvc = UINavigationController(rootViewController: vc)
+            window.set(rootViewController: nvc)
+            self.currentNavigationController = nvc
+            destinationVC = vc
+        case .register:
+            let vc = R.storyboard.authorization.signup()!
+            currentNavigationController?.pushViewController(vc, animated: true)
             destinationVC = vc
         case .mainTab:
             mainTabBarController = R.storyboard.mainTab.mainTab()!
@@ -133,6 +142,11 @@ class Router {
             }
             vc.configure(with: vm)
             currentNavigationController?.pushViewController(vc, animated: true)
+            destinationVC = vc
+        case .editUser:
+            let nvc = R.storyboard.user.editUserNavigation()!
+            let vc = nvc.viewControllers.first! as! EditUserTableTableViewController
+            currentNavigationController?.present(nvc, animated: true, completion: nil)
             destinationVC = vc
         case .event:
             let vc = R.storyboard.event.event()!
@@ -150,7 +164,8 @@ class Router {
         
         assert(destinationVC != nil, "destinationVC cannot be nil")
         guard let destinationVcProtocol = destinationVC as? ViewControllerProtocol else {
-            fatalError("destinationVC does not conform to ViewControllerProtocol")
+            return UIViewController()
+            //fatalError("destinationVC does not conform to ViewControllerProtocol")
         }
         
         destinationVcProtocol

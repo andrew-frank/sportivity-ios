@@ -17,7 +17,10 @@ class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
     @IBOutlet fileprivate weak var followersLabel: UILabel!
     @IBOutlet weak var actionButton: ActionButton!
     
-    fileprivate var reuseBag = DisposeBag()
+    /// Observable that informs that `Router` should route to the `Route`
+    let onRouteTo : Observable<Route> = PublishSubject<Route>()
+    
+    var reuseBag = DisposeBag()
     
     var viewModel: UserProfileHeaderViewModel!
     
@@ -50,8 +53,23 @@ class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
         
         viewModel
             .isItMe
+            .asDriver()
             .map { $0 ? "EDIT" : "FOLLOW" }
             .drive(actionButton.rx.title())
+            .addDisposableTo(reuseBag)
+        
+        actionButton
+            .rx.tap
+            .asObservable()
+            .subscribeNext { () in
+                switch viewModel.isItMe.value {
+                case true:
+                    let route = Route(to: .editUser, type: nil, data: nil)
+                    self.onRouteTo.asPublishSubject()!.onNext(route)
+                case false:
+                    print("follow")
+                }
+            }
             .addDisposableTo(reuseBag)
     }
 }

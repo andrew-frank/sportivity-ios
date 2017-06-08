@@ -12,6 +12,7 @@
 		4902FF1C1ED364F500A49925 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1B1ED364F500A49925 /* APIError.swift */; };
 		4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1D1ED398B900A49925 /* ShowsError.swift */; };
 		4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902FF1F1ED3A8FF00A49925 /* API+RxResult.swift */; };
+		490667011EE9E4C600029967 /* EditUserTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490667001EE9E4C600029967 /* EditUserTableTableViewController.swift */; };
 		4916F3201EA676660053C3E2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4916F31F1EA676660053C3E2 /* MainTab.storyboard */; };
 		4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3221EA6827B0053C3E2 /* RxTools.swift */; };
 		4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */; };
@@ -43,6 +44,7 @@
 		492A99B61ED20191006A6721 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99B51ED20191006A6721 /* ResponseError.swift */; };
 		492A99B81ED202D9006A6721 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99B71ED202D9006A6721 /* RequestError.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
+		493AEA291EE82B3800B50501 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AEA281EE82B3800B50501 /* SignUpViewController.swift */; };
 		4945BE051ED878C5000B4C5F /* CategoriesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4945BE041ED878C5000B4C5F /* CategoriesSelectionView.xib */; };
 		4945BE071ED878FC000B4C5F /* CategoriesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945BE061ED878FC000B4C5F /* CategoriesSelectionView.swift */; };
 		4945BE0B1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945BE0A1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift */; };
@@ -118,6 +120,7 @@
 		4902FF1B1ED364F500A49925 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = Errors/APIError.swift; sourceTree = "<group>"; };
 		4902FF1D1ED398B900A49925 /* ShowsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowsError.swift; path = UITools/ShowsError.swift; sourceTree = "<group>"; };
 		4902FF1F1ED3A8FF00A49925 /* API+RxResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "API+RxResult.swift"; path = "Misc/API+RxResult.swift"; sourceTree = "<group>"; };
+		490667001EE9E4C600029967 /* EditUserTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserTableTableViewController.swift; path = User/EditUserTableTableViewController.swift; sourceTree = "<group>"; };
 		4916F31F1EA676660053C3E2 /* MainTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTab.storyboard; path = MainTab/MainTab.storyboard; sourceTree = "<group>"; };
 		4916F3221EA6827B0053C3E2 /* RxTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTools.swift; path = RxTools/RxTools.swift; sourceTree = "<group>"; };
 		4916F3241EA686AC0053C3E2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = MainTab/MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		492A99B51ED20191006A6721 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseError.swift; path = Errors/ResponseError.swift; sourceTree = "<group>"; };
 		492A99B71ED202D9006A6721 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestError.swift; path = Errors/RequestError.swift; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
+		493AEA281EE82B3800B50501 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Authorization/SignUpViewController.swift; sourceTree = "<group>"; };
 		4945BE041ED878C5000B4C5F /* CategoriesSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesSelectionView.xib; path = Views/CategoriesCollection/CategoriesSelectionView.xib; sourceTree = "<group>"; };
 		4945BE061ED878FC000B4C5F /* CategoriesSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesSelectionView.swift; path = Views/CategoriesCollection/CategoriesSelectionView.swift; sourceTree = "<group>"; };
 		4945BE0A1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesSelectionViewModel.swift; path = Views/CategoriesCollection/CategoriesSelectionViewModel.swift; sourceTree = "<group>"; };
@@ -250,6 +254,14 @@
 				4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */,
 			);
 			name = EventCell;
+			sourceTree = "<group>";
+		};
+		490666FF1EE9E2E300029967 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				490667001EE9E4C600029967 /* EditUserTableTableViewController.swift */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 		4916F31E1EA676480053C3E2 /* MainTab */ = {
@@ -384,6 +396,7 @@
 				4930F1631EA524480090F1D1 /* Authorization.storyboard */,
 				49C0C3D21EA5255300F7B5F5 /* LoginChoiceViewController.swift */,
 				492A999F1ED1FA69006A6721 /* LoginChoiceViewModel.swift */,
+				493AEA281EE82B3800B50501 /* SignUpViewController.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -404,6 +417,7 @@
 		494DF0B61EA7F61100583DBB /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
+				490666FF1EE9E2E300029967 /* Edit */,
 				494DF0BF1EA7FCC400583DBB /* UserProfileViewModel.swift */,
 				494DF0B91EA7F62900583DBB /* UserProfileViewController.swift */,
 				494DF0C11EA7FD4100583DBB /* UserProfileHeaderViewModel.swift */,
@@ -857,6 +871,7 @@
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				49FD1D0A1EDF9DD300D24258 /* CategorySelectionViewModel.swift in Sources */,
 				492A99B21ED200C4006A6721 /* ModelError.swift in Sources */,
+				493AEA291EE82B3800B50501 /* SignUpViewController.swift in Sources */,
 				492A99B41ED20137006A6721 /* Errors.swift in Sources */,
 				494DF0BA1EA7F62900583DBB /* UserProfileViewController.swift in Sources */,
 				494DF0C81EA8047700583DBB /* GradientView.swift in Sources */,
@@ -901,6 +916,7 @@
 				492A999A1ED1F927006A6721 /* UserAPI+Requests.swift in Sources */,
 				4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
+				490667011EE9E4C600029967 /* EditUserTableTableViewController.swift in Sources */,
 				4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */,
 				4918C1321EA51E4A0081F43D /* UIWindow+Extensions.swift in Sources */,
 				492A99B81ED202D9006A6721 /* RequestError.swift in Sources */,

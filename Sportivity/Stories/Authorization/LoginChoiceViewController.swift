@@ -30,6 +30,11 @@ class LoginChoiceViewController: UIViewController, ViewControllerProtocol, Confi
         super.viewDidLoad()
         bind()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //navigationController?.isNavigationBarHidden = true
+    }
 }
 
 private extension LoginChoiceViewController {
@@ -52,6 +57,13 @@ private extension LoginChoiceViewController {
                     self.onRouteTo.asPublishSubject()!.onNext(route)
                 }
             }
+            .addDisposableTo(disposeBag)
+        
+        signupButton
+            .rx.tap
+            .asObservable()
+            .map { Route.init(to: .register, type: nil, data: nil) }
+            .bind(to: onRouteTo.asPublishSubject()!)
             .addDisposableTo(disposeBag)
     }
 }
