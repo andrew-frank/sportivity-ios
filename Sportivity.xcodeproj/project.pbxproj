@@ -68,6 +68,10 @@
 		4965606E1EA7949A003454F5 /* ListingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */; };
 		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
 		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
+		49722E5F1EE9EE4200DCE741 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E5E1EE9EE4200DCE741 /* MapViewController.swift */; };
+		49722E611EE9F6F000DCE741 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E601EE9F6F000DCE741 /* MapViewModel.swift */; };
+		49722E631EE9F74E00DCE741 /* PlaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E621EE9F74E00DCE741 /* PlaceAPI.swift */; };
+		49722E651EE9F7AE00DCE741 /* PlacesAPI+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E641EE9F7AE00DCE741 /* PlacesAPI+Requests.swift */; };
 		4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD951ED5E598001BB924 /* EventsParameters.swift */; };
 		4980BD981ED624AA001BB924 /* EventProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD971ED624AA001BB924 /* EventProfileViewModel.swift */; };
 		4980BD9C1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BD9B1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift */; };
@@ -176,6 +180,10 @@
 		4965606B1EA7949A003454F5 /* ListingViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModelProtocol.swift; sourceTree = "<group>"; };
 		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
+		49722E5E1EE9EE4200DCE741 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Map/MapViewController.swift; sourceTree = "<group>"; };
+		49722E601EE9F6F000DCE741 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = Map/MapViewModel.swift; sourceTree = "<group>"; };
+		49722E621EE9F74E00DCE741 /* PlaceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAPI.swift; sourceTree = "<group>"; };
+		49722E641EE9F7AE00DCE741 /* PlacesAPI+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlacesAPI+Requests.swift"; sourceTree = "<group>"; };
 		4980BD951ED5E598001BB924 /* EventsParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsParameters.swift; path = Event/EventsParameters.swift; sourceTree = "<group>"; };
 		4980BD971ED624AA001BB924 /* EventProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileViewModel.swift; path = Event/EventProfileViewModel.swift; sourceTree = "<group>"; };
 		4980BD9B1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventProfileHeaderTableViewCell.swift; path = Event/EventProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -465,6 +473,15 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		49722E5D1EE9EE3100DCE741 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				49722E5E1EE9EE4200DCE741 /* MapViewController.swift */,
+				49722E601EE9F6F000DCE741 /* MapViewModel.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		4980BD9F1ED76C36001BB924 /* Place */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +622,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				49722E5D1EE9EE3100DCE741 /* Map */,
 				4996AC091EBE9B200062A087 /* EventProfile */,
 				494DF0B61EA7F61100583DBB /* UserProfile */,
 				4965606F1EA79A05003454F5 /* Search */,
@@ -624,6 +642,8 @@
 				492A99991ED1F927006A6721 /* UserAPI+Requests.swift */,
 				492A999D1ED1F962006A6721 /* AuthenitcateAPI.swift */,
 				492A999B1ED1F95A006A6721 /* AuthenitcateAPI+Requests.swift */,
+				49722E621EE9F74E00DCE741 /* PlaceAPI.swift */,
+				49722E641EE9F7AE00DCE741 /* PlacesAPI+Requests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -877,11 +897,13 @@
 				494DF0C81EA8047700583DBB /* GradientView.swift in Sources */,
 				494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */,
 				492A99A21ED1FB4A006A6721 /* Config.swift in Sources */,
+				49722E631EE9F74E00DCE741 /* PlaceAPI.swift in Sources */,
 				4916F34D1EA6B6B50053C3E2 /* EventsViewModel.swift in Sources */,
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				492A99AF1ED1FFDA006A6721 /* Logger.swift in Sources */,
 				4980BD981ED624AA001BB924 /* EventProfileViewModel.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
+				49722E611EE9F6F000DCE741 /* MapViewModel.swift in Sources */,
 				4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */,
 				4916F3291EA688390053C3E2 /* Router.swift in Sources */,
 				49D233311ED49F2E00FA1B22 /* AuthCredentials.swift in Sources */,
@@ -889,6 +911,7 @@
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
 				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
+				49722E5F1EE9EE4200DCE741 /* MapViewController.swift in Sources */,
 				4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */,
 				4945BE0D1ED88B33000B4C5F /* NibLoadingView.swift in Sources */,
 				4980BD9C1ED64F7A001BB924 /* EventProfileHeaderTableViewCell.swift in Sources */,
@@ -900,6 +923,7 @@
 				492A99A01ED1FA69006A6721 /* LoginChoiceViewModel.swift in Sources */,
 				494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
+				49722E651EE9F7AE00DCE741 /* PlacesAPI+Requests.swift in Sources */,
 				4902FF1C1ED364F500A49925 /* APIError.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
 				4980BDA41ED76F3C001BB924 /* Loc.swift in Sources */,
