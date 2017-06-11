@@ -1,9 +1,9 @@
 //
 //  Annotation.swift
-//  Cluster
+//  Sportivity
 //
-//  Created by Lasha Efremidze on 4/15/17.
-//  Copyright © 2017 efremidze. All rights reserved.
+//  Created by Andrzej Frankowski on 11/06/2017.
+//  Copyright © 2017 Sportivity. All rights reserved.
 //
 
 import MapKit
@@ -48,16 +48,6 @@ open class ClusterAnnotationView: MKAnnotationView {
     
     open let type: ClusterAnnotationType
     
-    /**
-     Initializes and returns a new cluster annotation view.
-     
-     - Parameters:
-        - annotation: The annotation object to associate with the new view.
-        - reuseIdentifier: If you plan to reuse the annotation view for similar types of annotations, pass a string to identify it. Although you can pass nil if you do not intend to reuse the view, reusing annotation views is generally recommended.
-        - type: The cluster annotation type to associate with the new view.
-     
-     - Returns: The initialized cluster annotation view.
-     */
     public init(annotation: MKAnnotation?, reuseIdentifier: String?, type: ClusterAnnotationType) {
         self.type = type
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)

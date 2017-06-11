@@ -12,7 +12,7 @@ import RxCocoa
 import MapKit
 
 private struct MapViewControllerConstants {
-    static let annotationReuseId = "ann"
+    static let annotationReuseId = "annotation"
 }
 
 private typealias C = MapViewControllerConstants
@@ -26,7 +26,8 @@ class MapViewController: UIViewController, ViewControllerProtocol, Configurable 
     /// Observable that informs that `Router` should route to the `Route`
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet fileprivate weak var mapView: MKMapView!
+    fileprivate let clusterManager = ClusterManager()
     var viewModel: MapViewModel! = MapViewModel()
     
     override func viewDidLoad() {

@@ -1,9 +1,9 @@
 //
 //  Extensions.swift
-//  Cluster
+//  Sportivity
 //
-//  Created by Lasha Efremidze on 4/15/17.
-//  Copyright © 2017 efremidze. All rights reserved.
+//  Created by Andrzej Frankowski on 11/06/2017.
+//  Copyright © 2017 Sportivity. All rights reserved.
 //
 
 import MapKit

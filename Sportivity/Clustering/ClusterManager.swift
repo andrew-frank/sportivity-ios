@@ -1,15 +1,15 @@
 //
-//  Cluster.swift
-//  Cluster
+//  ClusterManager.swift
+//  Sportivity
 //
-//  Created by Lasha Efremidze on 4/13/17.
-//  Copyright © 2017 efremidze. All rights reserved.
+//  Created by Andrzej Frankowski on 11/06/2017.
+//  Copyright © 2017 Sportivity. All rights reserved.
 //
 
 import CoreLocation
 import MapKit
 
-open class ClusterManager {
+class ClusterManager {
     
     var tree = QuadTree(rect: MKMapRectWorld)
     
@@ -20,84 +20,42 @@ open class ClusterManager {
         return queue
     }()
     
-    /**
-     Controls the level from which clustering will be enabled. Min value is 2 (max zoom out), max is 20 (max zoom in).
-     */
-    open var zoomLevel: Int = 20 {
+    var zoomLevel: Int = 20 {
         didSet {
             zoomLevel = zoomLevel.clamped(to: 2...20)
         }
     }
     
     public init() {}
-    
-    /**
-     Adds an annotation object to the cluster manager.
-     
-     - Parameters:
-        - annotation: An annotation object. The object must conform to the MKAnnotation protocol.
-     */
-    open func add(_ annotation: MKAnnotation) {
+    func add(_ annotation: MKAnnotation) {
         tree.add(annotation)
     }
     
-    /**
-     Adds an array of annotation objects to the cluster manager.
-     
-     - Parameters:
-        - annotations: An array of annotation objects. Each object in the array must conform to the MKAnnotation protocol.
-     */
-    open func add(_ annotations: [MKAnnotation]) {
+    func add(_ annotations: [MKAnnotation]) {
         for annotation in annotations {
             add(annotation)
         }
     }
     
-    /**
-     Removes an annotation object from the cluster manager.
-     
-     - Parameters:
-        - annotation: An annotation object. The object must conform to the MKAnnotation protocol.
-     */
-    open func remove(_ annotation: MKAnnotation) {
+    func remove(_ annotation: MKAnnotation) {
         tree.remove(annotation)
     }
     
-    /**
-     Removes an array of annotation objects from the cluster manager.
-     
-     - Parameters:
-        - annotations: An array of annotation objects. Each object in the array must conform to the MKAnnotation protocol.
-     */
-    open func remove(_ annotations: [MKAnnotation]) {
+    func remove(_ annotations: [MKAnnotation]) {
         for annotation in annotations {
             remove(annotation)
         }
     }
     
-    /**
-     Removes all the annotation objects from the cluster manager.
-     */
-    open func removeAll() {
+    func removeAll() {
         tree = QuadTree(rect: MKMapRectWorld)
     }
     
-    /**
-     The complete list of annotations associated.
-     
-     The objects in this array must adopt the MKAnnotation protocol. If no annotations are associated with the cluster manager, the value of this property is an empty array.
-     */
-    open var annotations: [MKAnnotation] {
+    var annotations: [MKAnnotation] {
         return tree.annotations(in: MKMapRectWorld)
     }
     
-    /**
-     Reload the annotations on the map view.
-     
-     - Parameters:
-        - mapView: The map view object to reload.
-     */
-    open func reload(_ mapView: MKMapView, visibleMapRect: MKMapRect) {
+    func reload(_ mapView: MKMapView, visibleMapRect: MKMapRect) {
         let operation = BlockOperation()
         operation.addExecutionBlock { [weak self, weak mapView] in
             guard let strongSelf = self, let mapView = mapView else { return }

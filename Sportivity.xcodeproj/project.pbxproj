@@ -68,6 +68,7 @@
 		4956A6AC1EED8B1000B9D1F3 /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */; };
 		4956A6AD1EED8B1000B9D1F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A91EED8B1000B9D1F3 /* Extensions.swift */; };
 		4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */; };
+		4956A6B01EED8BC300B9D1F3 /* QuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
 		4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560691EA7949A003454F5 /* ListingTableViewCell.swift */; };
 		4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */; };
@@ -186,6 +187,7 @@
 		4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterManager.swift; path = Clustering/ClusterManager.swift; sourceTree = "<group>"; };
 		4956A6A91EED8B1000B9D1F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Clustering/Extensions.swift; sourceTree = "<group>"; };
 		4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadTree.swift; path = Clustering/QuadTree.swift; sourceTree = "<group>"; };
+		4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadTreeNode.swift; path = Clustering/QuadTreeNode.swift; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
 		496560691EA7949A003454F5 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingTableViewCell.xib; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			children = (
 				4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */,
 				4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */,
+				4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */,
 				4956A6A71EED8B1000B9D1F3 /* Annotation.swift */,
 				4956A6A91EED8B1000B9D1F3 /* Extensions.swift */,
 			);
@@ -929,6 +932,7 @@
 				49D559401EA50E050000C712 /* R.generated.swift in Sources */,
 				492A99AF1ED1FFDA006A6721 /* Logger.swift in Sources */,
 				4980BD981ED624AA001BB924 /* EventProfileViewModel.swift in Sources */,
+				4956A6B01EED8BC300B9D1F3 /* QuadTreeNode.swift in Sources */,
 				49C0C3D31EA5255300F7B5F5 /* LoginChoiceViewController.swift in Sources */,
 				49722E611EE9F6F000DCE741 /* MapViewModel.swift in Sources */,
 				4902FF201ED3A8FF00A49925 /* API+RxResult.swift in Sources */,
