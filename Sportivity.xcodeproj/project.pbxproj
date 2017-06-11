@@ -64,6 +64,10 @@
 		494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0CB1EA816DF00583DBB /* CategorySelections.swift */; };
 		4956A6A31EED804600B9D1F3 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */; };
 		4956A6A51EED810200B9D1F3 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A41EED810200B9D1F3 /* MapAnnotationView.swift */; };
+		4956A6AB1EED8B1000B9D1F3 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A71EED8B1000B9D1F3 /* Annotation.swift */; };
+		4956A6AC1EED8B1000B9D1F3 /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */; };
+		4956A6AD1EED8B1000B9D1F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A91EED8B1000B9D1F3 /* Extensions.swift */; };
+		4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
 		4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560691EA7949A003454F5 /* ListingTableViewCell.swift */; };
 		4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */; };
@@ -178,6 +182,10 @@
 		494DF0CB1EA816DF00583DBB /* CategorySelections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelections.swift; path = Category/CategorySelections.swift; sourceTree = "<group>"; };
 		4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = Map/MapAnnotation.swift; sourceTree = "<group>"; };
 		4956A6A41EED810200B9D1F3 /* MapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotationView.swift; path = Map/MapAnnotationView.swift; sourceTree = "<group>"; };
+		4956A6A71EED8B1000B9D1F3 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Annotation.swift; path = Clustering/Annotation.swift; sourceTree = "<group>"; };
+		4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterManager.swift; path = Clustering/ClusterManager.swift; sourceTree = "<group>"; };
+		4956A6A91EED8B1000B9D1F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Clustering/Extensions.swift; sourceTree = "<group>"; };
+		4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadTree.swift; path = Clustering/QuadTree.swift; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
 		496560691EA7949A003454F5 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingTableViewCell.xib; sourceTree = "<group>"; };
@@ -457,6 +465,17 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		4956A6A61EED8AB400B9D1F3 /* Clustering */ = {
+			isa = PBXGroup;
+			children = (
+				4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */,
+				4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */,
+				4956A6A71EED8B1000B9D1F3 /* Annotation.swift */,
+				4956A6A91EED8B1000B9D1F3 /* Extensions.swift */,
+			);
+			name = Clustering;
+			sourceTree = "<group>";
+		};
 		496560681EA7949A003454F5 /* ListingCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +576,7 @@
 				49D559471EA510E40000C712 /* Networking */,
 				49D559451EA510E40000C712 /* Models */,
 				49D559461EA510E40000C712 /* Stories */,
+				4956A6A61EED8AB400B9D1F3 /* Clustering */,
 				49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */,
 				49D5593F1EA50E050000C712 /* R.generated.swift */,
 				49B89E541EA0D56A0004BCB3 /* Assets.xcassets */,
@@ -917,6 +937,7 @@
 				4945BE071ED878FC000B4C5F /* CategoriesSelectionView.swift in Sources */,
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
+				4956A6AD1EED8B1000B9D1F3 /* Extensions.swift in Sources */,
 				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
 				49722E5F1EE9EE4200DCE741 /* MapViewController.swift in Sources */,
 				4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */,
@@ -933,6 +954,7 @@
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,
 				49722E651EE9F7AE00DCE741 /* PlacesAPI+Requests.swift in Sources */,
 				4902FF1C1ED364F500A49925 /* APIError.swift in Sources */,
+				4956A6AC1EED8B1000B9D1F3 /* ClusterManager.swift in Sources */,
 				496560711EA79A16003454F5 /* SearchViewController.swift in Sources */,
 				4980BDA41ED76F3C001BB924 /* Loc.swift in Sources */,
 				492A99951ED1F916006A6721 /* EventAPI.swift in Sources */,
@@ -942,6 +964,7 @@
 				492A99B61ED20191006A6721 /* ResponseError.swift in Sources */,
 				494DF0C61EA8046100583DBB /* ActionButton.swift in Sources */,
 				4980BDA81ED78A45001BB924 /* UserViewModel.swift in Sources */,
+				4956A6AB1EED8B1000B9D1F3 /* Annotation.swift in Sources */,
 				4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */,
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */,
@@ -956,6 +979,7 @@
 				492A99911ED1EA65006A6721 /* UIView+IBInspectables.swift in Sources */,
 				492A99AB1ED1FEAA006A6721 /* User.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
+				4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */,
 				4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */,
 				492A99961ED1F916006A6721 /* EventAPI+Requests.swift in Sources */,
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,
