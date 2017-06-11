@@ -62,6 +62,8 @@
 		494DF0C81EA8047700583DBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C71EA8047700583DBB /* GradientView.swift */; };
 		494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */; };
 		494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF0CB1EA816DF00583DBB /* CategorySelections.swift */; };
+		4956A6A31EED804600B9D1F3 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */; };
+		4956A6A51EED810200B9D1F3 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A41EED810200B9D1F3 /* MapAnnotationView.swift */; };
 		496560671EA79486003454F5 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560661EA79486003454F5 /* AvatarImageView.swift */; };
 		4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560691EA7949A003454F5 /* ListingTableViewCell.swift */; };
 		4965606D1EA7949A003454F5 /* ListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */; };
@@ -174,6 +176,8 @@
 		494DF0C71EA8047700583DBB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Views/GradientView.swift; sourceTree = "<group>"; };
 		494DF0C91EA804C900583DBB /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorButton.swift; path = Views/ActivityIndicatorButton.swift; sourceTree = "<group>"; };
 		494DF0CB1EA816DF00583DBB /* CategorySelections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySelections.swift; path = Category/CategorySelections.swift; sourceTree = "<group>"; };
+		4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = Map/MapAnnotation.swift; sourceTree = "<group>"; };
+		4956A6A41EED810200B9D1F3 /* MapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotationView.swift; path = Map/MapAnnotationView.swift; sourceTree = "<group>"; };
 		496560661EA79486003454F5 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = Views/AvatarImageView.swift; sourceTree = "<group>"; };
 		496560691EA7949A003454F5 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		4965606A1EA7949A003454F5 /* ListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingTableViewCell.xib; sourceTree = "<group>"; };
@@ -478,6 +482,8 @@
 			children = (
 				49722E5E1EE9EE4200DCE741 /* MapViewController.swift */,
 				49722E601EE9F6F000DCE741 /* MapViewModel.swift */,
+				4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */,
+				4956A6A41EED810200B9D1F3 /* MapAnnotationView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -895,6 +901,7 @@
 				492A99B41ED20137006A6721 /* Errors.swift in Sources */,
 				494DF0BA1EA7F62900583DBB /* UserProfileViewController.swift in Sources */,
 				494DF0C81EA8047700583DBB /* GradientView.swift in Sources */,
+				4956A6A51EED810200B9D1F3 /* MapAnnotationView.swift in Sources */,
 				494DF0BC1EA7F93800583DBB /* UserAvatarImageView.swift in Sources */,
 				492A99A21ED1FB4A006A6721 /* Config.swift in Sources */,
 				49722E631EE9F74E00DCE741 /* PlaceAPI.swift in Sources */,
@@ -920,6 +927,7 @@
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
 				4945BE0B1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift in Sources */,
 				492A99A51ED1FC33006A6721 /* Bootstrap.swift in Sources */,
+				4956A6A31EED804600B9D1F3 /* MapAnnotation.swift in Sources */,
 				492A99A01ED1FA69006A6721 /* LoginChoiceViewModel.swift in Sources */,
 				494DF0CA1EA804C900583DBB /* ActivityIndicatorButton.swift in Sources */,
 				4916F3251EA686AC0053C3E2 /* MainTabBarViewController.swift in Sources */,

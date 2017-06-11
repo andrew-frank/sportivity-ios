@@ -12,7 +12,7 @@ import RxCocoa
 
 class MapViewModel {
     
-    let pins = Variable<[Place]>([ ])
+    let placeAnnotations = Variable<[MapAnnotation]>([ ])
     let disposeBag = DisposeBag()
     
     init() {
@@ -23,7 +23,10 @@ class MapViewModel {
         PlacesAPI
             .rx_fetchAll()
             .catchErrorJustReturn([])
-            .bind(to: pins)
+            .map({ (places) -> [MapAnnotation] in
+                return places.map { return MapAnnotation(place: $0) }
+            })
+            .bind(to: placeAnnotations)
             .addDisposableTo(disposeBag)
     }
 }
