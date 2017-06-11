@@ -48,25 +48,48 @@ private extension MapViewController {
             .asObservable()
             .delay(1, scheduler: MainScheduler.instance)
             .subscribeNext { [unowned self] (annotations) in
-                self.mapView.addAnnotations(annotations)
+                self.clusterManager.add(annotations)
+                //self.mapView.addAnnotations(annotations)
             }
             .addDisposableTo(disposeBag)
     }
 }
 
 extension MapViewController : MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var view = mapView.dequeueReusableAnnotationView(withIdentifier: C.annotationReuseId) as? MKPinAnnotationView
-        if view == nil {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.annotationReuseId)
-            if #available(iOS 9.0, *) {
-                view?.pinTintColor = R.color.sportivity.mellowYellow.color()
+        let color = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        if let annotation = annotation as? ClusterAnnotation {
+            let identifier = "Cluster"
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            if view == nil {
+                if let annotation = annotation.annotations.first as? Annotation, let type = annotation.type {
+                    view = OutlinedClusterAnnotationView(annotation: annotation, reuseIdentifier: identifier, type: type, outlineColor: .white)
+                } else {
+                    view = ClusterAnnotationView(annotation: annotation, reuseIdentifier: identifier, type: .color(color, radius: 25))
+                }
             } else {
-                view?.pinColor = .purple
+                view?.annotation = annotation
             }
+            return view
         } else {
-            view?.annotation = annotation
+            let identifier = "Pin"
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+            if view == nil {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                if #available(iOS 9.0, *) {
+                    view?.pinTintColor = color
+                } else {
+                    view?.pinColor = .green
+                }
+            } else {
+                view?.annotation = annotation
+            }
+            return view
         }
-        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        clusterManager.reload(mapView, visibleMapRect: mapView.visibleMapRect)
     }
 }

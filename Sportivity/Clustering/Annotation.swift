@@ -8,25 +8,25 @@
 
 import MapKit
 
-open class Annotation: NSObject, MKAnnotation {
-    open var coordinate = CLLocationCoordinate2D()
-    open var title: String?
-    open var subtitle: String?
-    open var type: ClusterAnnotationType?
+class Annotation: NSObject, MKAnnotation {
+    var coordinate = CLLocationCoordinate2D()
+    var title: String?
+    var subtitle: String?
+    var type: ClusterAnnotationType?
 }
 
-open class ClusterAnnotation: Annotation {
-    open var annotations = [MKAnnotation]()
+class ClusterAnnotation: Annotation {
+    var annotations = [MKAnnotation]()
 }
 
-public enum ClusterAnnotationType {
+enum ClusterAnnotationType {
     case color(UIColor, radius: CGFloat)
     case image(UIImage?)
 }
 
-open class ClusterAnnotationView: MKAnnotationView {
+class ClusterAnnotationView: MKAnnotationView {
     
-    open lazy var countLabel: UILabel = {
+    lazy var countLabel: UILabel = {
         let label = UILabel()
         label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         label.backgroundColor = .clear
@@ -40,13 +40,13 @@ open class ClusterAnnotationView: MKAnnotationView {
         return label
     }()
     
-    override open var annotation: MKAnnotation? {
+    override var annotation: MKAnnotation? {
         didSet {
             configure()
         }
     }
     
-    open let type: ClusterAnnotationType
+    let type: ClusterAnnotationType
     
     public init(annotation: MKAnnotation?, reuseIdentifier: String?, type: ClusterAnnotationType) {
         self.type = type
@@ -58,7 +58,7 @@ open class ClusterAnnotationView: MKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open func configure() {
+    func configure() {
         guard let annotation = annotation as? ClusterAnnotation else { return }
         
         switch type {
