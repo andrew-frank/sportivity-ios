@@ -56,8 +56,11 @@ class ClusterManager {
     }
     
     func reload(_ mapView: MKMapView, visibleMapRect: MKMapRect) {
+        let dateStart = Date()
+        
         let operation = BlockOperation()
         operation.addExecutionBlock { [weak self, weak mapView] in
+            
             guard let strongSelf = self, let mapView = mapView else { return }
             let (toAdd, toRemove) = strongSelf.clusteredAnnotations(mapView, visibleMapRect: visibleMapRect, operation: operation)
             if !operation.isCancelled {
@@ -65,6 +68,11 @@ class ClusterManager {
                     guard let mapView = mapView else { return }
                     mapView.removeAnnotations(toRemove)
                     mapView.addAnnotations(toAdd)
+                    
+                    let dateStop = Date()
+                    let timeInSeconds = dateStop.timeIntervalSince(dateStart)
+                    let zoomScale = ZoomScale(mapView.bounds.width) / visibleMapRect.size.width
+                    Logger.shared.log(.info, className: "ClusterManager", message: "[Algorithm] - Clustering took \(timeInSeconds) sec. for zoomScale = \(zoomScale)")
                 }
             }
         }
@@ -111,9 +119,8 @@ class ClusterManager {
                         latitude: CLLocationDegrees(totalLatitude) / CLLocationDegrees(count),
                         longitude: CLLocationDegrees(totalLongitude) / CLLocationDegrees(count)
                     )
-                    let cluster = ClusterAnnotation()
+                    let cluster = MapAnnotation(type: MapAnnotationType.cluster(annotations: annotations))
                     cluster.coordinate = coordinate
-                    cluster.annotations = annotations
                     clusteredAnnotations.append(cluster)
                 } else {
                     clusteredAnnotations += annotations

@@ -9,9 +9,10 @@
 import Foundation
 import MapKit
 
+
 enum MapAnnotationType {
     case pin
-    case cluster
+    case cluster(annotations: [MKAnnotation])
 }
 
 class MapAnnotation: NSObject, MKAnnotation {

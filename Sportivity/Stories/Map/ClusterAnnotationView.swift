@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+struct ClusterAnnotationViewConstants {
+    static let radius = 25.0
+    static let outlineColor = UIColor.white
+}
+
 class ClusterAnnotationView: MKAnnotationView {
     
     typealias C = ClusterAnnotationViewConstants
@@ -45,8 +50,11 @@ class ClusterAnnotationView: MKAnnotationView {
     }
     
     func configure() {
-        if let annotation = annotation as? ClusterAnnotation {
-            let count = annotation.annotations.count
+        guard let annotation = annotation as? MapAnnotation else { return }
+        
+        switch annotation.type {
+        case .cluster(let annotations):
+            let count = annotations.count
             backgroundColor	= color
             var diameter = C.radius * 2
             if count < 8 {
@@ -60,6 +68,8 @@ class ClusterAnnotationView: MKAnnotationView {
             
             layer.borderColor = C.outlineColor.cgColor
             layer.borderWidth = 2
+        default:
+            assert(false, "Wrong annotation type")
         }
     }
     
