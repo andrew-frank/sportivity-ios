@@ -12,7 +12,9 @@ import RxCocoa
 import MapKit
 
 private struct MapViewControllerConstants {
-    static let annotationReuseId = "annotation"
+    static let clusterAnnotationReuseId = "cluster"
+    static let pinAnnotationReuseId = "pin"
+    static let clusteringEnabled = true
 }
 
 private typealias C = MapViewControllerConstants
@@ -39,6 +41,16 @@ class MapViewController: UIViewController, ViewControllerProtocol, Configurable 
         mapView.setRegion(region, animated: false)
         bind()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if C.clusteringEnabled {
+            Observable<Void>.just().delay(0.5, scheduler: MainScheduler.instance).subscribeNext { [unowned self] in
+                self.clusterManager.reload(self.mapView, visibleMapRect: self.mapView.visibleMapRect)
+            }
+            .addDisposableTo(disposeBag)
+        }
+    }
 }
 
 private extension MapViewController {
@@ -48,8 +60,11 @@ private extension MapViewController {
             .asObservable()
             .delay(1, scheduler: MainScheduler.instance)
             .subscribeNext { [unowned self] (annotations) in
-                self.clusterManager.add(annotations)
-                //self.mapView.addAnnotations(annotations)
+                if C.clusteringEnabled {
+                    self.clusterManager.add(annotations)
+                } else {
+                    self.mapView.addAnnotations(annotations)
+                }
             }
             .addDisposableTo(disposeBag)
     }
@@ -58,29 +73,25 @@ private extension MapViewController {
 extension MapViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let color = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        let color = R.color.sportivity.sunsetOrange()
+        
         if let annotation = annotation as? ClusterAnnotation {
-            let identifier = "Cluster"
-            var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: C.clusterAnnotationReuseId)
             if view == nil {
-                if let annotation = annotation.annotations.first as? Annotation, let type = annotation.type {
-                    view = OutlinedClusterAnnotationView(annotation: annotation, reuseIdentifier: identifier, type: type, outlineColor: .white)
-                } else {
-                    view = ClusterAnnotationView(annotation: annotation, reuseIdentifier: identifier, type: .color(color, radius: 25))
-                }
+                view = ClusterAnnotationView(annotation: annotation, reuseIdentifier: C.clusterAnnotationReuseId, color: color)
             } else {
                 view?.annotation = annotation
             }
             return view
+            
         } else {
-            let identifier = "Pin"
-            var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: C.pinAnnotationReuseId) as? MKPinAnnotationView
             if view == nil {
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.pinAnnotationReuseId)
                 if #available(iOS 9.0, *) {
                     view?.pinTintColor = color
                 } else {
-                    view?.pinColor = .green
+                    view?.pinColor = .red
                 }
             } else {
                 view?.annotation = annotation
@@ -90,6 +101,8 @@ extension MapViewController : MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        clusterManager.reload(mapView, visibleMapRect: mapView.visibleMapRect)
+        if C.clusteringEnabled {
+            clusterManager.reload(mapView, visibleMapRect: mapView.visibleMapRect)
+        }
     }
 }
