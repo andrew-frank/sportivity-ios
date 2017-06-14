@@ -93,14 +93,13 @@
                     <connections>
                         <segue destination="OkB-iF-ITt" kind="relationship" relationship="viewControllers" id="Vuy-Li-6UN"/>
                         <segue destination="vaB-OM-HDP" kind="relationship" relationship="viewControllers" id="rKD-ha-Zvo"/>
-                        <segue destination="8Zn-4A-GIa" kind="relationship" relationship="viewControllers" id="oH9-vH-G9O"/>
                         <segue destination="eHq-J2-Ae2" kind="relationship" relationship="viewControllers" id="5Gx-dC-F0b"/>
                         <segue destination="vsd-0C-opm" kind="relationship" relationship="viewControllers" id="oEN-Ac-jO5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LnY-IU-GaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-935" y="1404"/>
+            <point key="canvasLocation" x="-892" y="1264"/>
         </scene>
         <!--Games-->
         <scene sceneID="SpG-EN-ned">
@@ -282,30 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSe-LF-TD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="1279"/>
-        </scene>
-        <!--Add-->
-        <scene sceneID="YtJ-2Y-3sq">
-            <objects>
-                <viewController id="8Zn-4A-GIa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1pt-QO-krh"/>
-                        <viewControllerLayoutGuide type="bottom" id="On5-WW-5uL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r3h-bX-BED">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Add" image="create" id="1YI-AQ-3in">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="150"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LGS-3C-1lT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="169" y="854"/>
+            <point key="canvasLocation" x="1108" y="1138"/>
         </scene>
         <!--Search-->
         <scene sceneID="SD3-uk-DNE">
@@ -325,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMs-Py-5Cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="1279"/>
+            <point key="canvasLocation" x="169" y="1138"/>
         </scene>
         <!--Me-->
         <scene sceneID="m7O-QC-Ehp">
@@ -344,7 +320,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlS-cH-wlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="1944"/>
+            <point key="canvasLocation" x="169" y="1803"/>
         </scene>
         <!--user-->
         <scene sceneID="13l-8C-5uQ">
@@ -354,11 +330,10 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWH-Zy-8QV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="1943"/>
+            <point key="canvasLocation" x="1108" y="1802"/>
         </scene>
     </scenes>
     <resources>
-        <image name="create" width="23" height="23"/>
         <image name="games" width="21" height="21"/>
         <image name="mapCompass" width="23" height="23"/>
         <image name="mapCompassSelected" width="23" height="23"/>

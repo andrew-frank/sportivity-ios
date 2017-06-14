@@ -63,10 +63,5 @@ extension MainTabBarViewController : UITabBarControllerDelegate {
         }
         
         self.didSelect.asPublishSubject()!.onNext(viewController)
-        
-        // TEMP!!!
-        if viewController === self.viewControllers![2] {
-            UserManager.shared.logout()
-        }
     }
 }
