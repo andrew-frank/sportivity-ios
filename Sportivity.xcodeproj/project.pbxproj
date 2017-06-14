@@ -76,6 +76,7 @@
 		496560711EA79A16003454F5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560701EA79A16003454F5 /* SearchViewController.swift */; };
 		496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496560721EA79A52003454F5 /* SearchViewModel.swift */; };
 		497051A51EF16F94001664FA /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497051A41EF16F94001664FA /* ClusterAnnotationView.swift */; };
+		497051A71EF1909D001664FA /* PinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497051A61EF1909D001664FA /* PinViewModel.swift */; };
 		49722E5F1EE9EE4200DCE741 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E5E1EE9EE4200DCE741 /* MapViewController.swift */; };
 		49722E611EE9F6F000DCE741 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E601EE9F6F000DCE741 /* MapViewModel.swift */; };
 		49722E631EE9F74E00DCE741 /* PlaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49722E621EE9F74E00DCE741 /* PlaceAPI.swift */; };
@@ -196,6 +197,7 @@
 		496560701EA79A16003454F5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		496560721EA79A52003454F5 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = Search/SearchViewModel.swift; sourceTree = "<group>"; };
 		497051A41EF16F94001664FA /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterAnnotationView.swift; path = Map/ClusterAnnotationView.swift; sourceTree = "<group>"; };
+		497051A61EF1909D001664FA /* PinViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinViewModel.swift; path = Map/PinViewModel.swift; sourceTree = "<group>"; };
 		49722E5E1EE9EE4200DCE741 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Map/MapViewController.swift; sourceTree = "<group>"; };
 		49722E601EE9F6F000DCE741 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = Map/MapViewModel.swift; sourceTree = "<group>"; };
 		49722E621EE9F74E00DCE741 /* PlaceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAPI.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */,
 				4956A6A41EED810200B9D1F3 /* PlaceAnnotationView.swift */,
 				497051A41EF16F94001664FA /* ClusterAnnotationView.swift */,
+				497051A61EF1909D001664FA /* PinViewModel.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 				492A99A81ED1FDF1006A6721 /* NetworkHelpers.swift in Sources */,
 				4980BD9E1ED6627F001BB924 /* EventAttendee.swift in Sources */,
 				4916F35D1EA6BC680053C3E2 /* ViewControllerProtocol.swift in Sources */,
+				497051A71EF1909D001664FA /* PinViewModel.swift in Sources */,
 				494DF0C01EA7FCC400583DBB /* UserProfileViewModel.swift in Sources */,
 				49CD2A9E1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift in Sources */,
 				4916F3231EA6827B0053C3E2 /* RxTools.swift in Sources */,

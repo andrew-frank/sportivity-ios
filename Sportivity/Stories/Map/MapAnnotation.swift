@@ -6,12 +6,11 @@
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import MapKit
 
-
 enum MapAnnotationType {
-    case pin
+    case pin(image: UIImage)
     case cluster(annotations: [MKAnnotation])
 }
 
@@ -22,14 +21,7 @@ class MapAnnotation: NSObject, MKAnnotation {
     // Title and subtitle for use by selection UI.
     var title: String?
     var subtitle: String?
-    var type = MapAnnotationType.pin
-    
-    init(place: Place) {
-        if let lat = place.loc.value?.lat, let lon = place.loc.value?.lon {
-            coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-        }
-        title = place.name.value
-    }
+    var type: MapAnnotationType
     
     init(type: MapAnnotationType) {
         self.type = type

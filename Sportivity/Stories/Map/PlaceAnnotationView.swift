@@ -9,17 +9,56 @@
 import UIKit
 import MapKit
 
-class PlaceAnnotationView: MKPinAnnotationView {
+struct PlaceAnnotationViewConstants {
+    static let radius = 15.0
+}
 
+private typealias C = PlaceAnnotationViewConstants
+
+class PlaceAnnotationView: MKAnnotationView {
+
+    fileprivate let imageView = UIImageView()
+    
     override open var annotation: MKAnnotation? {
         didSet {
             configure()
         }
     }
+    
+    public init(annotation: MKAnnotation?, reuseIdentifier: String?, color: UIColor = R.color.sportivity.sunsetOrange()) {
+        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        imageView.cornerRadius = CGFloat(C.radius)
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        
+        layer.cornerRadius = CGFloat(C.radius)
+        layer.borderColor = color.cgColor
+        layer.borderWidth = 4
+        
+        backgroundColor = color
+        let imageFrame = CGRect(origin: frame.origin, size: CGSize(width: 2*C.radius - 4, height: 2*C.radius - 4))
+        imageView.frame = imageFrame
+        imageView.center = self.center
+        self.addSubview(imageView)
+        
+        configure()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     private func configure() {
         guard let annotation = annotation as? MapAnnotation else { return }
         
-        
+        switch annotation.type {
+        case .pin(let image):
+            self.imageView.image = image
+        default:
+            assert(false, "Wrong annotation type")
+        }
     }
 }

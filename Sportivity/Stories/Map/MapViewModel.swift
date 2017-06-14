@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import MapKit
 
 class MapViewModel {
     
@@ -24,7 +25,20 @@ class MapViewModel {
             .rx_fetchAll()
             .catchErrorJustReturn([])
             .map({ (places) -> [MapAnnotation] in
-                return places.map { return MapAnnotation(place: $0) }
+                
+                return places.map { place in
+                    var image = R.image.basketballIcon()
+                    if let cat = place.sportCategories.value.first {
+                        image = cat.iconImage
+                    }
+                    let type = MapAnnotationType.pin(image: image!)
+                    let annotation = MapAnnotation(type: type)
+                    annotation.title = place.name.value
+                    if let lat = place.loc.value?.lat, let lon = place.loc.value?.lon {
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    }
+                    return annotation
+                }
             })
             .bind(to: placeAnnotations)
             .addDisposableTo(disposeBag)

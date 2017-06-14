@@ -13,7 +13,7 @@ import MapKit
 
 private struct MapViewControllerConstants {
     static let clusterAnnotationReuseId = "cluster"
-    static let pinAnnotationReuseId = "pin"
+    static let placeAnnotationReuseId = "place"
     static let clusteringEnabled = true
 }
 
@@ -82,11 +82,16 @@ extension MapViewController : MKMapViewDelegate {
         
         switch annotation.type {
         case .pin:
-            view = mapView.dequeueReusableAnnotationView(withIdentifier: C.pinAnnotationReuseId) as? MKPinAnnotationView
+//            view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? PlaceAnnotationView
+            //or
+            view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? MKPinAnnotationView
             if let view = view {
                 view.annotation = annotation
             } else {
-                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.pinAnnotationReuseId)
+//                let placeView = PlaceAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
+//                view = placeView
+                //or
+                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
                 if #available(iOS 9.0, *) {
                     pinView.pinTintColor = color
                 } else {
@@ -94,7 +99,7 @@ extension MapViewController : MKMapViewDelegate {
                 }
                 view = pinView
             }
-        case .cluster:
+        case .cluster(_):
             view = mapView.dequeueReusableAnnotationView(withIdentifier: C.clusterAnnotationReuseId)
             if let view = view {
                 view.annotation = annotation
