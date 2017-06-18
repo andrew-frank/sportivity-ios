@@ -9,7 +9,7 @@
 import Foundation
 
 struct LoggerConstants {
-    static let defualtMinLevel = LogLevel.info
+    static let defualtMinLevel = LogLevel.verbose
 }
 
 public enum LogLevel: Int, CustomStringConvertible {

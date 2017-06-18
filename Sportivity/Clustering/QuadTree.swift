@@ -2,7 +2,7 @@
 //  QuadTree.swift
 //  Sportivity
 //
-//  Created by Andrzej Frankowski on 11/06/2017.
+//  Created by Andrzej Frankowski on 18/05/2017.
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 

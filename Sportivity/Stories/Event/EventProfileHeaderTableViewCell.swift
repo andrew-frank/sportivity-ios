@@ -36,6 +36,10 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
         reuseBag = DisposeBag()
     }
     
@@ -44,7 +48,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel
             .photoUrl
             .driveNext { [unowned self] (url) in
-                self.photoImageView.kf.setImage(with: url)
+                    self.photoImageView.kf.setImage(with: url)
             }
             .addDisposableTo(reuseBag)
         viewModel.hostText.drive(hostLabel.rx.text).addDisposableTo(reuseBag)

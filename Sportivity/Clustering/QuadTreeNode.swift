@@ -2,14 +2,14 @@
 //  QuadTreeNode.swift
 //  Sportivity
 //
-//  Created by Andrzej Frankowski on 11/06/2017.
+//  Created by Andrzej Frankowski on 18/05/2017.
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
 import MapKit
 
 struct QuadTreeNodeConstants {
-    static let maxPointCapacity = 8
+    static let bucketCapacity = 8
 }
 
 private typealias C = QuadTreeNodeConstants
@@ -78,7 +78,7 @@ class QuadTreeNode {
         switch type {
         case .leaf:
             annotations.append(annotation)
-            if annotations.count == C.maxPointCapacity {
+            if annotations.count == C.bucketCapacity {
                 subdivide()
             }
         case .internal(let children):

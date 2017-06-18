@@ -33,18 +33,18 @@ class EventProfileHeaderViewModel {
         self.id = event.id
         self.userManager = userManager
         
-        self.name = event.name.asDriver()
-//        let placePhoto = event.place.asDriver().flatMap { (place) -> Driver<URL?> in
-//            guard let place = place else {
-//                return Driver<URL?>.just(nil)
-//            }
-//            return place.photoURL.asDriver()
-//        }
-//        let eventPhoto = event.photoUrl.asDriver()
-//        photoUrl = Driver.combineLatest(eventPhoto, placePhoto, resultSelector: { (eventPhoto, placePhoto) in
-//            return eventPhoto ?? placePhoto
-//        })
-        photoUrl = event.place.asDriver().map { $0?.photoURL.value }
+        self.name = self.event.name.asDriver()
+        let placePhoto = event.place.asDriver().flatMap { (place) -> Driver<URL?> in
+            guard let place = place else {
+                return Driver<URL?>.just(nil)
+            }
+            return place.photoURL.asDriver()
+        }
+        let eventPhoto = self.event.photoUrl.asDriver()
+        photoUrl = Driver.combineLatest(eventPhoto, placePhoto, resultSelector: { (eventPhoto, placePhoto) in
+            return eventPhoto ?? placePhoto
+        })
+        
         let hostText: Observable<String> = event.host.asObservable()
             .flatMap({ (user) -> Observable<String> in
                 guard let user = user else { return Observable.just("") }

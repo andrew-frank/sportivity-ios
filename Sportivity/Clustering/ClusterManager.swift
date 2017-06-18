@@ -2,7 +2,7 @@
 //  ClusterManager.swift
 //  Sportivity
 //
-//  Created by Andrzej Frankowski on 11/06/2017.
+//  Created by Andrzej Frankowski on 18/05/2017.
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
@@ -10,15 +10,12 @@ import CoreLocation
 import MapKit
 
 class ClusterManager {
-    
+    let queue: OperationQueue
+
     var tree = QuadTree(rect: MKMapRectWorld)
-    
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        queue.qualityOfService = .userInitiated
-        return queue
-    }()
+    var annotations: [MKAnnotation] {
+        return tree.annotations(in: MKMapRectWorld)
+    }
     
     var zoomLevel: Int = 20 {
         didSet {
@@ -26,7 +23,27 @@ class ClusterManager {
         }
     }
     
-    public init() {}
+    public init() {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .userInitiated
+        self.queue = queue
+    }
+    
+    func removeAll() {
+        tree = QuadTree(rect: MKMapRectWorld)
+    }
+    
+    func remove(_ annotations: [MKAnnotation]) {
+        for annotation in annotations {
+            remove(annotation)
+        }
+    }
+    
+    func remove(_ annotation: MKAnnotation) {
+        tree.remove(annotation)
+    }
+
     func add(_ annotation: MKAnnotation) {
         tree.add(annotation)
     }
@@ -37,32 +54,19 @@ class ClusterManager {
         }
     }
     
-    func remove(_ annotation: MKAnnotation) {
-        tree.remove(annotation)
-    }
-    
-    func remove(_ annotations: [MKAnnotation]) {
-        for annotation in annotations {
-            remove(annotation)
-        }
-    }
-    
-    func removeAll() {
-        tree = QuadTree(rect: MKMapRectWorld)
-    }
-    
-    var annotations: [MKAnnotation] {
-        return tree.annotations(in: MKMapRectWorld)
-    }
-    
-    func reload(_ mapView: MKMapView, visibleMapRect: MKMapRect) {
+    func mapViewChanged(_ mapView: MKMapView, visibleMapRect: MKMapRect) {
         let dateStart = Date()
         
         let operation = BlockOperation()
         operation.addExecutionBlock { [weak self, weak mapView] in
+            guard
+                let `self` = self,
+                let mapView = mapView
+                else {
+                    return
+            }
             
-            guard let strongSelf = self, let mapView = mapView else { return }
-            let (toAdd, toRemove) = strongSelf.clusteredAnnotations(mapView, visibleMapRect: visibleMapRect, operation: operation)
+            let (toAdd, toRemove) = self.clusteredAnnotations(mapView, visibleMapRect: visibleMapRect, operation: operation)
             if !operation.isCancelled {
                 DispatchQueue.main.async { [weak mapView] in
                     guard let mapView = mapView else { return }
@@ -79,7 +83,9 @@ class ClusterManager {
         queue.cancelAllOperations()
         queue.addOperation(operation)
     }
-    
+}
+
+private extension ClusterManager {
     func clusteredAnnotations(_ mapView: MKMapView, visibleMapRect: MKMapRect, operation: Operation) -> (toAdd: [MKAnnotation], toRemove: [MKAnnotation]) {
         let zoomScale = ZoomScale(mapView.bounds.width) / visibleMapRect.size.width
         
@@ -146,5 +152,4 @@ class ClusterManager {
         
         return (toAdd: toAdd.allObjects as? [MKAnnotation] ?? [], toRemove: toRemove.allObjects as? [MKAnnotation] ?? [])
     }
-    
 }

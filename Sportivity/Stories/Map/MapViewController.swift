@@ -15,6 +15,7 @@ private struct MapViewControllerConstants {
     static let clusterAnnotationReuseId = "cluster"
     static let placeAnnotationReuseId = "place"
     static let clusteringEnabled = true
+    static let useApplePins = true
 }
 
 private typealias C = MapViewControllerConstants
@@ -67,7 +68,7 @@ extension MapViewController : MKMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         if C.clusteringEnabled {
-            self.clusterManager.reload(mapView, visibleMapRect: mapView.visibleMapRect)
+            self.clusterManager.mapViewChanged(mapView, visibleMapRect: mapView.visibleMapRect)
         }
     }
     
@@ -82,22 +83,26 @@ extension MapViewController : MKMapViewDelegate {
         
         switch annotation.type {
         case .pin:
-//            view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? PlaceAnnotationView
-            //or
-            view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? MKPinAnnotationView
+            if C.useApplePins {
+                view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? MKPinAnnotationView
+            } else {
+                view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? PlaceAnnotationView
+            }
             if let view = view {
                 view.annotation = annotation
             } else {
-//                let placeView = PlaceAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
-//                view = placeView
-                //or
-                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
-                if #available(iOS 9.0, *) {
-                    pinView.pinTintColor = color
+                if C.useApplePins {
+                    let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
+                    if #available(iOS 9.0, *) {
+                        pinView.pinTintColor = color
+                    } else {
+                        pinView.pinColor = .red
+                    }
+                    view = pinView
                 } else {
-                    pinView.pinColor = .red
+                    let placeView = PlaceAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
+                    view = placeView
                 }
-                view = pinView
             }
         case .cluster(_):
             view = mapView.dequeueReusableAnnotationView(withIdentifier: C.clusterAnnotationReuseId)
@@ -113,7 +118,7 @@ extension MapViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if C.clusteringEnabled {
-            clusterManager.reload(mapView, visibleMapRect: mapView.visibleMapRect)
+            clusterManager.mapViewChanged(mapView, visibleMapRect: mapView.visibleMapRect)
         }
     }
 }
