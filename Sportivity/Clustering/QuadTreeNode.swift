@@ -16,54 +16,9 @@ private typealias C = QuadTreeNodeConstants
 
 class QuadTreeNode {
     
-    enum NodeType {
-        case leaf
-        case `internal`(children: Children)
-    }
-    
-    // TODO
-    struct Children: Sequence {
-        let northWest: QuadTreeNode
-        let northEast: QuadTreeNode
-        let southWest: QuadTreeNode
-        let southEast: QuadTreeNode
-        
-        init(parentNode: QuadTreeNode) {
-            let mapRect = parentNode.rect
-            northWest = QuadTreeNode(rect: MKMapRect(minX: mapRect.minX, minY: mapRect.minY, maxX: mapRect.midX, maxY: mapRect.midY))
-            northEast = QuadTreeNode(rect: MKMapRect(minX: mapRect.midX, minY: mapRect.minY, maxX: mapRect.maxX, maxY: mapRect.midY))
-            southWest = QuadTreeNode(rect: MKMapRect(minX: mapRect.minX, minY: mapRect.midY, maxX: mapRect.midX, maxY: mapRect.maxY))
-            southEast = QuadTreeNode(rect: MKMapRect(minX: mapRect.midX, minY: mapRect.midY, maxX: mapRect.maxX, maxY: mapRect.maxY))
-        }
-        
-        struct ChildrenIterator: IteratorProtocol {
-            private var index = 0
-            private let children: Children
-            
-            init(children: Children) {
-                self.children = children
-            }
-            
-            mutating func next() -> QuadTreeNode? {
-                defer { index += 1 }
-                switch index {
-                case 0: return children.northWest
-                case 1: return children.northEast
-                case 2: return children.southWest
-                case 3: return children.southEast
-                default: return nil
-                }
-            }
-        }
-        
-        public func makeIterator() -> ChildrenIterator {
-            return ChildrenIterator(children: self)
-        }
-    }
-    
     var annotations = [MKAnnotation]()
     let rect: MKMapRect
-    var type: NodeType = .leaf
+    var type: QuadTreeNodeType = .leaf
     
     init(rect: MKMapRect) {
         self.rect = rect
@@ -81,7 +36,7 @@ class QuadTreeNode {
             if annotations.count == C.bucketCapacity {
                 subdivide()
             }
-        case .internal(let children):
+        case .cluster(let children):
             for child in children where child.add(annotation) {
                 return true
             }
@@ -98,7 +53,7 @@ class QuadTreeNode {
         _ = annotations.map { $0.coordinate }.index(of: annotation.coordinate).map { annotations.remove(at: $0) }
         switch type {
         case .leaf: break
-        case .internal(let children):
+        case .cluster(let children):
             for child in children where child.remove(annotation) {
                 return true
             }
@@ -118,7 +73,7 @@ class QuadTreeNode {
         
         switch type {
         case .leaf: break
-        case .internal(let children):
+        case .cluster(let children):
             for childNode in children {
                 result.append(contentsOf: childNode.annotations(in: rect))
             }
@@ -133,9 +88,63 @@ private extension QuadTreeNode {
     func subdivide() {
         switch type {
         case .leaf:
-            type = .internal(children: Children(parentNode: self))
-        case .internal:
+            type = .cluster(children: QuadTreeNodeChildren(parentNode: self))
+        case .cluster:
             fatalError("This node is already divided")
         }
     }
+}
+
+
+struct QuadTreeNodeChildren: Sequence {
+    let nw: QuadTreeNode
+    let ne: QuadTreeNode
+    let sw: QuadTreeNode
+    let se: QuadTreeNode
+    
+    init(parentNode: QuadTreeNode) {
+        let mapRect = parentNode.rect
+        nw = QuadTreeNode(rect: MKMapRect(minX: mapRect.minX, minY: mapRect.minY, maxX: mapRect.midX, maxY: mapRect.midY))
+        ne = QuadTreeNode(rect: MKMapRect(minX: mapRect.midX, minY: mapRect.minY, maxX: mapRect.maxX, maxY: mapRect.midY))
+        sw = QuadTreeNode(rect: MKMapRect(minX: mapRect.minX, minY: mapRect.midY, maxX: mapRect.midX, maxY: mapRect.maxY))
+        se = QuadTreeNode(rect: MKMapRect(minX: mapRect.midX, minY: mapRect.midY, maxX: mapRect.maxX, maxY: mapRect.maxY))
+    }
+    
+    public func makeIterator() -> QuadTreeNodeChildrenIterator {
+        return QuadTreeNodeChildrenIterator(children: self)
+    }
+}
+
+struct QuadTreeNodeChildrenIterator: IteratorProtocol {
+    private var index = 0
+    private let children: QuadTreeNodeChildren
+    
+    init(children: QuadTreeNodeChildren) {
+        self.children = children
+    }
+    
+    mutating func next() -> QuadTreeNode? {
+        switch index {
+        case 0:
+            index += 1
+            return children.nw
+        case 1:
+            index += 1
+            return children.ne
+        case 2:
+            index += 1
+            return children.sw
+        case 3:
+            index += 1
+            return children.se
+        default:
+            index += 1
+            return nil
+        }
+    }
+}
+
+enum QuadTreeNodeType {
+    case leaf
+    case cluster(children: QuadTreeNodeChildren)
 }

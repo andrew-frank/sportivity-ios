@@ -65,7 +65,7 @@
 		4956A6A31EED804600B9D1F3 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */; };
 		4956A6A51EED810200B9D1F3 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A41EED810200B9D1F3 /* PlaceAnnotationView.swift */; };
 		4956A6AC1EED8B1000B9D1F3 /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */; };
-		4956A6AD1EED8B1000B9D1F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A91EED8B1000B9D1F3 /* Extensions.swift */; };
+		4956A6AD1EED8B1000B9D1F3 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6A91EED8B1000B9D1F3 /* Tools.swift */; };
 		4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */; };
 		4956A6B01EED8BC300B9D1F3 /* QuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */; };
 		4956A6B21EED942B00B9D1F3 /* UIImageHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956A6B11EED942B00B9D1F3 /* UIImageHelpers.swift */; };
@@ -187,7 +187,7 @@
 		4956A6A21EED804600B9D1F3 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = Map/MapAnnotation.swift; sourceTree = "<group>"; };
 		4956A6A41EED810200B9D1F3 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceAnnotationView.swift; path = Map/PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterManager.swift; path = Clustering/ClusterManager.swift; sourceTree = "<group>"; };
-		4956A6A91EED8B1000B9D1F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Clustering/Extensions.swift; sourceTree = "<group>"; };
+		4956A6A91EED8B1000B9D1F3 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tools.swift; path = Clustering/Tools.swift; sourceTree = "<group>"; };
 		4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadTree.swift; path = Clustering/QuadTree.swift; sourceTree = "<group>"; };
 		4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadTreeNode.swift; path = Clustering/QuadTreeNode.swift; sourceTree = "<group>"; };
 		4956A6B11EED942B00B9D1F3 /* UIImageHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageHelpers.swift; path = UITools/UIImageHelpers.swift; sourceTree = "<group>"; };
@@ -481,7 +481,7 @@
 				4956A6A81EED8B1000B9D1F3 /* ClusterManager.swift */,
 				4956A6AA1EED8B1000B9D1F3 /* QuadTree.swift */,
 				4956A6AF1EED8BC300B9D1F3 /* QuadTreeNode.swift */,
-				4956A6A91EED8B1000B9D1F3 /* Extensions.swift */,
+				4956A6A91EED8B1000B9D1F3 /* Tools.swift */,
 			);
 			name = Clustering;
 			sourceTree = "<group>";
@@ -952,7 +952,7 @@
 				4945BE071ED878FC000B4C5F /* CategoriesSelectionView.swift in Sources */,
 				4965606C1EA7949A003454F5 /* ListingTableViewCell.swift in Sources */,
 				4916F34C1EA6B6B50053C3E2 /* EventsViewController.swift in Sources */,
-				4956A6AD1EED8B1000B9D1F3 /* Extensions.swift in Sources */,
+				4956A6AD1EED8B1000B9D1F3 /* Tools.swift in Sources */,
 				49D2332D1ED49D1D00FA1B22 /* UserManager.swift in Sources */,
 				49722E5F1EE9EE4200DCE741 /* MapViewController.swift in Sources */,
 				4980BD961ED5E598001BB924 /* EventsParameters.swift in Sources */,

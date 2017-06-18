@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  Tools.swift
 //  Sportivity
 //
 //  Created by Andrzej Frankowski on 20/05/2017.
