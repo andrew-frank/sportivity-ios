@@ -16,4 +16,11 @@ extension PlacesAPI {
             .validatedRequest()
             .rx_responseModelsArray(Place.self)
     }
+    
+    static func rx_fetchPlace(id: String) -> Observable<Place> {
+        return PlacesAPI
+            .fetchPlace(id: id)
+            .validatedRequest()
+            .rx_responseModel(Place.self)
+    }
 }

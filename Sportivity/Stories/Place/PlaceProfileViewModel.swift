@@ -24,16 +24,16 @@ class PlaceProfileViewModel {
     
     func refresh() {
         fetchPlace()
-            .subscribeNext { [unowned self] _ in
-                //self.configure(with place)
+            .subscribeNext { [unowned self] place in
+                self.configure(with: place)
             }
             .addDisposableTo(disposeBag)
     }
 }
 
 private extension PlaceProfileViewModel {
-    func fetchPlace() -> Observable<Void> {
-        return Observable<Void>.empty()
+    func fetchPlace() -> Observable<Place> {
+        return PlacesAPI.rx_fetchPlace(id: id)
     }
     
     func configure(with place: Place) {
