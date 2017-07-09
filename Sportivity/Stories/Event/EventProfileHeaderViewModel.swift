@@ -28,6 +28,10 @@ class EventProfileHeaderViewModel {
     
     let toggleAttend = PublishSubject<Void>()
     
+    var placeId: String? {
+        return event.place.value?.id
+    }
+    
     init(event: Event, userManager: UserManagerProtocol = UserManager()) {
         self.event = event
         self.id = event.id

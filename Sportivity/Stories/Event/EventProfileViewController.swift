@@ -61,18 +61,18 @@ class EventProfileViewController: UIViewController, ViewControllerProtocol, Conf
             .addDisposableTo(disposeBag)
         
         tableView
-            .rx.modelSelected(UserViewModel.self)
-            .map { (user) -> Route in
-                return Route(to: .user, type: nil, data: user)
-            }
-            .bind(to: onRouteTo.asPublishSubject()!)
-            .addDisposableTo(disposeBag)
-        
-        tableView
             .rx.itemSelected
             .asObservable()
             .subscribeNext { [unowned self] (indexPath) in
                 self.tableView.deselectRow(at: indexPath, animated: true)
+                let item = self.viewModel.cellsData.value[indexPath.item]
+                if let userVm = item as? UserViewModel {
+                    let route = Route(to: .user, type: nil, data: userVm)
+                    self.onRouteTo.asPublishSubject()!.onNext(route)
+                } else if let vm = item as? EventProfileHeaderViewModel, let id = vm.placeId {
+                    let route = Route(to: .place, type: nil, data: id)
+                    self.onRouteTo.asPublishSubject()!.onNext(route)
+                }
             }
             .addDisposableTo(disposeBag)
     }
