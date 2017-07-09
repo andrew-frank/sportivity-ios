@@ -20,7 +20,7 @@ enum ViewTag {
 //
     case user
     case editUser
-//    case place
+    case place
     case event
 }
 
@@ -47,7 +47,7 @@ struct Route : CustomStringConvertible {
         switch viewTag {
         case .loginChoice, .mainTab:
             return .windowRootSwap
-        case .user, .event, .register:
+        case .user, .event, .register, .place:
             return .push
         case .editUser:
             return .modal
@@ -155,6 +155,9 @@ class Router {
             vc.configure(with: viewModel)
             currentNavigationController?.pushViewController(vc, animated: true)
             destinationVC = vc
+        case .place:
+            // TODO: place route
+            destinationVC = UIViewController()
             
         // MAIN TAB SWITCHES
         case .events:

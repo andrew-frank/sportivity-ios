@@ -8,7 +8,13 @@
 
 import UIKit
 import MapKit
+import RxSwift
 
 class PlacePinAnnotationView: MKPinAnnotationView {
+    var reuseBag = DisposeBag()
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reuseBag = DisposeBag()
+    }
 }

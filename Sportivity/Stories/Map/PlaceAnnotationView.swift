@@ -55,8 +55,8 @@ class PlaceAnnotationView: MKAnnotationView {
         guard let annotation = annotation as? MapAnnotation else { return }
         
         switch annotation.type {
-        case .pin(let category, let placePhotoUrl):
-            self.imageView.image = image
+        case .place(_, let category, _):
+            self.imageView.image = category?.iconImage
         default:
             assert(false, "Wrong annotation type")
         }

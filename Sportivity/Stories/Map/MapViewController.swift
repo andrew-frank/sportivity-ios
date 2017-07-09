@@ -66,9 +66,11 @@ private extension MapViewController {
     }
     
     func configureCalloutView(annotationView: MKAnnotationView) {
-        guard let annotation = annotationView.annotation as? MapAnnotation else {
-            assert(false)
-            return
+        guard
+            let annotationView = annotationView as? PlacePinAnnotationView,
+            let annotation = annotationView.annotation as? MapAnnotation else {
+                assert(false, "Wrong annotation type")
+                return
         }
         
         let view = UIView()
@@ -79,7 +81,7 @@ private extension MapViewController {
         let frame = CGRect(x: 0, y: 0, width: C.calloutImageWidth, height: C.calloutImageHeight)
         let imageView = UIImageView(frame: frame)
         switch annotation.type {
-        case .pin(let category, let photoUrl):
+        case .place(let id, let category, let photoUrl):
             if let url = photoUrl {
                 imageView.kf.setImage(with: url)
             } else if let category = category {
@@ -90,9 +92,18 @@ private extension MapViewController {
                 imageView.contentMode = .scaleAspectFill
                 imageView.image = nil
             }
+            
+            let tapGesture = UITapGestureRecognizer()
+            tapGesture
+                .rx.event
+                .map({ (recognizer) -> Route in
+                    return Route(to: .place, type: nil, data: id)
+                })
+                .bind(to: onRouteTo.asPublishSubject()!)
+                .addDisposableTo(annotationView.reuseBag)
+            view.addGestureRecognizer(tapGesture)
         default:
             assert(false, "Wrong annotation type")
-
         }
         view.addSubview(imageView)
         
@@ -118,7 +129,7 @@ extension MapViewController : MKMapViewDelegate {
         }
         
         switch annotation.type {
-        case .pin:
+        case .place:
             if C.useApplePins {
                 view = mapView.dequeueReusableAnnotationView(withIdentifier: C.placeAnnotationReuseId) as? MKPinAnnotationView
             } else {
@@ -129,7 +140,7 @@ extension MapViewController : MKMapViewDelegate {
                 view.annotation = annotation
             } else {
                 if C.useApplePins {
-                    let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
+                    let pinView = PlacePinAnnotationView(annotation: annotation, reuseIdentifier: C.placeAnnotationReuseId)
                     if #available(iOS 9.0, *) {
                         pinView.pinTintColor = color
                     } else {

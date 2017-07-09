@@ -6,11 +6,11 @@
 //  Copyright © 2017 Sportivity. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import MapKit
 
 enum MapAnnotationType {
-    case pin(category: Category?, photoUrl: URL?)
+    case place(id: String, category: Category?, photoUrl: URL?)
     case cluster(annotations: [MKAnnotation])
 }
 
