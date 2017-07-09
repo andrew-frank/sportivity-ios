@@ -42,7 +42,11 @@ class UserProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel
             .photoURL
             .driveNext { [unowned self] (url) in
-                self.avatarImageVIew.kf.setImage(with: url)
+                if let url = url {
+                    self.avatarImageVIew.kf.setImage(with: url)
+                } else {
+                    self.avatarImageVIew.image = R.image.userPlaceholder()
+                }
             }
             .addDisposableTo(reuseBag)
         
