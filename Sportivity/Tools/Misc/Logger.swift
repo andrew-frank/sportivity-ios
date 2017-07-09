@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct LoggerConstants {
+    static let defualtMinLevel = LogLevel.verbose
+}
+
 public enum LogLevel: Int, CustomStringConvertible {
     case verbose = 0
     case debug = 1
@@ -41,10 +45,15 @@ protocol LoggerType {
 class Logger {
     public static var shared = Logger()
     
+    var minLevel = LoggerConstants.defualtMinLevel
+    
     func log(_ level: LogLevel, className: String? = nil, function: String = #function, file: String = #file, line: Int = #line, message: String) {
 //        let dateFormat = DateFormat.custom("yyyy-MM-dd'T'HH:mm:ss")
 //        let datePrefix = Date().string(format: dateFormat)
 //        let datePrefix = ""
+        
+        guard level.rawValue >= self.minLevel.rawValue else  { return }
+        
         let level = level.description
         var log = "\(level) - \(message)"
         if let className = className {

@@ -20,6 +20,7 @@ class UserProfileViewController: UIViewController, ViewControllerProtocol, Confi
     let onRouteTo : Observable<Route> = PublishSubject<Route>()
 
     @IBOutlet fileprivate weak var tableView: UITableView!
+    fileprivate var logoutBarButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     
     var viewModel: UserProfileViewModel!
     
@@ -73,6 +74,7 @@ private extension UserProfileViewController {
                     cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
                     let cell = cell as! UserProfileHeaderTableViewCell
                     cell.configure(with: vm)
+                    cell.onRouteTo.bind(to: self.onRouteTo.asPublishSubject()!).addDisposableTo(cell.reuseBag)
                 case let vm as EventViewModel:
                     let reuseId = R.reuseIdentifier.eventTableViewCell
                     cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
@@ -91,6 +93,25 @@ private extension UserProfileViewController {
             .asObservable()
             .subscribeNext { [unowned self] (indexPath) in
                 self.tableView.deselectRow(at: indexPath, animated: true)
+            }
+            .addDisposableTo(disposeBag)
+        
+        logoutBarButton
+            .rx.tap
+            .asObservable()
+            .subscribeNext { [unowned self] () in
+                self.viewModel.logout()
+            }
+            .addDisposableTo(disposeBag)
+        
+        viewModel
+            .isItMe.asObservable()
+            .subscribeNext { [unowned self] (isMe) in
+                if isMe {
+                    self.navigationItem.rightBarButtonItem = self.logoutBarButton
+                } else {
+                    self.navigationItem.rightBarButtonItem = nil
+                }
             }
             .addDisposableTo(disposeBag)
     }

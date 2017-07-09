@@ -12,6 +12,7 @@ import Alamofire
 enum UserAPI {
     case fetch(user: String)
     case search(name: String?)
+    case create(name: String, email: String, password: String)
 }
 
 extension UserAPI: NetworkHelpers {
@@ -23,6 +24,8 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch, .search:
             return .get
+        case .create:
+            return .post
         }
     }
     
@@ -30,7 +33,7 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch(let id):
             return "/\(id)"
-        case .search:
+        case .search, .create:
             return nil
         }
     }
@@ -45,6 +48,12 @@ extension UserAPI: NetworkHelpers {
                 params["name"] = name
             }
             return params
+        case .create(let name, let email, let password):
+            var params = Alamofire.Parameters.init()
+            params["name"] = name
+            params["email"] = email
+            params["password"] = password
+            return params
         }
     }
     
@@ -52,6 +61,8 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch, .search:
             return URLEncoding.queryString
+        case .create:
+            return JSONEncoding.default
         }
     }
 }

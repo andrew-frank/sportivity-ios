@@ -28,14 +28,17 @@ enum UserProfileViewModelFetchResult {
 class UserProfileViewModel {
     
     fileprivate var user : User?
+    fileprivate let userManager : UserManagerProtocol
+    
     let id: String
     let cellsData = Variable<[Any]>([ ])
-    let isItMe: Driver<Bool>
+    let isItMe: Variable<Bool>
     let disposeBag = DisposeBag()
     
     init(id: String, user: User?, userManager: UserManagerProtocol = UserManager.shared) {
         self.id = id
-        isItMe = Driver<Bool>.just(userManager.user?.id == id)
+        self.userManager = userManager
+        isItMe = Variable<Bool>(self.userManager.user?.id == id)
         if let user = user {
             self.user = user
             configure(with: user)
@@ -55,6 +58,10 @@ class UserProfileViewModel {
         }
         .addDisposableTo(disposeBag)
         return observable.map { UserProfileViewModelFetchResult(result: $0) }
+    }
+    
+    func logout() {
+        userManager.logout()
     }
 }
 

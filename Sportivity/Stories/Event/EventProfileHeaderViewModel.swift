@@ -15,6 +15,7 @@ class EventProfileHeaderViewModel {
     fileprivate let userManager: UserManagerProtocol
     fileprivate let disposeBag = DisposeBag()
     
+    let id: String
     let name: Driver<String>
     let photoUrl: Driver<URL?>
     let hostText: Driver<String>
@@ -23,26 +24,27 @@ class EventProfileHeaderViewModel {
     let street: Driver<String?>
     let city: Driver<String?>
     let attendees: Variable<[EventAttendee]>
-    let isAttending: Observable<Bool>
+    let isAttending = Variable<Bool>(false)
     
     let toggleAttend = PublishSubject<Void>()
     
     init(event: Event, userManager: UserManagerProtocol = UserManager()) {
         self.event = event
+        self.id = event.id
         self.userManager = userManager
         
-        self.name = event.name.asDriver()
-//        let placePhoto = event.place.asDriver().flatMap { (place) -> Driver<URL?> in
-//            guard let place = place else {
-//                return Driver<URL?>.just(nil)
-//            }
-//            return place.photoURL.asDriver()
-//        }
-//        let eventPhoto = event.photoUrl.asDriver()
-//        photoUrl = Driver.combineLatest(eventPhoto, placePhoto, resultSelector: { (eventPhoto, placePhoto) in
-//            return eventPhoto ?? placePhoto
-//        })
-        photoUrl = event.place.asDriver().map { $0?.photoURL.value }
+        self.name = self.event.name.asDriver()
+        let placePhoto = event.place.asDriver().flatMap { (place) -> Driver<URL?> in
+            guard let place = place else {
+                return Driver<URL?>.just(nil)
+            }
+            return place.photoURL.asDriver()
+        }
+        let eventPhoto = self.event.photoUrl.asDriver()
+        photoUrl = Driver.combineLatest(eventPhoto, placePhoto, resultSelector: { (eventPhoto, placePhoto) in
+            return eventPhoto ?? placePhoto
+        })
+        
         let hostText: Observable<String> = event.host.asObservable()
             .flatMap({ (user) -> Observable<String> in
                 guard let user = user else { return Observable.just("") }
@@ -57,32 +59,39 @@ class EventProfileHeaderViewModel {
         self.city = event.place.asDriver().map { $0?.city.value }
         self.hostText = hostText.asDriver(onErrorJustReturn: "")
         self.attendees = event.attendees
-        self.isAttending = Observable.combineLatest(userManager.rx_user, attendees.asObservable(), resultSelector: { (user, attendees) -> Bool in
-            guard let user = user else { return false }
-            return attendees.reduce(false, { (isAttending, attendee) -> Bool in
-                return isAttending || attendee.id == user.id
-            })
-        })
+        
+        attendees
+            .asObservable()
+            .map { [unowned self] attendees -> Bool in
+                guard let myId = self.userManager.user?.id else { return false }
+                let isAttending = attendees.reduce(false, { (isAttending, attendee) -> Bool in
+                    return isAttending || attendee.id == myId
+                })
+                return isAttending
+            }
+            .bind(to: isAttending)
+            .addDisposableTo(disposeBag)
         
         bind()
     }
     
     private func bind() {
         toggleAttend
-            .withLatestFrom(isAttending)
+            .withLatestFrom(isAttending.asObservable())
             .doOnNext { (isAttending) in
                 Logger.shared.log(.info, message: "toggleAttend from isAttending=\(isAttending) to \(!isAttending)")
             }
-            .flatMap { (isAttending) -> Observable<Bool> in
-                var request: Observable<Void>!
+            .flatMap { [unowned self] (isAttending) -> Observable<Bool?> in
                 if isAttending {
-                    // POST /attend
+                    return EventsAPI.rx_leave(self.event.id).map { false }.catchErrorJustReturn(nil)
                 } else {
-                    // DELETE /attend //?
+                    return EventsAPI.rx_join(self.event.id).map { true }.catchErrorJustReturn(nil)
                 }
-                return Observable<Bool>.just(false)
             }
             .subscribeNext { [unowned self] (isAttending) in
+                guard let isAttending = isAttending else {
+                    return
+                }
                 guard let me = self.userManager.user else {
                     assert(false)
                     return

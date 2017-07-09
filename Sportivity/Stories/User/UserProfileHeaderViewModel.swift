@@ -16,10 +16,10 @@ class UserProfileHeaderViewModel {
     let photoURL: Driver<URL?>
     let followers : Driver<String> = Driver.just("12 Followers / 8 Following")
     let isFollowing: Variable<Bool>
-    let isItMe: Driver<Bool>
+    let isItMe: Variable<Bool>
     let sports: Driver<[Category]>
     
-    init(user: User, isItMe: Driver<Bool>) {
+    init(user: User, isItMe: Variable<Bool>) {
         self.name = user.name.asDriver()
         self.photoURL = user.photoUrl.asDriver()
         self.isFollowing = user.isFollowing

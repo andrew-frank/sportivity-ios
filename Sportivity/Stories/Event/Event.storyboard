@@ -233,7 +233,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="Wcl-EI-Agl" id="hsk-tT-Fk1"/>
-                                            <outlet property="attendButton" destination="94V-WG-yuq" id="imd-5B-dnM"/>
+                                            <outlet property="attendButton" destination="94V-WG-yuq" id="PUa-9m-DFt"/>
                                             <outlet property="cityLabel" destination="z9F-um-OSD" id="6N3-BO-lh7"/>
                                             <outlet property="dateLabel" destination="LJw-eG-U46" id="GaO-ka-kZz"/>
                                             <outlet property="hostLabel" destination="Hxy-rQ-0TA" id="3bq-bq-U09"/>

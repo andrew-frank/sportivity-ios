@@ -26,6 +26,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
     @IBOutlet weak var mapView: MKMapView!
     
     var reuseBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     var viewModel: EventProfileHeaderViewModel!
     
@@ -35,6 +36,10 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
         reuseBag = DisposeBag()
     }
     
@@ -43,18 +48,32 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel
             .photoUrl
             .driveNext { [unowned self] (url) in
-                self.photoImageView.kf.setImage(with: url)
+                    self.photoImageView.kf.setImage(with: url)
             }
             .addDisposableTo(reuseBag)
         viewModel.hostText.drive(hostLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.placeName.drive(placeNameLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
-        viewModel.isAttending.bind(to: attendButton.rx.isSelected).addDisposableTo(reuseBag)
+
+        viewModel
+            .isAttending
+            .asObservable()
+            .subscribeNext { [unowned self] (isAttending) in
+                if isAttending {
+                    self.attendButton.setTitle("LEAVE", for: .normal)
+                } else {
+                    self.attendButton.setTitle("JOIN", for: .normal)
+                }
+            }
+            .addDisposableTo(reuseBag)
+
         attendButton
             .rx.tap
             .asObservable()
-            .bind(to: viewModel.toggleAttend)
-            .addDisposableTo(reuseBag)
+            .subscribeNext { [unowned self] () in
+                self.viewModel.toggleAttend.onNext()
+            }
+            .addDisposableTo(disposeBag)
     }
 }

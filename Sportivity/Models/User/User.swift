@@ -47,7 +47,7 @@ extension User: WrapCustomizable {
         switch propertyName {
         case "id":                  return "_id"
         case "name":                return "name"
-        case "photoUrl":            return "photoURL"
+        //case "photoUrl":            return "photoURL"
         case "email":               return "email"
         case "city":                return "city"
         case "sportCategories":     return "sportsCategories"
@@ -59,7 +59,7 @@ extension User: WrapCustomizable {
         switch propertyName {
         case "id":                  return originalValue
         case "name":                return (originalValue as! Variable<String>).value
-        case "photoUrl":            return (originalValue as! Variable<URL?>).value?.absoluteString
+        case "photoURL":            return (originalValue as! Variable<URL?>).value?.absoluteString
         case "email":               return (originalValue as! Variable<String?>).value
         case "city":                return (originalValue as! Variable<String?>).value
         case "sportCategories":     return (originalValue as! Variable<[Category]>).value.map { $0.rawValue }

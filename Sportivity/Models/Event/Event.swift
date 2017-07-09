@@ -25,7 +25,7 @@ final class Event : Unboxable {
         self.id = try unboxer.unbox(key: "_id")
         let name : String = try unboxer.unbox(key: "name")
         self.name = Variable<String>(name)
-        let photoUrl : URL? = try? unboxer.unbox(key: "photoUrl")
+        let photoUrl : URL? = try? unboxer.unbox(key: "photoURL")
         self.photoUrl = Variable<URL?>(photoUrl)
         
         let attendees : [EventAttendee]? = unboxer.unbox(key: "attendees")

@@ -26,4 +26,12 @@ extension UserAPI {
             .validatedRequest()
             .rx_responseModelsArray(User.self)
     }
+    
+    static func rx_create(name: String, email: String, pass: String) -> Observable<User> { // Observable<Result<User, APIError>> {
+        return UserAPI
+            .create(name: name, email: email, password: pass)
+            .validatedRequest()
+            .rx_responseModel(User.self)
+//            .resultifyAPIResponse()
+    }
 }
