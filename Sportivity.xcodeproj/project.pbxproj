@@ -94,6 +94,9 @@
 		4980BDAC1ED7A319001BB924 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */; };
 		4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDAD1ED7B624001BB924 /* UserRouteData.swift */; };
 		49812F8F1F124CB3004B5917 /* PlacePinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F8E1F124CB3004B5917 /* PlacePinAnnotationView.swift */; };
+		49812F921F12533F004B5917 /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49812F911F12533F004B5917 /* Place.storyboard */; };
+		49812F941F125376004B5917 /* PlaceProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F931F125376004B5917 /* PlaceProfileViewController.swift */; };
+		49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -217,6 +220,9 @@
 		4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventCell/EventTableViewCell.xib; sourceTree = "<group>"; };
 		4980BDAD1ED7B624001BB924 /* UserRouteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouteData.swift; sourceTree = "<group>"; };
 		49812F8E1F124CB3004B5917 /* PlacePinAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacePinAnnotationView.swift; path = Map/PlacePinAnnotationView.swift; sourceTree = "<group>"; };
+		49812F911F12533F004B5917 /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Place.storyboard; path = Place/Place.storyboard; sourceTree = "<group>"; };
+		49812F931F125376004B5917 /* PlaceProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileViewController.swift; path = Place/PlaceProfileViewController.swift; sourceTree = "<group>"; };
+		49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileViewModel.swift; path = Place/PlaceProfileViewModel.swift; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -540,6 +546,16 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		49812F901F12531E004B5917 /* PlaceProfile */ = {
+			isa = PBXGroup;
+			children = (
+				49812F911F12533F004B5917 /* Place.storyboard */,
+				49812F931F125376004B5917 /* PlaceProfileViewController.swift */,
+				49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */,
+			);
+			name = PlaceProfile;
+			sourceTree = "<group>";
+		};
 		4996AC091EBE9B200062A087 /* EventProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +679,7 @@
 		49D559461EA510E40000C712 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				49812F901F12531E004B5917 /* PlaceProfile */,
 				49722E5D1EE9EE3100DCE741 /* Map */,
 				4996AC091EBE9B200062A087 /* EventProfile */,
 				494DF0B61EA7F61100583DBB /* UserProfile */,
@@ -835,6 +852,7 @@
 				4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */,
 				49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */,
 				4980BDAC1ED7A319001BB924 /* EventTableViewCell.xib in Resources */,
+				49812F921F12533F004B5917 /* Place.storyboard in Resources */,
 				494DF0B81EA7F61E00583DBB /* User.storyboard in Resources */,
 				49D559441EA50E300000C712 /* Sportivity.clr in Resources */,
 				4945BE131ED890D0000B4C5F /* CategorySelectionCollectionViewCell.xib in Resources */,
@@ -924,6 +942,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49812F941F125376004B5917 /* PlaceProfileViewController.swift in Sources */,
 				492A999E1ED1F962006A6721 /* AuthenitcateAPI.swift in Sources */,
 				4945BE121ED890D0000B4C5F /* CategorySelectionCollectionViewCell.swift in Sources */,
 				4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */,
@@ -999,6 +1018,7 @@
 				492A99AB1ED1FEAA006A6721 /* User.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
 				4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */,
+				49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */,
 				4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */,
 				492A99961ED1F916006A6721 /* EventAPI+Requests.swift in Sources */,
 				4916F3521EA6B8690053C3E2 /* EventViewModel.swift in Sources */,

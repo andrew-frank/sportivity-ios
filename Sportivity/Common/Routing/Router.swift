@@ -156,8 +156,14 @@ class Router {
             currentNavigationController?.pushViewController(vc, animated: true)
             destinationVC = vc
         case .place:
-            // TODO: place route
-            destinationVC = UIViewController()
+            let vc = R.storyboard.place.place()!
+            assert(destination.data != nil)
+            assert(destination.data is String)
+            let id: String = destination.data as! String
+            let vm = PlaceProfileViewModel(id: id)
+            vc.configure(with: vm)
+            currentNavigationController?.pushViewController(vc, animated: true)
+            destinationVC = vc
             
         // MAIN TAB SWITCHES
         case .events:
