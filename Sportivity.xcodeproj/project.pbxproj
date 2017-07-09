@@ -93,6 +93,7 @@
 		4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */; };
 		4980BDAC1ED7A319001BB924 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */; };
 		4980BDAE1ED7B624001BB924 /* UserRouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980BDAD1ED7B624001BB924 /* UserRouteData.swift */; };
+		49812F8F1F124CB3004B5917 /* PlacePinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F8E1F124CB3004B5917 /* PlacePinAnnotationView.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -215,6 +216,7 @@
 		4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserViewModel+ListingProtocol.swift"; path = "ViewModels/UserViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
 		4980BDAB1ED7A319001BB924 /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventCell/EventTableViewCell.xib; sourceTree = "<group>"; };
 		4980BDAD1ED7B624001BB924 /* UserRouteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouteData.swift; sourceTree = "<group>"; };
+		49812F8E1F124CB3004B5917 /* PlacePinAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacePinAnnotationView.swift; path = Map/PlacePinAnnotationView.swift; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				4956A6A41EED810200B9D1F3 /* PlaceAnnotationView.swift */,
 				497051A41EF16F94001664FA /* ClusterAnnotationView.swift */,
 				497051A61EF1909D001664FA /* PinViewModel.swift */,
+				49812F8E1F124CB3004B5917 /* PlacePinAnnotationView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */,
 				492A99AD1ED1FFB2006A6721 /* Request+Mapping.swift in Sources */,
 				4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */,
+				49812F8F1F124CB3004B5917 /* PlacePinAnnotationView.swift in Sources */,
 				49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */,
 				49FD1D0A1EDF9DD300D24258 /* CategorySelectionViewModel.swift in Sources */,
 				492A99B21ED200C4006A6721 /* ModelError.swift in Sources */,

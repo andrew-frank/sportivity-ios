@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 enum MapAnnotationType {
-    case pin(image: UIImage)
+    case pin(category: Category?, photoUrl: URL?)
     case cluster(annotations: [MKAnnotation])
 }
 

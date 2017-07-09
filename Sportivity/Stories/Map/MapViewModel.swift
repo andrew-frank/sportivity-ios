@@ -27,11 +27,7 @@ class MapViewModel {
             .map({ (places) -> [MapAnnotation] in
                 
                 return places.map { place in
-                    var image = R.image.basketballIcon()
-                    if let cat = place.sportCategories.value.first {
-                        image = cat.iconImage
-                    }
-                    let type = MapAnnotationType.pin(image: image!)
+                    let type = MapAnnotationType.pin(category: place.sportCategories.value.first, photoUrl: place.photoURL.value)
                     let annotation = MapAnnotation(type: type)
                     annotation.title = place.name.value
                     if let lat = place.loc.value?.lat, let lon = place.loc.value?.lon {

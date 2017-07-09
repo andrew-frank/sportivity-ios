@@ -16,6 +16,8 @@ private struct MapViewControllerConstants {
     static let placeAnnotationReuseId = "place"
     static let clusteringEnabled = true
     static let useApplePins = true
+    static let calloutImageWidth = 300
+    static let calloutImageHeight = 200
 }
 
 private typealias C = MapViewControllerConstants
@@ -64,29 +66,37 @@ private extension MapViewController {
     }
     
     func configureCalloutView(annotationView: MKAnnotationView) {
-        let width = 300
-        let height = 200
-        
-        let snapshotView = UIView()
-        let views = ["snapshotView": snapshotView]
-        snapshotView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[snapshotView(300)]", options: [], metrics: nil, views: views))
-        snapshotView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[snapshotView(200)]", options: [], metrics: nil, views: views))
-        
-        let options = MKMapSnapshotOptions()
-        options.size = CGSize(width: width, height: height)
-        options.mapType = .satelliteFlyover
-        options.camera = MKMapCamera(lookingAtCenter: annotationView.annotation!.coordinate, fromDistance: 100, pitch: 65, heading: 0)
-        
-        let snapshotter = MKMapSnapshotter(options: options)
-        snapshotter.start { snapshot, error in
-            if snapshot != nil {
-                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-                imageView.image = snapshot!.image
-                snapshotView.addSubview(imageView)
-            }
+        guard let annotation = annotationView.annotation as? MapAnnotation else {
+            assert(false)
+            return
         }
         
-        annotationView.detailCalloutAccessoryView = snapshotView
+        let view = UIView()
+        let views = ["view": view]
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[view(\(C.calloutImageWidth))]", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[view(\(C.calloutImageHeight))]", options: [], metrics: nil, views: views))
+        
+        let frame = CGRect(x: 0, y: 0, width: C.calloutImageWidth, height: C.calloutImageHeight)
+        let imageView = UIImageView(frame: frame)
+        switch annotation.type {
+        case .pin(let category, let photoUrl):
+            if let url = photoUrl {
+                imageView.kf.setImage(with: url)
+            } else if let category = category {
+                let image = category.iconImage
+                imageView.contentMode = .scaleAspectFit
+                imageView.image = image
+            } else {
+                imageView.contentMode = .scaleAspectFill
+                imageView.image = nil
+            }
+        default:
+            assert(false, "Wrong annotation type")
+
+        }
+        view.addSubview(imageView)
+        
+        annotationView.detailCalloutAccessoryView = view
     }
 }
 
