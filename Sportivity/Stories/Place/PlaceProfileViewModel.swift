@@ -38,8 +38,8 @@ private extension PlaceProfileViewModel {
     
     func configure(with place: Place) {
         var cells = [Any]()
-//        let header = UserProfileHeaderViewModel(user: user, isItMe: isItMe)
-//        cells.append(header)
+        let header = PlaceProfileHeaderViewModel(place: place)
+        cells.append(header)
         for event in place.events.value {
             cells.append(EventViewModel(event: event))
         }

@@ -97,6 +97,8 @@
 		49812F921F12533F004B5917 /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49812F911F12533F004B5917 /* Place.storyboard */; };
 		49812F941F125376004B5917 /* PlaceProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F931F125376004B5917 /* PlaceProfileViewController.swift */; };
 		49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */; };
+		49812F981F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F971F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift */; };
+		49812F9A1F125E80004B5917 /* PlaceProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F991F125E80004B5917 /* PlaceProfileHeaderViewModel.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -223,6 +225,8 @@
 		49812F911F12533F004B5917 /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Place.storyboard; path = Place/Place.storyboard; sourceTree = "<group>"; };
 		49812F931F125376004B5917 /* PlaceProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileViewController.swift; path = Place/PlaceProfileViewController.swift; sourceTree = "<group>"; };
 		49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileViewModel.swift; path = Place/PlaceProfileViewModel.swift; sourceTree = "<group>"; };
+		49812F971F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileHeaderTableViewCell.swift; path = Place/PlaceProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		49812F991F125E80004B5917 /* PlaceProfileHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileHeaderViewModel.swift; path = Place/PlaceProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 				49812F911F12533F004B5917 /* Place.storyboard */,
 				49812F931F125376004B5917 /* PlaceProfileViewController.swift */,
 				49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */,
+				49812F971F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift */,
+				49812F991F125E80004B5917 /* PlaceProfileHeaderViewModel.swift */,
 			);
 			name = PlaceProfile;
 			sourceTree = "<group>";
@@ -984,6 +990,7 @@
 				49D2332F1ED49E3000FA1B22 /* AuthManager.swift in Sources */,
 				4980BDA61ED7765B001BB924 /* EventProfileHeaderViewModel.swift in Sources */,
 				4916F35B1EA6BB750053C3E2 /* Configurable.swift in Sources */,
+				49812F981F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift in Sources */,
 				4945BE0B1ED87AAF000B4C5F /* CategoriesSelectionViewModel.swift in Sources */,
 				492A99A51ED1FC33006A6721 /* Bootstrap.swift in Sources */,
 				4956A6A31EED804600B9D1F3 /* MapAnnotation.swift in Sources */,
@@ -1018,6 +1025,7 @@
 				492A99AB1ED1FEAA006A6721 /* User.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
 				4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */,
+				49812F9A1F125E80004B5917 /* PlaceProfileHeaderViewModel.swift in Sources */,
 				49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */,
 				4900B15B1EBEAC2E0090FEA4 /* EventTableViewCell.swift in Sources */,
 				492A99961ED1F916006A6721 /* EventAPI+Requests.swift in Sources */,

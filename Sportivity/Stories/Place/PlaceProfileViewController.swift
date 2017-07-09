@@ -41,11 +41,11 @@ class PlaceProfileViewController: UIViewController, ViewControllerProtocol, Conf
                 
                 var cell: UITableViewCell!
                 switch item {
-//                case let vm as EventProfileHeaderViewModel:
-//                    let reuseId = R.reuseIdentifier.eventHeaderTableCell.identifier
-//                    cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
-//                    let cell = cell as! EventProfileHeaderTableViewCell
-//                    cell.configure(with: vm)
+                case let vm as PlaceProfileHeaderViewModel:
+                    let reuseId = R.reuseIdentifier.placeHeaderTableCell.identifier
+                    cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
+                    let cell = cell as! PlaceProfileHeaderTableViewCell
+                    cell.configure(with: vm)
                 case let vm as EventViewModel:
                     let reuseId = R.reuseIdentifier.eventTableViewCell
                     cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
@@ -81,7 +81,7 @@ class PlaceProfileViewController: UIViewController, ViewControllerProtocol, Conf
 extension PlaceProfileViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case 0:     return 516
+        case 0:     return 410
         default:    return 50
         }
     }

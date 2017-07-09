@@ -7,18 +7,38 @@
 //
 
 import UIKit
+import MapKit
+import RxSwift
+import Kingfisher
 
-class PlaceProfileHeaderTableViewCell: UITableViewCell {
+class PlaceProfileHeaderTableViewCell: UITableViewCell, Configurable {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var reuseBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    
+    var viewModel: PlaceProfileHeaderViewModel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reuseBag = DisposeBag()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure() {
+        viewModel.name.drive(nameLabel.rx.text).addDisposableTo(reuseBag)
+        viewModel
+            .photoUrl
+            .driveNext { [unowned self] (url) in
+                self.photoImageView.kf.setImage(with: url)
+            }
+            .addDisposableTo(reuseBag)
+        viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
+        viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
     }
-
 }
