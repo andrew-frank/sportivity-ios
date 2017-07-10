@@ -11,6 +11,17 @@ import RxSwift
 import RxCocoa
 
 class EventProfileHeaderViewModel {
+    
+    fileprivate static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d', ' HH:mm"
+        return formatter
+    }()
+    fileprivate static let hourFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
     fileprivate let event: Event
     fileprivate let userManager: UserManagerProtocol
     fileprivate let disposeBag = DisposeBag()
@@ -18,6 +29,7 @@ class EventProfileHeaderViewModel {
     let id: String
     let name: Driver<String>
     let photoUrl: Driver<URL?>
+    let date: Driver<String?>
     let hostText: Driver<String>
     let placeName: Driver<String?>
     let placeLoc: Driver<Loc?>
@@ -48,7 +60,15 @@ class EventProfileHeaderViewModel {
         photoUrl = Driver.combineLatest(eventPhoto, placePhoto, resultSelector: { (eventPhoto, placePhoto) in
             return eventPhoto ?? placePhoto
         })
-        
+        date = Observable
+            .combineLatest(self.event.dateStart.asObservable(), self.event.dateEnd.asObservable(), resultSelector: { (start, end) -> String? in
+                var text = EventProfileHeaderViewModel.dateFormatter.string(from: start)
+                if let end = end {
+                    text += (" – " + EventProfileHeaderViewModel.hourFormatter.string(from: end))
+                }
+                return text
+            })
+            .asDriver(onErrorJustReturn: nil)
         let hostText: Observable<String> = event.host.asObservable()
             .flatMap({ (user) -> Observable<String> in
                 guard let user = user else { return Observable.just("") }

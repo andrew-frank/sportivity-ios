@@ -51,11 +51,15 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
                     self.photoImageView.kf.setImage(with: url)
             }
             .addDisposableTo(reuseBag)
+        viewModel
+            .date
+            .drive(dateLabel.rx.text)
+            .addDisposableTo(reuseBag)
         viewModel.hostText.drive(hostLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.placeName.drive(placeNameLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
-
+        
         viewModel
             .isAttending
             .asObservable()
@@ -67,7 +71,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
                 }
             }
             .addDisposableTo(reuseBag)
-
+        
         attendButton
             .rx.tap
             .asObservable()
