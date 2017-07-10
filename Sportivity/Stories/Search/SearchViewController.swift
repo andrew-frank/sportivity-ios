@@ -78,8 +78,14 @@ private extension SearchViewController {
         tableView
             .rx.modelSelected(ListingViewModelProtocol.self)
             .map { item -> Route in
-                let vm = (item as! UserViewModel)
-                let route = Route(to: .user, type: nil, data: vm)
+                var route: Route!
+                if let vm = item as? UserViewModel {
+                    route = Route(to: .user, type: nil, data: vm)
+                } else if let vm = item as? EventViewModel {
+                    route = Route(to: .event, type: nil, data: vm)
+                } else if let vm = item as? PlaceViewModel {
+                    route = Route(to: .place, type: nil, data: vm.id)
+                }
                 return route
             }
             .bind(to: onRouteTo.asPublishSubject()!)

@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCI-hg-cLZ" id="upd-3z-Lcp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="409.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-Hr-jEU" userLabel="HeaderHolder">
@@ -38,12 +38,20 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
-                                                        <view clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-kq-HWb">
+                                                        <view clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-kq-HWb" customClass="GradientView" customModule="Sportivity" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.22023547535211269" colorSpace="calibratedWhite"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-4i-SV3">
-                                                            <rect key="frame" x="135.5" y="60.5" width="105" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-4i-SV3">
+                                                            <rect key="frame" x="15" y="106" width="345" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -51,14 +59,15 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="JGF-4i-SV3" secondAttribute="trailing" constant="15" id="053-xy-srn"/>
                                                         <constraint firstItem="BKr-LF-0Va" firstAttribute="top" secondItem="7oY-Hr-jEU" secondAttribute="top" id="3b3-md-Lba"/>
                                                         <constraint firstAttribute="height" constant="145" id="B5F-FU-7T8"/>
                                                         <constraint firstItem="BKr-LF-0Va" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" id="MPP-o5-YK0"/>
+                                                        <constraint firstItem="JGF-4i-SV3" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" constant="15" id="XJb-Vq-aMD"/>
                                                         <constraint firstAttribute="bottom" secondItem="BKr-LF-0Va" secondAttribute="bottom" id="Xjb-Mg-16i"/>
-                                                        <constraint firstItem="JGF-4i-SV3" firstAttribute="centerX" secondItem="7oY-Hr-jEU" secondAttribute="centerX" id="gS3-Ia-jnb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JGF-4i-SV3" secondAttribute="bottom" constant="15" id="i7K-HT-0lV"/>
                                                         <constraint firstAttribute="bottom" secondItem="dJe-kq-HWb" secondAttribute="bottom" id="ipF-vw-gIW"/>
                                                         <constraint firstAttribute="trailing" secondItem="dJe-kq-HWb" secondAttribute="trailing" id="mWE-N3-FVl"/>
-                                                        <constraint firstItem="JGF-4i-SV3" firstAttribute="centerY" secondItem="7oY-Hr-jEU" secondAttribute="centerY" id="nto-1g-nof"/>
                                                         <constraint firstAttribute="trailing" secondItem="BKr-LF-0Va" secondAttribute="trailing" id="o3M-HQ-l1s"/>
                                                         <constraint firstItem="dJe-kq-HWb" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" id="qxt-ZN-8Vw"/>
                                                         <constraint firstItem="dJe-kq-HWb" firstAttribute="top" secondItem="7oY-Hr-jEU" secondAttribute="top" id="wE2-yn-bnI"/>

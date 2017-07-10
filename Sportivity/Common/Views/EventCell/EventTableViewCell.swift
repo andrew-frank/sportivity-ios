@@ -12,6 +12,8 @@ import RxCocoa
 import Kingfisher
 
 class EventTableViewCell: UITableViewCell, Configurable {
+    
+    static let deafultHeight: CGFloat = 200
 
     fileprivate var reuseBag = DisposeBag()
 

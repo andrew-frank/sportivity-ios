@@ -98,7 +98,7 @@ class UserManager : UserManagerProtocol {
                     return false
                 }
                 if let user = user, user.id != credentials.id {
-                    assert(false, "Something went wrong with Auth/User Managers - the id does not match with user's id")
+                    //assert(false, "Something went wrong with Auth/User Managers - the id does not match with user's id")
                     return false
                 }
                 return true

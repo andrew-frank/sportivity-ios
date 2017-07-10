@@ -28,6 +28,7 @@ class UserProfileViewController: UIViewController, ViewControllerProtocol, Confi
         super.viewDidLoad()
         navigationItem.title = "Profile"
         tableView.register(R.nib.eventTableViewCell(), forCellReuseIdentifier: R.reuseIdentifier.eventTableViewCell.identifier)
+        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
         bind()
     }
     
@@ -114,5 +115,16 @@ private extension UserProfileViewController {
                 }
             }
             .addDisposableTo(disposeBag)
+    }
+}
+
+extension UserProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 284.5
+        default:
+            return EventTableViewCell.deafultHeight
+        }
     }
 }
