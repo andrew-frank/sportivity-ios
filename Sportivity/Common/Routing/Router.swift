@@ -11,13 +11,12 @@ import RxSwift
 
 enum ViewTag {
     case loginChoice
-//    case loginEmail
     case register
 
     case mainTab
     case events
 //    case map
-//
+    
     case user
     case editUser
     case place

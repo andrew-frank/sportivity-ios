@@ -43,6 +43,7 @@
 		492A99B41ED20137006A6721 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99B31ED20137006A6721 /* Errors.swift */; };
 		492A99B61ED20191006A6721 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99B51ED20191006A6721 /* ResponseError.swift */; };
 		492A99B81ED202D9006A6721 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A99B71ED202D9006A6721 /* RequestError.swift */; };
+		492F3D9E1F1406B900A29BAB /* EditUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F3D9D1F1406B900A29BAB /* EditUserViewModel.swift */; };
 		4930F1641EA524480090F1D1 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4930F1631EA524480090F1D1 /* Authorization.storyboard */; };
 		493AEA291EE82B3800B50501 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AEA281EE82B3800B50501 /* SignUpViewController.swift */; };
 		4945BE051ED878C5000B4C5F /* CategoriesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4945BE041ED878C5000B4C5F /* CategoriesSelectionView.xib */; };
@@ -173,6 +174,7 @@
 		492A99B31ED20137006A6721 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Errors/Errors.swift; sourceTree = "<group>"; };
 		492A99B51ED20191006A6721 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseError.swift; path = Errors/ResponseError.swift; sourceTree = "<group>"; };
 		492A99B71ED202D9006A6721 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestError.swift; path = Errors/RequestError.swift; sourceTree = "<group>"; };
+		492F3D9D1F1406B900A29BAB /* EditUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserViewModel.swift; path = User/EditUserViewModel.swift; sourceTree = "<group>"; };
 		4930F1631EA524480090F1D1 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authorization.storyboard; path = Authorization/Authorization.storyboard; sourceTree = "<group>"; };
 		493AEA281EE82B3800B50501 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Authorization/SignUpViewController.swift; sourceTree = "<group>"; };
 		4945BE041ED878C5000B4C5F /* CategoriesSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesSelectionView.xib; path = Views/CategoriesCollection/CategoriesSelectionView.xib; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				490667001EE9E4C600029967 /* EditUserTableTableViewController.swift */,
+				492F3D9D1F1406B900A29BAB /* EditUserViewModel.swift */,
 			);
 			name = Edit;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				496560731EA79A52003454F5 /* SearchViewModel.swift in Sources */,
 				494DF0CC1EA816DF00583DBB /* CategorySelections.swift in Sources */,
 				492A999A1ED1F927006A6721 /* UserAPI+Requests.swift in Sources */,
+				492F3D9E1F1406B900A29BAB /* EditUserViewModel.swift in Sources */,
 				4900B1561EBEA2210090FEA4 /* EventProfileViewController.swift in Sources */,
 				4916F3351EA68AD80053C3E2 /* Category.swift in Sources */,
 				490667011EE9E4C600029967 /* EditUserTableTableViewController.swift in Sources */,

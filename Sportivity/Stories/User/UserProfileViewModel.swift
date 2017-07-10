@@ -43,6 +43,13 @@ class UserProfileViewModel {
             self.user = user
             configure(with: user)
         }
+        self.userManager
+            .rx_user
+            .subscribeNext { [unowned self] (user) in
+                guard let user = user else { return }
+                self.configure(with: user)
+            }
+            .addDisposableTo(disposeBag)
         _ = refresh()
     }
     
@@ -51,7 +58,7 @@ class UserProfileViewModel {
         observable.subscribeNext { [unowned self] (result) in
             switch result {
             case .success(let user):
-                self.configure(with: user)
+                self.userManager.update(user: user)
             default:
                 break
             }
