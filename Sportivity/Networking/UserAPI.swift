@@ -11,7 +11,7 @@ import Alamofire
 
 enum UserAPI {
     case fetch(user: String)
-    case search(name: String?)
+    case search(name: String?, howMany: Int)
     case create(name: String, email: String, password: String)
 }
 
@@ -42,8 +42,9 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch:
             return nil
-        case .search(let name):
+        case .search(let name, let howMany):
             var params = Alamofire.Parameters.init()
+            params["howMany"] = howMany
             if let name = name {
                 params["name"] = name
             }

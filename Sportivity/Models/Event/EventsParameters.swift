@@ -12,4 +12,5 @@ struct EventsParameters {
     let howMany : Int?
     let from : Int?
     let categories : [String]?
+    let name: String?
 }

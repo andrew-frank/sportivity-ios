@@ -23,4 +23,11 @@ extension PlacesAPI {
             .validatedRequest()
             .rx_responseModel(Place.self)
     }
+    
+    static func rx_search(name: String?, howMany: Int) -> Observable<[Place]> {
+        return PlacesAPI
+            .search(name: name, howMany: howMany)
+            .validatedRequest()
+            .rx_responseModelsArray(Place.self)
+    }
 }

@@ -99,6 +99,8 @@
 		49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */; };
 		49812F981F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F971F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift */; };
 		49812F9A1F125E80004B5917 /* PlaceProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49812F991F125E80004B5917 /* PlaceProfileHeaderViewModel.swift */; };
+		4991435A1F1316D000D931FA /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499143591F1316D000D931FA /* PlaceViewModel.swift */; };
+		4991435C1F1316DD00D931FA /* PlaceViewModel+ListingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4991435B1F1316DD00D931FA /* PlaceViewModel+ListingProtocol.swift */; };
 		4996AC0B1EBE9B310062A087 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996AC0A1EBE9B310062A087 /* Event.storyboard */; };
 		49B89E4E1EA0D56A0004BCB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */; };
 		49B89E551EA0D56A0004BCB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B89E541EA0D56A0004BCB3 /* Assets.xcassets */; };
@@ -227,6 +229,8 @@
 		49812F951F1253C8004B5917 /* PlaceProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileViewModel.swift; path = Place/PlaceProfileViewModel.swift; sourceTree = "<group>"; };
 		49812F971F125E05004B5917 /* PlaceProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileHeaderTableViewCell.swift; path = Place/PlaceProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		49812F991F125E80004B5917 /* PlaceProfileHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceProfileHeaderViewModel.swift; path = Place/PlaceProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		499143591F1316D000D931FA /* PlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewModel.swift; path = ViewModels/PlaceViewModel.swift; sourceTree = "<group>"; };
+		4991435B1F1316DD00D931FA /* PlaceViewModel+ListingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PlaceViewModel+ListingProtocol.swift"; path = "ViewModels/PlaceViewModel+ListingProtocol.swift"; sourceTree = "<group>"; };
 		4996AC0A1EBE9B310062A087 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Event.storyboard; path = Event/Event.storyboard; sourceTree = "<group>"; };
 		49B89E4A1EA0D56A0004BCB3 /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B89E4D1EA0D56A0004BCB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				49CD2A9D1EBEBB3600DC7F13 /* EventViewModel+ListingProtocol.swift */,
 				4980BDA71ED78A45001BB924 /* UserViewModel.swift */,
 				4980BDA91ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift */,
+				499143591F1316D000D931FA /* PlaceViewModel.swift */,
+				4991435B1F1316DD00D931FA /* PlaceViewModel+ListingProtocol.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -952,6 +958,7 @@
 				492A999E1ED1F962006A6721 /* AuthenitcateAPI.swift in Sources */,
 				4945BE121ED890D0000B4C5F /* CategorySelectionCollectionViewCell.swift in Sources */,
 				4902FF1E1ED398B900A49925 /* ShowsError.swift in Sources */,
+				4991435A1F1316D000D931FA /* PlaceViewModel.swift in Sources */,
 				492A99AD1ED1FFB2006A6721 /* Request+Mapping.swift in Sources */,
 				4980BDAA1ED78ACF001BB924 /* UserViewModel+ListingProtocol.swift in Sources */,
 				49812F8F1F124CB3004B5917 /* PlacePinAnnotationView.swift in Sources */,
@@ -1024,6 +1031,7 @@
 				492A99911ED1EA65006A6721 /* UIView+IBInspectables.swift in Sources */,
 				492A99AB1ED1FEAA006A6721 /* User.swift in Sources */,
 				496560671EA79486003454F5 /* AvatarImageView.swift in Sources */,
+				4991435C1F1316DD00D931FA /* PlaceViewModel+ListingProtocol.swift in Sources */,
 				4956A6AE1EED8B1000B9D1F3 /* QuadTree.swift in Sources */,
 				49812F9A1F125E80004B5917 /* PlaceProfileHeaderViewModel.swift in Sources */,
 				49812F961F1253C8004B5917 /* PlaceProfileViewModel.swift in Sources */,

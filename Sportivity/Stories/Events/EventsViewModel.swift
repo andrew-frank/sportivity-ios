@@ -44,7 +44,7 @@ class EventsViewModel {
     
     func fetch() -> Observable<EventsFetchResult> {
         let categories : [String] = [ ]
-        let params = EventsParameters(howMany: nil, from: nil, categories: categories)
+        let params = EventsParameters(howMany: nil, from: nil, categories: categories, name: nil)
         let observable = EventsAPI.rx_fetchEvents(with: params).share()
         
         observable

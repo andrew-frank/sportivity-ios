@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 private struct SearchViewControllerConstants {
-    static let tableTopInset = CGFloat(109-20) //search header height - status bar
+    static let tableTopInset = CGFloat(109)
 }
 
 private typealias C = SearchViewControllerConstants
@@ -43,7 +43,15 @@ class SearchViewController: UIViewController, ViewControllerProtocol, Configurab
 }
 
 private extension SearchViewController {
+    
     func bind() {
+        searchBar
+            .rx.text
+            .asObservable()
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.searchQuery)
+            .addDisposableTo(disposeBag)
+        
         viewModel
             .data
             .asObservable()
@@ -64,7 +72,6 @@ private extension SearchViewController {
                 self.usersButton.isSelected = type == .users
                 self.eventsButton.isSelected = type == .events
                 self.placesButton.isSelected = type == .places
-                self.tableView.isHidden = type != .users
             }
             .addDisposableTo(disposeBag)
         
@@ -84,6 +91,13 @@ private extension SearchViewController {
             .subscribeNext { [unowned self] (indexPath) in
                 self.tableView.deselectRow(at: indexPath, animated: true)
             }
+            .addDisposableTo(disposeBag)
+        
+        viewModel
+            .data
+            .asObservable()
+            .map { $0.count == 0 }
+            .bind(to: tableView.rx.isHidden)
             .addDisposableTo(disposeBag)
     }
 }

@@ -42,4 +42,18 @@ extension EventsAPI {
     static func rx_leave(_ id: String) -> Observable<Void> {
         return EventsAPI.leave(id: id).validatedRequest().rx_responseNone()
     }
+    
+    static func rx_search(name: String?, howMany: Int) -> Observable<[Event]> {
+        let params = EventsParameters(howMany: 20, from: nil, categories: nil, name: name)
+        return EventsAPI
+            .rx_fetchEvents(with: params)
+            .flatMap({ (res) -> Observable<[Event]> in
+                switch res {
+                case .success(let items):
+                    return Observable<[Event]>.just(items)
+                case .failure(let error):
+                    return Observable<[Event]>.error(error)
+                }
+            })
+    }
 }

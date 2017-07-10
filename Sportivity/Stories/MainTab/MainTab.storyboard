@@ -151,6 +151,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vWe-9G-ma6">
+                                <rect key="frame" x="177" y="345.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-Gc-KhA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,6 +264,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vWe-9G-ma6" firstAttribute="centerX" secondItem="tn1-V7-IoL" secondAttribute="centerX" id="1uh-US-mHw"/>
                             <constraint firstAttribute="trailing" secondItem="FWy-7g-9RR" secondAttribute="trailing" id="89e-rd-2i5"/>
                             <constraint firstItem="FWy-7g-9RR" firstAttribute="leading" secondItem="tn1-V7-IoL" secondAttribute="leading" id="AfU-GB-fex"/>
                             <constraint firstAttribute="trailing" secondItem="qc4-Gc-KhA" secondAttribute="trailing" id="Pzj-Ku-Dbk"/>
@@ -268,6 +272,7 @@
                             <constraint firstItem="qc4-Gc-KhA" firstAttribute="leading" secondItem="tn1-V7-IoL" secondAttribute="leading" id="Uzs-dS-aud"/>
                             <constraint firstItem="FWy-7g-9RR" firstAttribute="top" secondItem="tn1-V7-IoL" secondAttribute="top" id="VGe-zG-kZ7"/>
                             <constraint firstAttribute="bottom" secondItem="qc4-Gc-KhA" secondAttribute="bottom" id="r8E-i4-ofa"/>
+                            <constraint firstItem="vWe-9G-ma6" firstAttribute="centerY" secondItem="tn1-V7-IoL" secondAttribute="centerY" constant="22" id="wkT-KA-5V2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="vEM-yx-f7Y"/>

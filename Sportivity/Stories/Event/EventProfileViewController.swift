@@ -81,7 +81,7 @@ class EventProfileViewController: UIViewController, ViewControllerProtocol, Conf
 extension EventProfileViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case 0:     return 516
+        case 0:     return 580
         default:    return 50
         }
     }

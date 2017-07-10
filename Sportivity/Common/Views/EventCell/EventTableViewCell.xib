@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="36L-bd-cqU" id="OCf-1C-qMv">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59R-Sc-TS6">
@@ -68,13 +68,13 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8u-Nl-eYT">
                                 <rect key="frame" x="309" y="-6" width="51" height="52.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6CA-tL-0CU">
-                                    <rect key="frame" x="0.0" y="0.0" width="51" height="52.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="51" height="52"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="po7-sr-b7K">
                                             <rect key="frame" x="0.0" y="0.0" width="51" height="52.5"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WYY-XH-hRP">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-F8-Ioj">

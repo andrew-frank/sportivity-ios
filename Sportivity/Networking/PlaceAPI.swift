@@ -12,6 +12,7 @@ import Alamofire
 enum PlacesAPI {
     case fetchAll
     case fetchPlace(id: String)
+    case search(name: String?, howMany: Int)
 }
 
 extension PlacesAPI: NetworkHelpers {
@@ -21,14 +22,14 @@ extension PlacesAPI: NetworkHelpers {
     
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .fetchAll, .fetchPlace:
+        case .fetchAll, .fetchPlace, .search:
             return .get
         }
     }
     
     var relativePath: String? {
         switch self {
-        case .fetchAll:
+        case .fetchAll, .search:
             return nil
         case .fetchPlace(let id):
             return "/\(id)"
@@ -39,12 +40,19 @@ extension PlacesAPI: NetworkHelpers {
         switch self {
         case .fetchAll, .fetchPlace:
             return nil
+        case .search(let name, let howMany):
+            var params = [String: Any]()
+            params["howMany"] = howMany
+            if let name = name {
+                params["name"] = name
+            }
+            return params
         }
     }
     
     var parametersEncoding: Alamofire.ParameterEncoding {
         switch self {
-        case .fetchAll, .fetchPlace:
+        case .fetchAll, .fetchPlace, .search:
             return URLEncoding.queryString
         }
     }
