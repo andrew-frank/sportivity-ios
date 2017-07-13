@@ -79,7 +79,7 @@ extension PlaceProfileViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:     return 410
-        default:    return 50
+        default:    return EventTableViewCell.deafultHeight
         }
     }
 }
