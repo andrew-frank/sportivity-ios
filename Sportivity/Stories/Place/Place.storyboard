@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YCI-hg-cLZ" id="upd-3z-Lcp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="409.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-Hr-jEU" userLabel="HeaderHolder">
@@ -51,9 +51,15 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-4i-SV3">
-                                                            <rect key="frame" x="15" y="106" width="345" height="24"/>
+                                                            <rect key="frame" x="15" y="86" width="345" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football, Basketball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-XC-T1r">
+                                                            <rect key="frame" x="15" y="117" width="345" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -61,11 +67,14 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="JGF-4i-SV3" secondAttribute="trailing" constant="15" id="053-xy-srn"/>
                                                         <constraint firstItem="BKr-LF-0Va" firstAttribute="top" secondItem="7oY-Hr-jEU" secondAttribute="top" id="3b3-md-Lba"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xN7-XC-T1r" secondAttribute="trailing" constant="15" id="7GB-Kh-dXd"/>
                                                         <constraint firstAttribute="height" constant="145" id="B5F-FU-7T8"/>
                                                         <constraint firstItem="BKr-LF-0Va" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" id="MPP-o5-YK0"/>
+                                                        <constraint firstItem="xN7-XC-T1r" firstAttribute="top" secondItem="JGF-4i-SV3" secondAttribute="bottom" constant="7" id="R65-ar-v2x"/>
                                                         <constraint firstItem="JGF-4i-SV3" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" constant="15" id="XJb-Vq-aMD"/>
                                                         <constraint firstAttribute="bottom" secondItem="BKr-LF-0Va" secondAttribute="bottom" id="Xjb-Mg-16i"/>
-                                                        <constraint firstAttribute="bottom" secondItem="JGF-4i-SV3" secondAttribute="bottom" constant="15" id="i7K-HT-0lV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xN7-XC-T1r" secondAttribute="bottom" constant="13" id="cpz-tE-vbq"/>
+                                                        <constraint firstItem="xN7-XC-T1r" firstAttribute="leading" secondItem="7oY-Hr-jEU" secondAttribute="leading" constant="15" id="fAN-O9-SpN"/>
                                                         <constraint firstAttribute="bottom" secondItem="dJe-kq-HWb" secondAttribute="bottom" id="ipF-vw-gIW"/>
                                                         <constraint firstAttribute="trailing" secondItem="dJe-kq-HWb" secondAttribute="trailing" id="mWE-N3-FVl"/>
                                                         <constraint firstAttribute="trailing" secondItem="BKr-LF-0Va" secondAttribute="trailing" id="o3M-HQ-l1s"/>
@@ -204,6 +213,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="zdP-Rg-sND" id="hGp-lg-2uK"/>
+                                            <outlet property="categoriesLabel" destination="xN7-XC-T1r" id="WRz-L3-RyK"/>
                                             <outlet property="cityLabel" destination="d2S-BN-BfR" id="UFm-tN-a7k"/>
                                             <outlet property="mapView" destination="jWc-8h-2he" id="nZd-9Z-6ez"/>
                                             <outlet property="nameLabel" destination="JGF-4i-SV3" id="6de-jC-L1J"/>
