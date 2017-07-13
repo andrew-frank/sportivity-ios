@@ -24,6 +24,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var attendeesHeaderLabel: UILabel!
     
     var reuseBag = DisposeBag()
     private let disposeBag = DisposeBag()
@@ -119,5 +120,13 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
             .addDisposableTo(disposeBag)
         
         mapView.addGestureRecognizer(mapTap)
+        
+        Observable
+            .combineLatest(viewModel.attendingCount.asObservable(), viewModel.capacity.asObservable()) { (count, capacity) -> String in
+                guard let capacity = capacity else { return "WHO?" }
+                return "\(count)/\(capacity) ATTENDING"
+            }
+            .bind(to: attendeesHeaderLabel.rx.text)
+            .addDisposableTo(disposeBag)
     }
 }

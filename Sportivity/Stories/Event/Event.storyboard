@@ -244,6 +244,7 @@
                                         <connections>
                                             <outlet property="addressLabel" destination="Wcl-EI-Agl" id="hsk-tT-Fk1"/>
                                             <outlet property="attendButton" destination="94V-WG-yuq" id="PUa-9m-DFt"/>
+                                            <outlet property="attendeesHeaderLabel" destination="xhC-DD-v5G" id="jyB-1d-RWB"/>
                                             <outlet property="cityLabel" destination="z9F-um-OSD" id="6N3-BO-lh7"/>
                                             <outlet property="dateLabel" destination="LJw-eG-U46" id="GaO-ka-kZz"/>
                                             <outlet property="hostLabel" destination="Hxy-rQ-0TA" id="3bq-bq-U09"/>

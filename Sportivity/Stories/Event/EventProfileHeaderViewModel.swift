@@ -37,6 +37,8 @@ class EventProfileHeaderViewModel {
     let city: Driver<String?>
     let attendees: Variable<[EventAttendee]>
     let isAttending = Variable<Bool>(false)
+    let capacity: Driver<Int?>
+    let attendingCount: Driver<Int>
     
     let toggleAttend = PublishSubject<Void>()
     
@@ -82,8 +84,10 @@ class EventProfileHeaderViewModel {
         self.street = event.place.asDriver().map { $0?.street.value }
         self.city = event.place.asDriver().map { $0?.city.value }
         self.hostText = hostText.asDriver(onErrorJustReturn: "")
+        self.capacity = event.capacity.asDriver()
         self.attendees = event.attendees
-        
+        self.attendingCount = event.attendees.asDriver().map { $0.count }
+
         attendees
             .asObservable()
             .map { [unowned self] attendees -> Bool in
