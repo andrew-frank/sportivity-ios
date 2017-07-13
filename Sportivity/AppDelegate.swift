@@ -12,10 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var router : Router?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // ROUTING
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.router = Router(window: window)
+        self.window = window
+        
+        // WINDOW APPEARANCE
+        
+        // Disabling, cos Back button title is glitching (...)
+        //let titleTextAttributes = [ NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold) ]
+        //UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
+        self.window?.tintColor = R.color.sportivity.sunsetOrange()
+        
+        // BOOTSTRAP
+        
+        Bootstrap.bootstrap()
+        
         return true
     }
 
