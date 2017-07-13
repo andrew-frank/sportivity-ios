@@ -33,8 +33,10 @@ extension UserAPI: NetworkHelpers {
         switch self {
         case .fetch(let id):
             return "/\(id)"
-        case .search, .create:
+        case .create:
             return nil
+        case .search:
+            return "/search"
         }
     }
     

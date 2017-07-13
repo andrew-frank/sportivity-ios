@@ -29,10 +29,12 @@ extension PlacesAPI: NetworkHelpers {
     
     var relativePath: String? {
         switch self {
-        case .fetchAll, .search:
+        case .fetchAll:
             return nil
         case .fetchPlace(let id):
             return "/\(id)"
+        case .search:
+            return "/search"
         }
     }
     
