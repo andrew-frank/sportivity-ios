@@ -15,6 +15,7 @@ class PlaceProfileHeaderTableViewCell: UITableViewCell, Configurable {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
     
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -41,6 +42,16 @@ class PlaceProfileHeaderTableViewCell: UITableViewCell, Configurable {
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.city.drive(cityLabel.rx.text).addDisposableTo(reuseBag)
         
+        viewModel
+            .categories
+            .map { (categories) -> String in
+                let text = categories.reduce("Sports: ", { (text, cat) -> String in
+                    return text == "Sports: " ? (text + cat.rawValue) : "\(text), \(cat.rawValue)"
+                })
+                return text == "Sports: " ? "" : text
+            }
+            .drive(categoriesLabel.rx.text)
+            .addDisposableTo(reuseBag)
         
         viewModel
             .loc

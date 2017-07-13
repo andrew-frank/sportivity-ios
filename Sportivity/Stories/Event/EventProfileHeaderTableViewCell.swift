@@ -53,10 +53,19 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
                     self.photoImageView.kf.setImage(with: url)
             }
             .addDisposableTo(reuseBag)
-        viewModel
-            .date
+
+        Observable
+            .combineLatest(viewModel.date.asObservable(), viewModel.attendingCount.asObservable()) { (date, attendingCount) -> String in
+                var text = date ?? ""
+                if attendingCount > 0 {
+                    text = (text.isEmpty ? "\(attendingCount) attending" : (text + "  •  \(attendingCount) attending"))
+                }
+                return text
+            }
+            .asDriver(onErrorJustReturn: "")
             .drive(dateLabel.rx.text)
             .addDisposableTo(reuseBag)
+        
         viewModel.hostText.drive(hostLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.placeName.drive(placeNameLabel.rx.text).addDisposableTo(reuseBag)
         viewModel.street.drive(addressLabel.rx.text).addDisposableTo(reuseBag)

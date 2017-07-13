@@ -20,6 +20,7 @@ class PlaceProfileHeaderViewModel {
     let loc: Driver<Loc?>
     let street: Driver<String?>
     let city: Driver<String?>
+    let categories: Driver<[Category]>
     
     init(place: Place, userManager: UserManagerProtocol = UserManager()) {
         self.place = place
@@ -30,5 +31,6 @@ class PlaceProfileHeaderViewModel {
         self.loc = self.place.loc.asDriver()
         self.street = self.place.street.asDriver()
         self.city = self.place.city.asDriver()
+        self.categories = self.place.sportCategories.asDriver()
     }
 }
