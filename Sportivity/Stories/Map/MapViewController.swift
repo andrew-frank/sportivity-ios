@@ -14,7 +14,7 @@ import MapKit
 private struct MapViewControllerConstants {
     static let clusterAnnotationReuseId = "cluster"
     static let placeAnnotationReuseId = "place"
-    static let clusteringEnabled = false
+    static let clusteringEnabled = true
     static let useApplePins = true
     static let calloutImageWidth = 300
     static let calloutImageHeight = 200
@@ -69,7 +69,7 @@ private extension MapViewController {
         guard
             let annotationView = annotationView as? PlacePinAnnotationView,
             let annotation = annotationView.annotation as? MapAnnotation else {
-                assert(false, "Wrong annotation type")
+                //assert(false, "Wrong annotation type")
                 return
         }
         
