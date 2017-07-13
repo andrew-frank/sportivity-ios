@@ -32,6 +32,7 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.mapView.showsUserLocation = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -79,5 +80,44 @@ class EventProfileHeaderTableViewCell: UITableViewCell, Configurable {
                 self.viewModel.toggleAttend.onNext()
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel
+            .placeLoc
+            .driveNext { [unowned self] (loc) in
+                guard let lat = loc?.lat, let lon = loc?.lon else { return }
+                let center = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                let region = MKCoordinateRegion(center: center, span: span)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = center
+                self.mapView.setRegion(region, animated: true)
+                self.mapView.addAnnotation(annotation)
+            }
+            .addDisposableTo(disposeBag)
+        
+        let mapTap = UITapGestureRecognizer()
+
+        Observable
+            .combineLatest(mapTap.rx.event.asObservable(), viewModel.placeLoc.asObservable(), viewModel.placeName.asObservable()) { (_, loc, name) -> Void in
+                guard let lat = loc?.lat, let lon = loc?.lon else { return }
+                let center = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                //let region = MKCoordinateRegion(center: center, span: span)
+                let options: [String:Any] = [
+                    MKLaunchOptionsMapCenterKey : center,
+                    MKLaunchOptionsMapSpanKey : span
+                ]
+                
+                let placemark = MKPlacemark(coordinate: center, addressDictionary: nil)
+                let mapitem = MKMapItem(placemark: placemark)
+                mapitem.name = name
+                mapitem.openInMaps(launchOptions: options)
+            }
+            .subscribeNext { (_) in
+                print("navigate to maps")
+            }
+            .addDisposableTo(disposeBag)
+        
+        mapView.addGestureRecognizer(mapTap)
     }
 }

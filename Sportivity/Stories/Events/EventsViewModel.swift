@@ -53,6 +53,7 @@ class EventsViewModel {
             })
             .bind(to: events.asPublishSubject()!)
             .addDisposableTo(disposeBag)
+        
         _ = fetch()
     }
     
