@@ -128,10 +128,10 @@ class EventProfileHeaderViewModel {
                     let meAttendee = EventAttendee(user: me)
                     var newAttendees = self.attendees.value
                     newAttendees.append(meAttendee)
-                    self.attendees.value = newAttendees
+                    self.event.attendees.value = newAttendees
                 } else {
                     let newAttendees = self.attendees.value.filter { $0.id != me.id }
-                    self.attendees.value = newAttendees
+                    self.event.attendees.value = newAttendees
                 }
             }
             .addDisposableTo(disposeBag)

@@ -94,6 +94,11 @@ private extension UserProfileViewController {
             .asObservable()
             .subscribeNext { [unowned self] (indexPath) in
                 self.tableView.deselectRow(at: indexPath, animated: true)
+                let item = self.viewModel.cellsData.value[indexPath.item]
+                if let event = item as? EventViewModel {
+                    let route = Route(to: .event, type: nil, data: event)
+                    self.onRouteTo.asPublishSubject()!.onNext(route)
+                }
             }
             .addDisposableTo(disposeBag)
         

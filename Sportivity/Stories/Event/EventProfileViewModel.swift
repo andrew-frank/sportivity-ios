@@ -20,6 +20,9 @@ class EventProfileViewModel {
     init(event: Event) {
         self.event = event
         buildCellViewModels()
+        self.event.attendees.asObservable().subscribeNext { [unowned self] (_) in
+            self.buildCellViewModels()
+        }.addDisposableTo(disposeBag)
     }
     
     private func buildCellViewModels() {
