@@ -20,6 +20,7 @@ final class Event : Unboxable {
     let capacity: Variable<Int?>
     let host: Variable<User?>
     let place: Variable<Place?>
+    let sportCategory: Variable<Category?>
     
     init(unboxer: Unboxer) throws {
         self.id = try unboxer.unbox(key: "_id")
@@ -49,5 +50,8 @@ final class Event : Unboxable {
         self.host = Variable<User?>(host)
         let place : Place? = try? unboxer.unbox(key: "place")
         self.place = Variable<Place?>(place)
+        
+        let cat: Category? = try? unboxer.unbox(key: "sportCategory")
+        self.sportCategory = Variable<Category?>(cat)
     }
 }

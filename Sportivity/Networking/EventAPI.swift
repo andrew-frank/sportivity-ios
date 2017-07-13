@@ -38,10 +38,10 @@ extension EventsAPI: NetworkHelpers {
         switch self {
         case .fetchEvent(let id):
             return "/\(id)"
-        case .join(let id):
-            return "/singUp?eventId=\(id)"
-        case .leave(let id):
-            return "/singUp?eventId=\(id)"
+        case .join:
+            return "/signUp"
+        case .leave:
+            return "/signUp"
         case .fetchEvents:
             return nil
         }
@@ -49,8 +49,10 @@ extension EventsAPI: NetworkHelpers {
     
     var parameters: Alamofire.Parameters? {
         switch self {
-        case .fetchEvent, .join, .leave:
+        case .fetchEvent:
             return nil
+        case .join(let id), .leave(let id):
+            return ["eventId": id]
         case .fetchEvents(let params):
             return params
         }

@@ -58,7 +58,7 @@ class UserProfileViewModel {
         observable.subscribeNext { [unowned self] (result) in
             switch result {
             case .success(let user):
-                self.userManager.update(user: user)
+                self.isItMe.value ? self.userManager.update(user: user) : self.configure(with: user)
             default:
                 break
             }

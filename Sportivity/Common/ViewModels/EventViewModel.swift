@@ -49,6 +49,8 @@ class EventViewModel : IdentifiableType, Equatable {
     let month: Driver<String?>
     let day: Driver<String?>
     let hour: Driver<String?>
+    
+    let category: Variable<Category?>
 
     init(event: Event) {
         self.event = event
@@ -79,5 +81,6 @@ class EventViewModel : IdentifiableType, Equatable {
         hour = event.dateStart.asDriver().map({ (date) -> String? in
             return EventViewModel.hourFormatter.string(from: date)
         })
+        category = event.sportCategory
     }
 }

@@ -26,11 +26,13 @@ enum EventsFetchResult {
 }
 
 class EventsViewModel {
-    let events = Variable<[EventViewModel]>([ ])
-    //let categories: Driver<[String: Bool]>
-    
+
     fileprivate let disposeBag = DisposeBag()
     fileprivate let userManager : UserManagerProtocol
+    fileprivate let _events = Variable<[EventViewModel]>([ ])
+
+    let events: Observable<[EventViewModel]> = PublishSubject<[EventViewModel]>()
+    //let categories: Driver<[String: Bool]>
     
     let filterViewModel : CategoriesSelectionViewModel
     
@@ -39,6 +41,18 @@ class EventsViewModel {
         //self.categories = userManager.categorySelections.rx_selections
         self.filterViewModel = CategoriesSelectionViewModel(selections: userManager.categorySelections)
         // TODO: get the categories, listen to changes and fetch for every change
+        
+        Observable
+            .combineLatest(_events.asObservable(), filterViewModel.selections.asObservable(), resultSelector: { (events, selections) -> [EventViewModel] in
+                return events.filter({ (event) -> Bool in
+                    guard let cat = event.category.value else { return false }
+                    return selections.reduce(false, { (result, categorySelectionVM) -> Bool in
+                        return result || (categorySelectionVM.category.rawValue == cat.rawValue && categorySelectionVM.isSelected)
+                    })
+                })
+            })
+            .bind(to: events.asPublishSubject()!)
+            .addDisposableTo(disposeBag)
         _ = fetch()
     }
     
@@ -61,7 +75,7 @@ class EventsViewModel {
                 }
                 return vms
             }
-            .bind(to: events)
+            .bind(to: _events)
             .addDisposableTo(disposeBag)
         
         return observable.map { (result) -> EventsFetchResult in

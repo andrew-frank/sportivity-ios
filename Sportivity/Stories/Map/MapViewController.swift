@@ -14,7 +14,7 @@ import MapKit
 private struct MapViewControllerConstants {
     static let clusterAnnotationReuseId = "cluster"
     static let placeAnnotationReuseId = "place"
-    static let clusteringEnabled = true
+    static let clusteringEnabled = false
     static let useApplePins = true
     static let calloutImageWidth = 300
     static let calloutImageHeight = 200
